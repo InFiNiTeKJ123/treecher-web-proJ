@@ -1,4 +1,4 @@
-สิ่งที่ต้องลง 
-FrontEnd: npm install @mui/material @emotion/react @emotion/styled @mui/icons-material react-router-dom
+# สิ่งที่ต้องลง 
+FrontEnd: ไม่ต้องลงเพิ่ม
 
 Backend: pip install -r requirements.txt

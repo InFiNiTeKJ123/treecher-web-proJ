@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Login from './pages/login';
-import Home from './pages/home_teacher';
 import Home_st from './pages/home_students';
 import Home_teacher from './pages/home_teacher';
 import PrimarySearchAppBar from './pages/test';

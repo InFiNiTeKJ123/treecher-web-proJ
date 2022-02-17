@@ -1,67 +1,82 @@
-import { Container, Typography } from '@mui/material'
-import React from 'react'
-import {
-  Bookmark,
-  List,
-  ExitToApp,
-  Home,
-  Person,
-  PhotoCamera,
-  PlayCircleOutline,
-  Settings,
-  Storefront,
-  TabletMac,
-} from "@mui/icons-material";
-import { Box } from '@mui/system';
+import { Box, Container, Typography } from '@mui/material'
+import React from 'react';
+import { Bookmark, ExitToApp, Person, PhotoCamera, PlayCircleOutline, Settings, Storefront, TabletMac,} from "@mui/icons-material";
+import SchoolIcon from '@mui/icons-material/School';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { makeStyles } from '@mui/styles';
+import { useTheme } from '@mui/material/styles';
 
+
+const useStyles = makeStyles(({ theme = useTheme() }) => ({
+  container: {
+    height: "100vh",
+    color: "white",
+    paddingTop: theme.spacing(5),
+    backgroundColor: "#008037",
+    position: "sticky",
+    top: 0,
+    [theme.breakpoints.up("md")]: {
+      backgroundColor: "white",
+      color: "#555",
+      border: "1px solid #ece7e7",
+    },
+  },
+  box: {
+    display: 'flex',
+    alignItems: "center",
+    borderRadius: theme.shape.borderRadius,
+    marginBottom: theme.spacing(3),
+    cursor: "pointer",
+    [theme.breakpoints.up("md")]: {
+      backgroundColor: "#008037",
+      paddingLeft: theme.spacing(1),
+    },
+  },
+  icon: {
+    marginRight: theme.spacing(1),
+    [theme.breakpoints.up("md")]: {
+      fontSize: "18px",
+      color: "white",
+    },
+  },
+  text: {
+    fontWeight: 500,
+    color: "white",
+    [theme.breakpoints.down("md")]: {
+      color: "white",
+      display: "none",
+    },
+  },
+}));
 
 function Left_Menu() {
+
+  const classes = useStyles()
+  
   return (
-    <Box>
-      <Container sx={{display: { xs: 'none', md: 'flex' }}}>
-      <div>
-        <Home />
-        <Typography>Homepage</Typography>
-      </div>
-      <div >
-        <Person />
-        <Typography >Friends</Typography>
-      </div>
-      <div >
-        <List />
-        <Typography >Lists</Typography>
-      </div>
-      <div >
-        <PhotoCamera />
-        <Typography >Camera</Typography>
-      </div>
-      <div >
-        <PlayCircleOutline />
-        <Typography >Videos</Typography>
-      </div>
-      <div >
-        <TabletMac />
-        <Typography >Apps</Typography>
-      </div>
-      <div >
-        <Bookmark />
-        <Typography >Collections</Typography>
-      </div>
-      <div >
-        <Storefront />
-        <Typography >Market Place</Typography>
-      </div>
-      <div >
-        <Settings/>
-        <Typography >Settings</Typography>
-      </div>
-      <div >
-        <ExitToApp />
-        <Typography >Logout</Typography>
-      </div>
-    </Container>
-    </Box>
-  )
+    <Container className={classes.container}>
+          <Box className={classes.box}>
+            <SchoolIcon className={classes.icon} />
+            <Typography className={classes.text}>หน้าหลัก</Typography>
+          </Box>
+          <Box className={classes.box}>
+            <Person className={classes.icon} />
+            <Typography className={classes.text}>โปรไฟล์</Typography>
+          </Box>
+          <Box className={classes.box}>
+            <AddCircleIcon className={classes.icon} />
+            <Typography className={classes.text}>เพิ่มห้องเรียน</Typography>
+          </Box>
+          <Box className={classes.box}>
+            <Settings className={classes.icon} />
+            <Typography className={classes.text}>Settings</Typography>
+          </Box>
+          <Box className={classes.box}>
+            <ExitToApp className={classes.icon} />
+            <Typography className={classes.text}>ออกจากระบบ</Typography>
+          </Box>
+      </Container>
+  );
 }
 
 export default Left_Menu

@@ -44,14 +44,13 @@ function Login() {
             alignItems: 'center',
             }}
             >
-                <Avatar sx={{width: 145, height: 145,backgroundColor: 'success.main',}}
+                <Avatar sx={{width: 150, height: 150,backgroundColor: 'success.main',}}
                 >
                 <img 
-                    src="https://www.img.in.th/images/5a8e12b61d4c4b7096dc11a9cd9813af.png" 
-                    alt="5a8e12b61d4c4b7096dc11a9cd9813af.png" 
-                    border="0"
-                    width="250"/>
-                <LockOutlinedIcon />
+                    src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png" 
+                    alt="5c82f85a69a47c74cf09dedd00fd4890.png"  
+                    border="20"
+                    width="200"/>
                 </Avatar>
                 <Typography component="h1" variant="h5" color="white">
                 TREECHER

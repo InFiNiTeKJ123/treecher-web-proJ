@@ -1,5 +1,4 @@
-import { Container, Typography } from '@mui/material'
-import React from 'react'
+import { Container, makeStyles, Typography } from "@material-ui/core";
 import {
   Bookmark,
   List,
@@ -11,57 +10,91 @@ import {
   Settings,
   Storefront,
   TabletMac,
-} from "@mui/icons-material";
-import { Box } from '@mui/system';
+} from "@material-ui/icons";
 
+const useStyles = makeStyles((theme) => ({
+  container: {
+    height: "100vh",
+    color: "white",
+    paddingTop: theme.spacing(10),
+    backgroundColor: theme.palette.primary.main,
+    position: "sticky",
+    top: 0,
+    [theme.breakpoints.up("sm")]: {
+      backgroundColor: "white",
+      color: "#555",
+      border: "1px solid #ece7e7",
+    },
+  },
+  item: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: theme.spacing(4),
+    [theme.breakpoints.up("sm")]: {
+      marginBottom: theme.spacing(3),
+      cursor: "pointer",
+    },
+  },
+  icon: {
+    marginRight: theme.spacing(1),
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "18px",
+    },
+  },
+  text: {
+    fontWeight: 500,
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+}));
 
-function Left_Menu() {
+const Leftbar = () => {
+  const classes = useStyles();
   return (
-    <Box>
-      <Container sx={{display: { xs: 'none', md: 'flex' }}}>
-      <div>
-        <Home />
-        <Typography>Homepage</Typography>
+    <Container className={classes.container}>
+      <div className={classes.item}>
+        <Home className={classes.icon} />
+        <Typography className={classes.text}>Homepage</Typography>
       </div>
-      <div >
-        <Person />
-        <Typography >Friends</Typography>
+      <div className={classes.item}>
+        <Person className={classes.icon} />
+        <Typography className={classes.text}>Friends</Typography>
       </div>
-      <div >
-        <List />
-        <Typography >Lists</Typography>
+      <div className={classes.item}>
+        <List className={classes.icon} />
+        <Typography className={classes.text}>Lists</Typography>
       </div>
-      <div >
-        <PhotoCamera />
-        <Typography >Camera</Typography>
+      <div className={classes.item}>
+        <PhotoCamera className={classes.icon} />
+        <Typography className={classes.text}>Camera</Typography>
       </div>
-      <div >
-        <PlayCircleOutline />
-        <Typography >Videos</Typography>
+      <div className={classes.item}>
+        <PlayCircleOutline className={classes.icon} />
+        <Typography className={classes.text}>Videos</Typography>
       </div>
-      <div >
-        <TabletMac />
-        <Typography >Apps</Typography>
+      <div className={classes.item}>
+        <TabletMac className={classes.icon} />
+        <Typography className={classes.text}>Apps</Typography>
       </div>
-      <div >
-        <Bookmark />
-        <Typography >Collections</Typography>
+      <div className={classes.item}>
+        <Bookmark className={classes.icon} />
+        <Typography className={classes.text}>Collections</Typography>
       </div>
-      <div >
-        <Storefront />
-        <Typography >Market Place</Typography>
+      <div className={classes.item}>
+        <Storefront className={classes.icon} />
+        <Typography className={classes.text}>Market Place</Typography>
       </div>
-      <div >
-        <Settings/>
-        <Typography >Settings</Typography>
+      <div className={classes.item}>
+        <Settings className={classes.icon} />
+        <Typography className={classes.text}>Settings</Typography>
       </div>
-      <div >
-        <ExitToApp />
-        <Typography >Logout</Typography>
+      <div className={classes.item}>
+        <ExitToApp className={classes.icon} />
+        <Typography className={classes.text}>Logout</Typography>
       </div>
     </Container>
-    </Box>
-  )
-}
+  );
+};
 
-export default Left_Menu
+export default Leftbar;

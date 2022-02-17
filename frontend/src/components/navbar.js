@@ -1,5 +1,9 @@
-import { AppBar, Avatar, Box, IconButton, Toolbar, Typography } from '@mui/material'
+
+import { AppBar, Avatar, Box, Container, IconButton, Toolbar, Typography } from '@mui/material'
 import React from 'react'
+import {
+  Home,
+} from "@mui/icons-material";
 
 
 function Navbar() {
@@ -34,9 +38,15 @@ function Navbar() {
                 onClick='#'
                 color="inherit"
               >
+                <Container sx={{display: { xs: 'none', md: 'flex' }}}>
+                      <div>
+                        <Home />
+                      </div>
+                </Container>
                 <Avatar sx={{ bgcolor: '#81DBEA' , display: { xs: 'none', lg: 'flex' }}} aria-label="avatar" >
-                  P
+                  ศ
                 </Avatar>
+                
               </IconButton> 
           </Box>       
         </Toolbar>

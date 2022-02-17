@@ -3,6 +3,8 @@ import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Lin
 import LockOutlinedIcon  from '@mui/icons-material/LockOutlined'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
+
+
 function Login() {
 
     const theme = createTheme();
@@ -23,27 +25,48 @@ function Login() {
         <CssBaseline />
         <Box
             sx={{
-            marginTop: 8,
+            marginTop: 5,
             display: 'flex',
             flexDirection: 'column',
+            backgroundColor: '#F5F5F5',
+            padding: 2 ,
+            borderRadius: 10,
             alignItems: 'center',
             }}
         >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-            Sign in
-            </Typography>
+            <Container sx={{
+            marginTop: 8,
+            display: 'flex',
+            padding: 2 ,
+            borderRadius: 5,
+            flexDirection: 'column',
+            backgroundColor: 'success.main',
+            alignItems: 'center',
+            }}
+            >
+                <Avatar sx={{width: 145, height: 145,backgroundColor: 'success.main',}}
+                >
+                <img 
+                    src="https://www.img.in.th/images/5a8e12b61d4c4b7096dc11a9cd9813af.png" 
+                    alt="5a8e12b61d4c4b7096dc11a9cd9813af.png" 
+                    border="0"
+                    width="250"/>
+                <LockOutlinedIcon />
+                </Avatar>
+                <Typography component="h1" variant="h5" color="white">
+                TREECHER
+                </Typography>
+            </Container>
             <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="อีเมล"
                 name="email"
                 autoComplete="email"
+                color="success"
                 autoFocus
             />
             <TextField
@@ -51,35 +74,35 @@ function Login() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="รหัสผ่าน"
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                color="success"
             />
             <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
+                control={<Checkbox value="remember" color="success" />}
+                label="จดจำรหัสผ่าน"
             />
             <Button
                 type="submit"
                 fullWidth
                 variant="contained"
+                color="success"
                 sx={{ mt: 3, mb: 2 }}
             >
-                Sign In
+                เข้าสู่ระบบ
             </Button>
-            <Grid container>
-                <Grid item xs>
-                <Link href="#" variant="body2">
-                    Forgot password?
-                </Link>
-                </Grid>
-                <Grid item>
-                <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                </Link>
-                </Grid>
-            </Grid>
+            <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="secondary"
+                sx={{ mt: 3, mb: 2 }}
+            >
+                ลงทะเบียน
+            </Button>
+            
             </Box>
         </Box>
         {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}

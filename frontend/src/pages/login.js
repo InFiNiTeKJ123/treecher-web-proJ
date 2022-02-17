@@ -48,7 +48,7 @@ function Login() {
                 >
                 <img 
                     src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png" 
-                    alt="5c82f85a69a47c74cf09dedd00fd4890.png"  
+                    alt="TreeCherLOGO.png"  
                     border="20"
                     width="200"/>
                 </Avatar>

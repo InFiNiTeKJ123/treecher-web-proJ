@@ -1,100 +1,82 @@
-import { Container, makeStyles, Typography } from "@material-ui/core";
-import {
-  Bookmark,
-  List,
-  ExitToApp,
-  Home,
-  Person,
-  PhotoCamera,
-  PlayCircleOutline,
-  Settings,
-  Storefront,
-  TabletMac,
-} from "@material-ui/icons";
+import { Box, Container, Typography } from '@mui/material'
+import React from 'react';
+import { Bookmark, ExitToApp, Person, PhotoCamera, PlayCircleOutline, Settings, Storefront, TabletMac,} from "@mui/icons-material";
+import SchoolIcon from '@mui/icons-material/School';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { makeStyles } from '@mui/styles';
+import { useTheme } from '@mui/material/styles';
 
-const useStyles = makeStyles((theme) => ({
+
+const useStyles = makeStyles(({ theme = useTheme() }) => ({
   container: {
     height: "100vh",
     color: "white",
-    paddingTop: theme.spacing(10),
-    backgroundColor: theme.palette.primary.main,
+    paddingTop: theme.spacing(5),
+    backgroundColor: "#008037",
     position: "sticky",
     top: 0,
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       backgroundColor: "white",
       color: "#555",
       border: "1px solid #ece7e7",
     },
   },
-  item: {
-    display: "flex",
+  box: {
+    display: 'flex',
     alignItems: "center",
-    marginBottom: theme.spacing(4),
-    [theme.breakpoints.up("sm")]: {
-      marginBottom: theme.spacing(3),
-      cursor: "pointer",
+    borderRadius: theme.shape.borderRadius,
+    marginBottom: theme.spacing(3),
+    cursor: "pointer",
+    [theme.breakpoints.up("md")]: {
+      backgroundColor: "#008037",
+      paddingLeft: theme.spacing(1),
     },
   },
   icon: {
     marginRight: theme.spacing(1),
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       fontSize: "18px",
+      color: "white",
     },
   },
   text: {
     fontWeight: 500,
-    [theme.breakpoints.down("sm")]: {
+    color: "white",
+    [theme.breakpoints.down("md")]: {
+      color: "white",
       display: "none",
     },
   },
 }));
 
-const Leftbar = () => {
-  const classes = useStyles();
+function Left_Menu() {
+
+  const classes = useStyles()
+  
   return (
     <Container className={classes.container}>
-      <div className={classes.item}>
-        <Home className={classes.icon} />
-        <Typography className={classes.text}>Homepage</Typography>
-      </div>
-      <div className={classes.item}>
-        <Person className={classes.icon} />
-        <Typography className={classes.text}>Friends</Typography>
-      </div>
-      <div className={classes.item}>
-        <List className={classes.icon} />
-        <Typography className={classes.text}>Lists</Typography>
-      </div>
-      <div className={classes.item}>
-        <PhotoCamera className={classes.icon} />
-        <Typography className={classes.text}>Camera</Typography>
-      </div>
-      <div className={classes.item}>
-        <PlayCircleOutline className={classes.icon} />
-        <Typography className={classes.text}>Videos</Typography>
-      </div>
-      <div className={classes.item}>
-        <TabletMac className={classes.icon} />
-        <Typography className={classes.text}>Apps</Typography>
-      </div>
-      <div className={classes.item}>
-        <Bookmark className={classes.icon} />
-        <Typography className={classes.text}>Collections</Typography>
-      </div>
-      <div className={classes.item}>
-        <Storefront className={classes.icon} />
-        <Typography className={classes.text}>Market Place</Typography>
-      </div>
-      <div className={classes.item}>
-        <Settings className={classes.icon} />
-        <Typography className={classes.text}>Settings</Typography>
-      </div>
-      <div className={classes.item}>
-        <ExitToApp className={classes.icon} />
-        <Typography className={classes.text}>Logout</Typography>
-      </div>
-    </Container>
+          <Box className={classes.box}>
+            <SchoolIcon className={classes.icon} />
+            <Typography className={classes.text}>หน้าหลัก</Typography>
+          </Box>
+          <Box className={classes.box}>
+            <Person className={classes.icon} />
+            <Typography className={classes.text}>โปรไฟล์</Typography>
+          </Box>
+          <Box className={classes.box}>
+            <AddCircleIcon className={classes.icon} />
+            <Typography className={classes.text}>เพิ่มห้องเรียน</Typography>
+          </Box>
+          <Box className={classes.box}>
+            <Settings className={classes.icon} />
+            <Typography className={classes.text}>Settings</Typography>
+          </Box>
+          <Box className={classes.box}>
+            <ExitToApp className={classes.icon} />
+            <Typography className={classes.text}>ออกจากระบบ</Typography>
+          </Box>
+      </Container>
   );
-};
+}
 
-export default Leftbar;
+export default Left_Menu;

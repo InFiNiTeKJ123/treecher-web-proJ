@@ -52,7 +52,7 @@ const useStyles = makeStyles(({theme = useTheme()}) => ({
 }));
 
 
-function Navbar() {
+function Navbarst() {
 
   const classes = useStyles()
   return (
@@ -66,14 +66,11 @@ function Navbar() {
             aria-label="open drawer"
             sx={{ display:'flex'}}
             >
-              <Avatar sx={{width: 35, height: 35,backgroundColor: 'success.main',}}
-                >
-                <img 
-                    src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png" 
-                    alt="TreeCherLOGO.png"  
-                    border="0"
-                    width="36"/>
-                </Avatar>
+              <img 
+                src="https://www.img.in.th/images/43a53673ca4b29c99027d9ff513cc5c7.png" 
+                alt="Treecher.png" 
+                width="35"
+              />
             </IconButton>
           <Typography variant='h6' sx={{ display: 'flex' }}> 
             TreeCher
@@ -82,12 +79,13 @@ function Navbar() {
           <container>
             <Box sx={{ flexGrow: 50}} />
             <Typography variant='h4'  sx={{ fontWeight: 'bold',color:'#ffffff',display: { xs: 'none', sm: 'flex' } }}> 
-                คุณครู
+                นักเรียน
             </Typography>
             <Box sx={{ flexGrow: 5 }} /> 
             <Typography variant='h6' sx={{color: '#fcf872', display: { xs: 'none', sm: 'flex' } }}> 
-                เพ็ชรัตน์ สุริยะไชย
+                ฉัตรชัย จันทร์แก้ว
             </Typography>
+            
           </container>
           <Box>
             <IconButton
@@ -99,8 +97,8 @@ function Navbar() {
                 onClick='#'
                 color="inherit"
               >
-                <Avatar sx={{ fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', display: { xs: 'none', sm: 'flex' }}} size="small" aria-label="avatar" >
-                  พ
+                <Avatar sx={{ fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', display: { xs: 'none', sm: 'flex' }}} size="small" aria-label="avatar" >
+                  ฉ
                 </Avatar>
               </IconButton> 
           </Box>       
@@ -111,4 +109,5 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbarst;
+

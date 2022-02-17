@@ -6,7 +6,6 @@ import Home_teacher from './pages/home_teacher';
 import PrimarySearchAppBar from './pages/test';
 
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -22,3 +21,5 @@ function App() {
 }
 
 export default App;
+
+

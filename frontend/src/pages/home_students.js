@@ -1,9 +1,10 @@
 import { Link } from '@mui/material'
 import React from 'react'
+import Navbar from '../components/navbarst'
 
 function Home_st() {
   return (
-    <h1>Hello Student</h1>
+    <Navbar/>
   )
 }
 

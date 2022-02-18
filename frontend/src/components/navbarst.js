@@ -66,11 +66,14 @@ function Navbarst() {
             aria-label="open drawer"
             sx={{ display:'flex'}}
             >
-              <img 
-                src="https://www.img.in.th/images/43a53673ca4b29c99027d9ff513cc5c7.png" 
-                alt="Treecher.png" 
-                width="35"
-              />
+              <Avatar sx={{width: 35, height: 35,backgroundColor: 'success.main',}}
+                >
+                <img 
+                    src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png" 
+                    alt="TreeCherLOGO.png"  
+                    border="0"
+                    width="36"/>
+                </Avatar>
             </IconButton>
           <Typography variant='h6' sx={{ display: 'flex' }}> 
             TreeCher

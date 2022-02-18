@@ -71,7 +71,8 @@ function Left_Menu() {
             <Settings className={classes.icon} />
             <Typography className={classes.text}>Settings</Typography>
           </Box>
-          <Box className={classes.box}>
+          <Box sx={{backgroundColor: '#FF0000',}}
+          className={classes.box}>
             <ExitToApp className={classes.icon} />
             <Typography className={classes.text}>ออกจากระบบ</Typography>
           </Box>

@@ -4,71 +4,75 @@ import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
-import { Container } from '@mui/material';
+import { Avatar , Container } from '@mui/material';
+import { yellow } from '@mui/material/colors';
 
 
 const useStyles = makeStyles(({theme = useTheme()}) => ({
     container: {
-        border: "1px solid #ece7e7"
+        paddingTop: theme.spacing(5),
+        paddingLeft: theme.spacing(10),
     },
     paper: {
-        borderRadius: theme.shape.borderRadius,
-        justifyContent: 'flex-end',
-        margin: 'auto',
+        borderRadius: 25,
         p: 2,
-        margin: 'auto',
-        maxWidth: 500,
-        flexGrow: 1,
+        width: '100%',
+        maxWidth: 'lg',
         [theme.breakpoints.up("sm")]: {
             display: "none",
           },
-    }
+    },
+    gridavatar: {
+        paddingRight: theme.spacing(3)
+   },
+    text_teacher:{
+        alignItem: 'center',
+        paddingLeft: theme.spacing(2),
+        color: 'white', 
+    },
+    text:{
+        alignItem: 'center',
+        paddingLeft: theme.spacing(2),
+        paddingBottom: theme.spacing(2),
+        color: '#fcf872', 
+    },
 }))
 
 
-export default function ComplexGrid() {
+function Avartar_mobile() {
 
     const classes = useStyles()
 
   return (
     <Container className={classes.container}>
-        <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-            <Grid item>
-            <ButtonBase sx={{ width: 128, height: 128 }}>
-            </ButtonBase>
-            </Grid>
-            <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-                <Grid item xs>
-                <Typography gutterBottom variant="subtitle1" component="div">
-                    Standard license
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                    Full resolution 1920x1080 • JPEG
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    ID: 1030114
-                </Typography>
-                </Grid>
-                <Grid item>
-                <Typography sx={{ cursor: 'pointer' }} variant="body2">
-                    Remove
-                </Typography>
+        <Paper className={classes.paper} sx={{ bgcolor: '#008037'}}>
+            <Grid container spacing={2}>
+                <Grid item xs={12} sm container>
+                    <Grid item xs container direction="column" spacing={2}>
+                        <Grid item xs>
+                            <Typography gutterBottom variant="h4" component="div" className={classes.text_teacher}>
+                                คุณครู
+                            </Typography>
+                            <Typography variant="body2" gutterBottom className={classes.text} >
+                                เพ็ชรัตน์ สุริยะไชย
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid item className={classes.gridavatar}>
+                        <Avatar sx={{ fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', display: { xs: 'flex', sm: 'none' }}} size="small" aria-label="avatar">
+                                พ
+                        </Avatar>
+                    </Grid>
                 </Grid>
             </Grid>
-            <Grid item>
-                <Typography variant="subtitle1" component="div">
-                $19.00
-                </Typography>
-            </Grid>
-            </Grid>
-        </Grid>
-        </Paper>
-    </Container>
+    </Paper>
+</Container>
   );
 }
+
+export default Avartar_mobile;
+
+
 // import React from 'react'
 // import { makeStyles } from '@mui/styles'
 // import { useTheme } from '@mui/material/styles';

@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from '@mui/material'
 import React from 'react';
-import { Bookmark, ExitToApp, Person, PhotoCamera, PlayCircleOutline, Settings, Storefront, TabletMac,} from "@mui/icons-material";
+import { ExitToApp, Person, Settings, } from "@mui/icons-material";
 import SchoolIcon from '@mui/icons-material/School';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { makeStyles } from '@mui/styles';
@@ -28,8 +28,17 @@ const useStyles = makeStyles(({ theme = useTheme() }) => ({
     marginBottom: theme.spacing(3),
     cursor: "pointer",
     [theme.breakpoints.up("md")]: {
-      backgroundColor: "#008037",
-      paddingLeft: theme.spacing(1),
+      backgroundColor: "#008037", 
+    },
+  },
+  boxlogout: {
+    display: 'flex',
+    alignItems: "center",
+    borderRadius: theme.shape.borderRadius,
+    marginBottom: theme.spacing(3),
+    cursor: "pointer",
+    [theme.breakpoints.up("md")]: {
+      backgroundColor: "#FF0000",
     },
   },
   icon: {
@@ -71,8 +80,7 @@ function Left_Menu() {
             <Settings className={classes.icon} />
             <Typography className={classes.text}>Settings</Typography>
           </Box>
-          <Box sx={{backgroundColor: '#FF0000',}}
-          className={classes.box}>
+          <Box className={classes.boxlogout}>
             <ExitToApp className={classes.icon} />
             <Typography className={classes.text}>ออกจากระบบ</Typography>
           </Box>

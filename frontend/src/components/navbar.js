@@ -1,7 +1,8 @@
 import React from 'react'
-import { AppBar, Avatar, Box, IconButton, Toolbar, Typography } from '@mui/material'
+import { AppBar, Avatar, Box, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const useStyles = makeStyles(({theme = useTheme()}) => ({
   appbar: {
@@ -49,6 +50,11 @@ const useStyles = makeStyles(({theme = useTheme()}) => ({
   badge: {
     marginRight: theme.spacing(2),
   },
+  hamburger_icon: {
+    [theme.breakpoints.down("sm")]: {
+      color: 'white',
+      marginRight: theme.spacing(6), 
+  }}
 }));
 
 
@@ -59,14 +65,17 @@ function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static' style={{backgroundColor: '#008037'}}>
         <Toolbar className={classes.toolbar}>
+          <IconButton sx={{display: { xs: 'flex', sm: 'none' }}}>
+            <MenuIcon sx={{display: { xs: 'flex', sm: 'none' }}} className={classes.hamburger_icon}/>
+          </IconButton>
           <IconButton
             size="small"
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ display:'flex'}}
+            sx={{ display:'flex' }}
             >
-              <Avatar sx={{width: 35, height: 35,backgroundColor: 'success.main',}}
+              <Avatar sx={{width: 35, height: 35,backgroundColor: 'success.main',}} 
                 >
                 <img 
                     src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png" 

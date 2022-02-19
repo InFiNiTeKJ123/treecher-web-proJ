@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react';
 import { Grid } from '@mui/material'
 import { useTheme, createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
@@ -17,14 +17,14 @@ const useStyles = makeStyles(({ theme = useTheme() }) => ({
     justifyContent: 'flex-end',
     paddingTop: theme.spacing(5),
     paddingLeft: theme.spacing(12),
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       display: "none",
     },
   },
   gridavartar :{
     paddingTop: theme.spacing(10),
     border: "1px solid black", 
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       display: "none",
     },
   },
@@ -42,7 +42,7 @@ function Home_teacher() {
     <Box position='flex'>
       <Navbar/>
       <Grid container item spacing={0.5}>
-        <Grid item xs={1.8} sm={1.5} sx={{display: { xs: 'none', md: 'flex' }}}>
+        <Grid item xs={1.8} sm={1.5} sx={{display: { xs: 'none', md: 'flex', position: 'sticky', top: 0 }}}>
           <Left_Menu />
         </Grid>
         <Grid item xs > 

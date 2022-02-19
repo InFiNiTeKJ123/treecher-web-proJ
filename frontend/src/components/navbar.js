@@ -24,36 +24,10 @@ const useStyles = makeStyles(({theme = useTheme()}) => ({
       display: "none",
     },
   },
-  logoLg: {
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
-  },
-  logoSm: {
-    display: "block",
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
-  },
-  cancel: {
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
-  },
-  searchButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
-  },
   icons: {
     alignItems: "center",
     display: (props) => (props.open ? "none" : "flex"),
   },
-  badge: {
-    marginRight: theme.spacing(2),
-  }, 
   menuSliderContainer: {
     width: 200,
     background: "#008037",
@@ -111,6 +85,10 @@ function Navbar() {
             width="75"
             />
       </Avatar>
+      <Typography component="h2" variant="h5" color="white" 
+                  sx={{ fontWeight: 500, paddingLeft: theme.spacing(6.5), paddingBottom: theme.spacing(1) }}>
+        TreeCher
+      </Typography>
       <List>
         {listItems.map((listItem, index) => (
           <ListItem className={classes.listItem} button key={index}>
@@ -125,10 +103,12 @@ function Navbar() {
   )
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 , position: 'sticky', top: 0 }}>
       <AppBar position='static' style={{backgroundColor: '#008037'}}>
         <Toolbar className={classes.toolbar}>
-          <IconButton sx={{display: { xs: 'flex', md: 'none' }, color: 'white' , marginRight: theme.spacing(6)}} onClick={toggleslider}>
+          <IconButton sx={{display: { xs: 'flex', md: 'none' }, color: 'white' , 
+                      marginRight: { xs: theme.spacing(6), sm: theme.spacing(1)}}} 
+                      onClick={toggleslider}>
             <MenuIcon sx={{display: { xs: 'flex', md: 'none' }}} className={classes.hamburger_icon}/>
           </IconButton>
           <Drawer open={open} anchor="left" onClose={toggleslider}>
@@ -174,7 +154,10 @@ function Navbar() {
                 onClick='#'
                 color="inherit"
               >
-                <Avatar sx={{ fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', display: { xs: 'none', sm: 'flex' }}} size="small" aria-label="avatar" >
+                <Avatar 
+                  sx={{ fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', 
+                        display: { xs: 'none', sm: 'flex' }}} 
+                  size="small" aria-label="avatar" >
                   พ
                 </Avatar>
               </IconButton> 

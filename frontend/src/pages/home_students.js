@@ -31,25 +31,6 @@ const useStyles = makeStyles(({ theme = useTheme() }) => ({
 }));
 
 
-// const listItems = [
-//   {
-//     listIcon: <Home />,
-//     listText: "Home"
-//   },
-//   {
-//     listIcon: <AssignmentInd />,
-//     listText: "Resume"
-//   },
-//   {
-//     listIcon: <Apps />,
-//     listText: "Portfolio"
-//   },
-//   {
-//     listIcon: <ContactMail />,
-//     listText: "Contacts"
-//   }
-// ];
-
 function Home_teacher() {
 
   const classes = useStyles()
@@ -60,21 +41,6 @@ function Home_teacher() {
     setOpen(!open)
   }
 
-  // const leftslide_lst = () => {
-  //   <Box>
-  //     <List>
-  //       {listItems.map((listItem, index) => (
-  //         <ListItem className={classes.listItem} button key={index}>
-  //           <ListItemIcon className={classes.listItem}>
-  //             {listItem.listIcon}
-  //           </ListItemIcon>
-  //           <ListItemText primary={listItem.listText} />
-  //         </ListItem>
-  //       ))}
-  //     </List>
-  //   </Box>
-  // }
-
   return (
     <Box position='flex'>
       <Navbarst/>
@@ -83,7 +49,6 @@ function Home_teacher() {
           <Left_Menu />
         </Grid>
         <Grid item xs > 
-          {/* <Box className={classes.box}>ห้องเรียน</Box> */}
           <Grid item classname={classes.gridavartar}>
             <Avartarst_mobile className={classes.avartar_mobile}/>
           </Grid>

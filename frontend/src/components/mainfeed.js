@@ -1,13 +1,21 @@
-import { makeStyles, ThemeProvider } from '@mui/styles'
-import { useTheme, createTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles'
+import { createTheme } from '@mui/material/styles';
 import React from 'react'
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 
-const useStyles = makeStyles(({ theme = useTheme() }) => ({
+const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
-      paddingTop: theme.spacing(3),
+      [theme.breakpoints.down("sm")]: {
+        paddingTop: theme.spacing(3),
+      }
     },
+    boxclassroom: {
+      width: 100 , height: 'auto', alignItems: 'center',
+      bgcolor: '#008037', color: 'white', 
+      paddingleft: theme.spacing(3), marginBottom: theme.spacing(3),
+      borderRadius: 3,
+    }
   }));
 
 function Mainfeed() {
@@ -19,34 +27,63 @@ function Mainfeed() {
   return (
       <Container className={classes.container}>
         <Box component='div'
-          sx={{ width: 100 , height: 'auto', 
-                bgcolor: '#008037', color: 'white', 
+          sx={{ width: 160 , height: 'auto', alignItems: 'center',
+                bgcolor: '#008037', color: 'white', display: 'flex',
                 paddingleft: theme.spacing(3), marginBottom: theme.spacing(3),
                 borderRadius: 3, }}>
-          <SchoolIcon sx={{ display: '', paddingLeft: theme.spacing(2), paddingTop: theme.spacing(2)}}/>
+          <SchoolIcon sx={{ paddingLeft: theme.spacing(2) }}/>
           <Typography 
-            sx={{ display:'flex' ,fontsize: '10', fontWeight: 500 ,
+            sx={{ display:'flex' , fontsize: 20, fontWeight: 500 ,
                   padding: theme.spacing(2) , paddingLeft: theme.spacing(2.5)}}>
             ห้องเรียน
           </Typography>
         </Box>
         <Box>
           <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-            component="img"
-            alt="green iguana"
-            height="100"
-            image="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              240-124
-            </Typography>
-          </CardContent>
-          <CardActions CardActions>
-            <Button size="small">เข้าห้องเรียน</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
+            <CardActionArea>
+              <CardMedia
+              component="img"
+              alt="green iguana"
+              height="100"
+              image="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 500 }}>
+                  240-124
+                </Typography>
+                <Typography gutterBottom variant="body2" component="div" sx={{ fontWeight: 500 }}>
+                  ห้องเรียนสำหรับคนรักโลก
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions CardActions>
+              <Button size="small">เข้าห้องเรียน</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+        </Card>
+        </Box>
+        <Box>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+              <CardMedia
+              component="img"
+              alt="green iguana"
+              height="100"
+              image="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 500 }}>
+                  240-124
+                </Typography>
+                <Typography gutterBottom variant="body2" component="div" sx={{ fontWeight: 500 }}>
+                  ห้องเรียนสำหรับคนรักโลก
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions CardActions>
+              <Button size="small">เข้าห้องเรียน</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
         </Card>
         </Box>
       </Container>

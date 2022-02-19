@@ -12,13 +12,12 @@ const useStyles = makeStyles(({ theme = useTheme() }) => ({
     height: "100vh",
     color: "white",
     paddingTop: theme.spacing(5),
-    backgroundColor: "#008037",
-    position: "sticky",
-    top: 0,
     [theme.breakpoints.up("md")]: {
       backgroundColor: "white",
       color: "#555",
       border: "1px solid #ece7e7",
+      position: 'sticky',
+      top: 0,
     },
   },
   box: {
@@ -63,7 +62,7 @@ function Left_Menu() {
   const classes = useStyles()
   
   return (
-    <Container className={classes.container}>
+    <Container className={classes.container} >
           <Box className={classes.box}>
             <SchoolIcon className={classes.icon} />
             <Typography className={classes.text}>หน้าหลัก</Typography>

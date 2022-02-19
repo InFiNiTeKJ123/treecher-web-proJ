@@ -5,8 +5,6 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { Avatar , Container } from '@mui/material';
-import { yellow } from '@mui/material/colors';
-
 
 const useStyles = makeStyles(({theme = useTheme()}) => ({
     container: {

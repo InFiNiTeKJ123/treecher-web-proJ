@@ -2,7 +2,8 @@ import React from 'react'
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container} from '@mui/material'
 import LockOutlinedIcon  from '@mui/icons-material/LockOutlined'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-
+import { useTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 
 function Login() {
@@ -25,24 +26,25 @@ function Login() {
         <CssBaseline />
         <Box
             sx={{
-            marginTop: 5,
+            marginTop: { xs: 0, sm: 5},
             display: 'flex',
             flexDirection: 'column',
             backgroundColor: '#F5F5F5',
             padding: 2 ,
             borderRadius: 10,
             alignItems: 'center',
-            }}
+            }} 
         >
-            <Container sx={{
-            marginTop: 8,
-            display: 'flex',
-            padding: 2 ,
-            borderRadius: 5,
-            flexDirection: 'column',
-            backgroundColor: 'success.main',
-            alignItems: 'center',
-            }}
+            <Container 
+                sx={{
+                marginTop: { xs: 0, sm: 6 }, 
+                display: 'flex',
+                padding: 2 ,
+                borderRadius: 5,
+                flexDirection: 'column',
+                backgroundColor: 'success.main',
+                alignItems: 'center',
+                }}
             >
                 <Avatar sx={{width: 150, height: 150,backgroundColor: 'success.main',}}
                 >
@@ -88,6 +90,7 @@ function Login() {
                 fullWidth
                 variant="contained"
                 color="success"
+                href='http://localhost:3000/home_th'
                 sx={{ mt: 3, mb: 2 }}
             >
                 เข้าสู่ระบบ
@@ -104,7 +107,6 @@ function Login() {
             
             </Box>
         </Box>
-        {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
         </Container>
     </ThemeProvider>
     );

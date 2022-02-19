@@ -1,8 +1,12 @@
-import React from 'react'
-import { AppBar, Avatar, Box, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
-import { useTheme } from '@mui/material/styles';
+import React, { useState } from 'react'
+import { AppBar, Avatar, Box, IconButton, Toolbar, Typography, List, ListItem, ListItemIcon, ListItemText, Drawer } from '@mui/material'
+import { useTheme , createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import MenuIcon from '@mui/icons-material/Menu';
+import { ExitToApp, Person } from '@mui/icons-material';
+import SchoolIcon from '@mui/icons-material/School';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+
 
 const useStyles = makeStyles(({theme = useTheme()}) => ({
   appbar: {
@@ -49,25 +53,87 @@ const useStyles = makeStyles(({theme = useTheme()}) => ({
   },
   badge: {
     marginRight: theme.spacing(2),
+  }, 
+  menuSliderContainer: {
+    width: 200,
+    background: "#008037",
+    height: "100%"
   },
-  hamburger_icon: {
-    [theme.breakpoints.down("sm")]: {
-      color: 'white',
-      marginRight: theme.spacing(6), 
-  }}
+  listItem: {
+    color: "white"
+  },
 }));
+
+const listItems = [
+  {
+    listIcon: <SchoolIcon />,
+    listText: "หน้าหลัก"
+  },
+  {
+    listIcon: <Person />,
+    listText: "โปรไฟล์"
+  },
+  {
+    listIcon: <AddCircleIcon />,
+    listText: "เพิ่มห้องเรียน"
+  },
+  {
+    listIcon: <ExitToApp />,
+    listText: "ออกจากระบบ"
+  }
+];
 
 
 function Navbar() {
 
   const classes = useStyles()
+
+  const theme = createTheme();
+
+  const [open, setOpen] = useState(false)
+
+  const toggleslider = () => {
+    setOpen(!open)
+  }
+
+  const leftslide_lst = () => (
+    <Box className={classes.menuSliderContainer} component="div">
+      <Avatar 
+      sx={{width: 75, height: 75, backgroundColor: 'success.main', 
+            marginLeft: theme.spacing(8), 
+            marginTop: theme.spacing(3) , 
+            marginBottom: theme.spacing(2)}} 
+        >
+          <img 
+            src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png" 
+            alt="TreeCherLOGO.png"  
+            border="0"
+            width="75"
+            />
+      </Avatar>
+      <List>
+        {listItems.map((listItem, index) => (
+          <ListItem className={classes.listItem} button key={index}>
+            <ListItemIcon className={classes.listItem} sx={{ color: 'white' }}>
+              {listItem.listIcon}
+            </ListItemIcon>
+            <ListItemText primary={listItem.listText} sx={{ color: 'white'}}/>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  )
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static' style={{backgroundColor: '#008037'}}>
         <Toolbar className={classes.toolbar}>
-          <IconButton sx={{display: { xs: 'flex', sm: 'none' }}}>
-            <MenuIcon sx={{display: { xs: 'flex', sm: 'none' }}} className={classes.hamburger_icon}/>
+          <IconButton sx={{display: { xs: 'flex', md: 'none' }, color: 'white' , marginRight: theme.spacing(6)}} onClick={toggleslider}>
+            <MenuIcon sx={{display: { xs: 'flex', md: 'none' }}} className={classes.hamburger_icon}/>
           </IconButton>
+          <Drawer open={open} anchor="left" onClose={toggleslider}>
+              {leftslide_lst()}
+          </Drawer>
           <IconButton
             size="small"
             edge="start"
@@ -75,7 +141,7 @@ function Navbar() {
             aria-label="open drawer"
             sx={{ display:'flex' }}
             >
-              <Avatar sx={{width: 35, height: 35,backgroundColor: 'success.main',}} 
+              <Avatar sx={{width: 35, height: 35, backgroundColor: 'success.main',}} 
                 >
                 <img 
                     src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png" 
@@ -112,7 +178,7 @@ function Navbar() {
                   พ
                 </Avatar>
               </IconButton> 
-          </Box>       
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

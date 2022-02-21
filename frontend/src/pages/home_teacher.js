@@ -36,8 +36,6 @@ function Home_teacher() {
 
   const classes = useStyles()
 
-  const theme = createTheme();
-
   return (
     <Box position='flex'>
       <Navbar/>

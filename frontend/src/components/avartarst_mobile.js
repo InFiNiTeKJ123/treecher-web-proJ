@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -7,10 +7,13 @@ import Typography from '@mui/material/Typography';
 import { Avatar , Container } from '@mui/material';
 
 
-const useStyles = makeStyles(({theme = useTheme()}) => ({
+const useStyles = makeStyles(({theme = createTheme()}) => ({
     container: {
         paddingTop: theme.spacing(5),
-        paddingLeft: theme.spacing(10),
+        // paddingLeft: theme.spacing(10),
+        [theme.breakpoints.up("sm")]: {
+            display: "none",
+          },
     },
     paper: {
         borderRadius: 25,

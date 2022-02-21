@@ -4,10 +4,10 @@ import { ExitToApp, Person, Settings, } from "@mui/icons-material";
 import SchoolIcon from '@mui/icons-material/School';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { makeStyles } from '@mui/styles';
-import { useTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 
-const useStyles = makeStyles(({ theme = useTheme() }) => ({
+const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
     height: "100vh",
     color: "white",
@@ -16,18 +16,18 @@ const useStyles = makeStyles(({ theme = useTheme() }) => ({
       backgroundColor: "white",
       color: "#555",
       border: "1px solid #ece7e7",
-      position: 'sticky',
-      top: 0,
     },
   },
   box: {
-    display: 'flex',
-    alignItems: "center",
+    display: 'flex', 
     borderRadius: theme.shape.borderRadius,
     marginBottom: theme.spacing(3),
     cursor: "pointer",
     [theme.breakpoints.up("md")]: {
       backgroundColor: "#008037", 
+      padding: theme.spacing(1),
+      width: 'auto',
+      height: 'auto'
     },
   },
   boxlogout: {
@@ -37,6 +37,7 @@ const useStyles = makeStyles(({ theme = useTheme() }) => ({
     marginBottom: theme.spacing(3),
     cursor: "pointer",
     [theme.breakpoints.up("md")]: {
+      padding: theme.spacing(1),
       backgroundColor: "#FF0000",
     },
   },

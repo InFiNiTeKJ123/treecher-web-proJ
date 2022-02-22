@@ -4,10 +4,10 @@ import { createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import React, { useState } from 'react'
 import Avartarst_mobile from '../components/avartarst_mobile'
-import Left_Menu from '../components/left_menu'
 import Main_quiz from '../components/main_quiz'
 import Navbarst from '../components/navbarst'
 import Quiz_popup from '../components/quiz_popup';
+import Left_Menu_class_st from '../components/left_menu_class_st';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -50,7 +50,7 @@ function Quiz() {
       <Navbarst/>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }}}>
-          <Left_Menu />
+          <Left_Menu_class_st />
         </Grid>
         <Grid item xs> 
           <Grid item classname={classes.gridavartar}>

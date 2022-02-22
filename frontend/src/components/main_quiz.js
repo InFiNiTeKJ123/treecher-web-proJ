@@ -17,7 +17,7 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
     }
   }));
 
-function Mainfeed() {
+function Mainfeed(props) {
 
     const classes = useStyles();
 
@@ -39,7 +39,7 @@ function Mainfeed() {
         </Box>
         <Box>
           <Card className={classes.card_classroom}>
-            <CardActionArea>
+            <CardActionArea onClick={props.Openpopup}>
               <CardMedia
               component="img"
               alt="green iguana"
@@ -55,9 +55,8 @@ function Mainfeed() {
                 </Typography>
               </CardContent>
             </CardActionArea>
-            <CardActions CardActions>
+            <CardActions CardActions onClick={props.Openpopup}>
               <Button size="small">เข้าทำควิซ</Button>
-              <Button size="small">Learn More</Button>
             </CardActions>
         </Card>
         </Box>

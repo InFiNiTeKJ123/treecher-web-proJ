@@ -40,14 +40,14 @@ function Home_teacher() {
     <Box position='flex'>
       <Navbar/>
       <Grid container item spacing={0.5}>
-        <Grid item xs={1.8} sm={1.5} sx={{display: { xs: 'none', md: 'flex', position: 'sticky', top: 0 }}}>
+        <Grid item sm={1.8} sx={{display: { xs: 'none', md: 'flex' }}}>
           <Left_Menu />
         </Grid>
         <Grid item xs > 
           <Grid item classname={classes.gridavartar}>
             <Avartar_mobile className={classes.avartar_mobile}/>
           </Grid>
-          <Grid >
+          <Grid item xs >
             <Mainfeed/>
           </Grid>
         </Grid>

@@ -64,7 +64,7 @@ function Left_Menu() {
   
   return (
     <Container className={classes.container} >
-          <Box className={classes.box}>
+          <Box className={classes.box} >
             <SchoolIcon className={classes.icon} />
             <Typography className={classes.text}>หน้าหลัก</Typography>
           </Box>

@@ -39,7 +39,7 @@ function Mainfeed() {
         </Box>
         <Box>
           <Card className={classes.card_classroom}>
-            <CardActionArea>
+            <CardActionArea href='http://localhost:3000/quiz'>
               <CardMedia
               component="img"
               alt="green iguana"
@@ -57,7 +57,6 @@ function Mainfeed() {
             </CardActionArea>
             <CardActions CardActions>
               <Button size="small">เข้าห้องเรียน</Button>
-              <Button size="small">Learn More</Button>
             </CardActions>
         </Card>
         </Box>
@@ -81,7 +80,6 @@ function Mainfeed() {
             </CardActionArea>
             <CardActions CardActions>
               <Button size="small">เข้าห้องเรียน</Button>
-              <Button size="small">Learn More</Button>
             </CardActions>
         </Card>
         </Box>

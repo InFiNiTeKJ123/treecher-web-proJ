@@ -20,7 +20,7 @@ function Quiz_popup(props) {
 
   return (
     <Box>
-      <Dialog
+      <Dialog 
         open={props.Open}
         TransitionComponent={Transition}
         keepMounted
@@ -38,11 +38,11 @@ function Quiz_popup(props) {
         </Box>
         <Box component='div'
          sx={{ textAlign : 'center'}}>
-           <img 
-            src="https://www.img.in.th/images/83b7c243c2ca76e853ca96df4c2e3514.png" 
-            alt="quiztree.png" 
-            height = "225"
-            width = "225" />
+            <Box component='img' 
+              src="https://www.img.in.th/images/83b7c243c2ca76e853ca96df4c2e3514.png" 
+              alt="quiztree.png" 
+              sx ={{ width: { xs: 150 , md: 225} , height: { xs: 150, md: 225 }}}
+              />
         </Box>
         </DialogContent>
         <DialogActions>

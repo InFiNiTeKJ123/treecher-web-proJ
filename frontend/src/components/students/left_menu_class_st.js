@@ -1,10 +1,14 @@
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Button, Container, IconButton, Typography } from '@mui/material'
 import React from 'react';
 import { ExitToApp, Person, Settings, } from "@mui/icons-material";
 import SchoolIcon from '@mui/icons-material/School';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { makeStyles } from '@mui/styles';
 import { createTheme } from '@mui/material/styles';
+
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import FilterVintageIcon from '@mui/icons-material/FilterVintage';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -56,36 +60,56 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
       display: "none",
     },
   },
+  icon_button: {
+    width: 'auto',
+    height: 'auto'
+  }
 }));
 
-function Left_Menu() {
+function Left_Menu_class_st() {
 
   const classes = useStyles()
   
   return (
     <Container className={classes.container} >
           <Box className={classes.box} >
-            <SchoolIcon className={classes.icon} />
-            <Typography className={classes.text}>หน้าหลัก</Typography>
+            <Button  href='http://localhost:3000/home_st'>
+              <SchoolIcon className={classes.icon} />
+              <Typography className={classes.text}>หน้าหลัก</Typography>
+            </Button>
           </Box>
           <Box className={classes.box}>
-            <Person className={classes.icon} />
-            <Typography className={classes.text}>โปรไฟล์</Typography>
+            <Button>
+              <Person className={classes.icon} />
+              <Typography className={classes.text}>โปรไฟล์</Typography>
+            </Button>
           </Box>
           <Box className={classes.box}>
-            <AddCircleIcon className={classes.icon} />
-            <Typography className={classes.text}>เพิ่มห้องเรียน</Typography>
+            <Button>
+              <PeopleAltIcon className={classes.icon} />
+              <Typography className={classes.text}>เพื่อนในห้องเรียน</Typography>
+            </Button>
+          </Box>
+          <Box className={classes.box} sx={{ bgcolor: '#81FF5B'}}>
+            <Button>
+              <AssignmentIcon className={classes.icon} />
+              <Typography className={classes.text}>แบบฝึกหัด</Typography>
+            </Button>
           </Box>
           <Box className={classes.box}>
-            <Settings className={classes.icon} />
-            <Typography className={classes.text}>Settings</Typography>
+            <Button>
+              <FilterVintageIcon className={classes.icon} />
+              <Typography className={classes.text}>คะแนนของฉัน</Typography>
+            </Button>
           </Box>
           <Box className={classes.boxlogout}>
-            <ExitToApp className={classes.icon} />
-            <Typography className={classes.text}>ออกจากระบบ</Typography>
+            <Button>
+              <ExitToApp className={classes.icon} />
+              <Typography className={classes.text}>ออกจากระบบ</Typography>
+            </Button>
           </Box>
       </Container>
   );
 }
 
-export default Left_Menu;
+export default Left_Menu_class_st;

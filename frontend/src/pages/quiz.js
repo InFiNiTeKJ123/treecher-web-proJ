@@ -3,11 +3,11 @@ import { Box } from '@mui/system'
 import { createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import React, { useState } from 'react'
-import Avartarst_mobile from '../components/avartarst_mobile'
-import Main_quiz from '../components/main_quiz'
-import Navbarst from '../components/navbarst'
-import Quiz_popup from '../components/quiz_popup';
-import Left_Menu_class_st from '../components/left_menu_class_st';
+import Avartarst_mobile from '../components/students/avartarst_mobile'
+import Main_quiz from '../components/teacher/main_quiz'
+import Quiz_popup from '../components/teacher/quiz_popup';
+import Left_Menu_class_st from '../components/students/left_menu_class_st';
+import Navbar_class_st from '../components/students/navbar_class_st';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -47,7 +47,7 @@ function Quiz() {
 
   return (
     <Box position='flex'> 
-      <Navbarst/>
+      <Navbar_class_st/>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }}}>
           <Left_Menu_class_st />

@@ -3,10 +3,11 @@ import { Grid } from '@mui/material'
 import { createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
-import Mainfeed from '../components/mainfeed'
-import Left_Menu from '../components/left_menu'
-import Navbarst from '../components/navbarst'
-import Avartarst_mobile from '../components/avartarst_mobile'
+import Mainfeed from '../components/teacher/mainfeed'
+import Navbarst from '../components/students/navbarst'
+import Avartarst_mobile from '../components/students/avartarst_mobile'
+import Add_classroomPopup_st from '../components/students/add_classroompopup_st';
+import Left_Menu_st from '../components/students/left_menust';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -37,12 +38,22 @@ function Home_teacher() {
   
   const theme = createTheme()
 
+  const [open, setOpen] = useState(false)
+  
+  const handleOpenPopup = () => {
+    setOpen(true)
+  }
+
+  const handleClosePopup = () => {
+    setOpen(false)
+  }
+
   return (
     <Box > 
       <Navbarst/>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }}}>
-          <Left_Menu />
+          <Left_Menu_st openpopup={handleOpenPopup}/>
         </Grid>
         <Grid item xs> 
           <Grid item classname={classes.gridavartar}>
@@ -50,6 +61,7 @@ function Home_teacher() {
           </Grid>
           <Grid item xs >
             <Mainfeed/>
+            <Add_classroomPopup_st Open={open} handleClose={handleClosePopup}/>
           </Grid>
         </Grid>
       </Grid>

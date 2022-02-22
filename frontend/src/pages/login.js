@@ -43,7 +43,7 @@ function Login() {
                 alignItems: 'center',
                 }}
             >
-                <Avatar sx={{width: 150, height: 150,backgroundColor: 'success.main',}}
+                <Avatar sx={{width: 150, height: 150, backgroundColor: 'success.main',}}
                 >
                 <img 
                     src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png" 
@@ -87,7 +87,7 @@ function Login() {
                 fullWidth
                 variant="contained"
                 color="success"
-                href='http://localhost:3000/home_th'
+                href='http://localhost:3000/home_st'
                 sx={{ mt: 3, mb: 2 }}
             >
                 เข้าสู่ระบบ

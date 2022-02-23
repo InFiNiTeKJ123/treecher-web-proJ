@@ -8,6 +8,8 @@ import Left_Menu from '../components/teacher/left_menu'
 import Navbar from '../components/teacher/navbar'
 import Avartar_mobile from '../components/teacher/avartar_mobile'
 import Add_classroomPopup_th from '../components/teacher/add_classroompopup_th';
+import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
+import Classroom_feed from '../components/classroom_feed';
 
 const useStyles = makeStyles(({ theme = useTheme() }) => ({
   container: {
@@ -33,7 +35,7 @@ const useStyles = makeStyles(({ theme = useTheme() }) => ({
 }));
 
 
-function Home_teacher() {
+function Classroom_Teacher() {
 
   const classes = useStyles()
 
@@ -53,15 +55,14 @@ function Home_teacher() {
       <Navbar/>
       <Grid container item spacing={0.5}>
         <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex' }}}>
-          <Left_Menu openpopup={handleOpenPopup}/>
+            <Left_Menu_class_th />
         </Grid>
         <Grid item xs > 
           <Grid item classname={classes.gridavartar}>
             <Avartar_mobile className={classes.avartar_mobile}/>
           </Grid>
           <Grid item xs >
-            <Mainfeed/>
-            <Add_classroomPopup_th Open={open} handleClose={handleClosePopup}/>
+            <Classroom_feed/>
           </Grid>
         </Grid>
       </Grid>
@@ -70,4 +71,4 @@ function Home_teacher() {
   )
 }
 
-export default Home_teacher
+export default Classroom_Teacher

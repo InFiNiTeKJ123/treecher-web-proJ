@@ -18,33 +18,10 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
       border: "1px solid #ece7e7",
     },
   },
-  box: {
-    display: 'flex', 
-    borderRadius: theme.shape.borderRadius,
-    marginBottom: theme.spacing(3),
-    cursor: "pointer",
-    [theme.breakpoints.up("md")]: {
-      backgroundColor: "#008037", 
-      padding: theme.spacing(1),
-      width: 'auto',
-      height: 'auto'
-    },
-  },
-  boxlogout: {
-    display: 'flex',
-    alignItems: "center",
-    borderRadius: theme.shape.borderRadius,
-    marginBottom: theme.spacing(3),
-    cursor: "pointer",
-    [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(1),
-      backgroundColor: "#FF0000",
-    },
-  },
   icon: {
     marginRight: theme.spacing(1),
     [theme.breakpoints.up("md")]: {
-      fontSize: "18px",
+      fontSize: "20px",
       color: "white",
     },
   },
@@ -61,10 +38,28 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
 function Left_Menu_st(props) {
 
   const classes = useStyles()
+
+  const theme = createTheme()
   
   return (
     <Container className={classes.container} >
-          <Box className={classes.box} >
+          <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" 
+            sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            หน้าหลัก
+          </Button>
+          <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            โปรไฟล์
+          </Button>
+          <Button startIcon = {<AddCircleIcon className={classes.icon} />} variant="contained" color="success" 
+              onClick={props.openpopup} sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            เพิ่มห้องเรียน
+          </Button>
+          <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
+               sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            ออกจากระบบ
+          </Button>
+          {/* <Box className={classes.box} >
             <Button>
               <SchoolIcon className={classes.icon} />
               <Typography className={classes.text}>หน้าหลัก</Typography>
@@ -87,7 +82,7 @@ function Left_Menu_st(props) {
               <ExitToApp className={classes.icon} />
               <Typography className={classes.text}>ออกจากระบบ</Typography>
             </Button>
-          </Box>
+          </Box> */}
       </Container>
   );
 }

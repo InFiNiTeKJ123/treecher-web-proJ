@@ -1,5 +1,5 @@
 import { Box, Button, Container, IconButton, Typography } from '@mui/material'
-import React from 'react';
+import React, { useState } from 'react';
 import { ExitToApp, Person, Settings, } from "@mui/icons-material";
 import SchoolIcon from '@mui/icons-material/School';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -9,6 +9,9 @@ import { createTheme } from '@mui/material/styles';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import FilterVintageIcon from '@mui/icons-material/FilterVintage';
+import { Link, useHref } from "react-router-dom";
+
+
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -20,29 +23,6 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
       backgroundColor: "white",
       color: "#555",
       border: "1px solid #ece7e7",
-    },
-  },
-  box: {
-    display: 'flex', 
-    borderRadius: theme.shape.borderRadius,
-    marginBottom: theme.spacing(3),
-    cursor: "pointer",
-    [theme.breakpoints.up("md")]: {
-      backgroundColor: "#008037", 
-      padding: theme.spacing(1),
-      width: 'auto',
-      height: 'auto'
-    },
-  },
-  boxlogout: {
-    display: 'flex',
-    alignItems: "center",
-    borderRadius: theme.shape.borderRadius,
-    marginBottom: theme.spacing(3),
-    cursor: "pointer",
-    [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(1),
-      backgroundColor: "#FF0000",
     },
   },
   icon: {
@@ -60,19 +40,41 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
       display: "none",
     },
   },
-  icon_button: {
-    width: 'auto',
-    height: 'auto'
-  }
 }));
 
-function Left_Menu_class_st() {
+function Left_Menu_class_st(props) {
 
   const classes = useStyles()
-  
+
+  const theme = createTheme()
+
   return (
     <Container className={classes.container} >
-          <Box className={classes.box} >
+          <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            หน้าหลัก
+          </Button>
+          <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            โปรไฟล์
+          </Button>
+          <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            เพื่อนในห้องเรียน
+          </Button>
+          <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained" color={props.changecolor ? "success" : "error"} 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} onClick={props.handleClick} href='/quiz' >
+            แบบฝึกหัด
+          </Button>
+          <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            คะแนนของฉัน
+          </Button>
+          <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
+               sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            ออกจากระบบ
+          </Button>
+          {/* <Box className={classes.box} >
             <Button  href='http://localhost:3000/home_st'>
               <SchoolIcon className={classes.icon} />
               <Typography className={classes.text}>หน้าหลัก</Typography>
@@ -107,7 +109,7 @@ function Left_Menu_class_st() {
               <ExitToApp className={classes.icon} />
               <Typography className={classes.text}>ออกจากระบบ</Typography>
             </Button>
-          </Box>
+          </Box> */}
       </Container>
   );
 }

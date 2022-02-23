@@ -34,7 +34,7 @@ function Mainfeed(props) {
           <Typography 
             sx={{ display:'flex' , fontWeight: 500 ,
                   padding: theme.spacing(2) , paddingLeft: theme.spacing(2.5)}}>
-            ควิซ
+            แบบฝึกหัด
           </Typography>
         </Box>
         <Box>
@@ -44,7 +44,7 @@ function Mainfeed(props) {
               component="img"
               alt="green iguana"
               height="100"
-              image="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
+              image="https://www.img.in.th/images/83b7c243c2ca76e853ca96df4c2e3514.png"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 500 }}>

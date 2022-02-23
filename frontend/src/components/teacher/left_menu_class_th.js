@@ -68,10 +68,36 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
 function Left_Menu_class_th() {
 
   const classes = useStyles()
+
+  const theme = createTheme()
   
   return (
     <Container className={classes.container} >
-          <Box className={classes.box} >
+          <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            หน้าหลัก
+          </Button>
+          <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            โปรไฟล์
+          </Button>
+          <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            นักเรียน
+          </Button>
+          <Button startIcon = {<AddTaskIcon className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            สร้างแบบฝึกหัด
+          </Button>
+          <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
+              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            คะแนนของนักเรียน
+          </Button>
+          <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
+               sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            ออกจากระบบ
+          </Button>
+          {/* <Box className={classes.box} >
             <Button  href='http://localhost:3000/home_st'>
               <SchoolIcon className={classes.icon} />
               <Typography className={classes.text}>หน้าหลัก</Typography>
@@ -106,7 +132,7 @@ function Left_Menu_class_th() {
               <ExitToApp className={classes.icon} />
               <Typography className={classes.text}>ออกจากระบบ</Typography>
             </Button>
-          </Box>
+          </Box> */}
       </Container>
   );
 }

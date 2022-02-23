@@ -39,7 +39,7 @@ function Mainfeed() {
         </Box>
         <Box>
           <Card className={classes.card_classroom}>
-            <CardActionArea href='http://localhost:3000/quiz'>
+            <CardActionArea href='/classroom_st'>
               <CardMedia
               component="img"
               alt="green iguana"

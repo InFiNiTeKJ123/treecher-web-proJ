@@ -8,6 +8,10 @@ import Main_quiz from '../components/teacher/main_quiz'
 import Quiz_popup from '../components/teacher/quiz_popup';
 import Left_Menu_class_st from '../components/students/left_menu_class_st';
 import Navbar_class_st from '../components/students/navbar_class_st';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -31,6 +35,11 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
   }
 }) )
 
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+
 function Quiz() {
 
   const classes = useStyles()
@@ -45,6 +54,30 @@ function Quiz() {
     setOpen(false)
   }
 
+  const [opensnackbar, setOpensnackbar] = useState(false);
+
+  const handleClick = () => {
+    setOpensnackbar(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpensnackbar(false);
+  };
+
+  const Checkpoint = () => (
+    <Stack spacing={2} sx={{ width: '100%' }}>
+        <Snackbar open={opensnackbar} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            เย้ คุณได้รดน้ำต้นไม้แล้ว
+          </Alert>
+        </Snackbar>
+      </Stack>
+  )
+
   return (
     <Box position='flex'> 
       <Navbar_class_st/>
@@ -58,7 +91,8 @@ function Quiz() {
           </Grid>
           <Grid item xs >
             <Main_quiz Openpopup={handleOpenPopup}/>
-            <Quiz_popup Open={open} handleclose={handleClosePopup} />
+            <Quiz_popup Open={open} handleclose={handleClosePopup} clickcheckpoint={handleClick}/>
+            {Checkpoint()}
           </Grid>
         </Grid>
       </Grid>

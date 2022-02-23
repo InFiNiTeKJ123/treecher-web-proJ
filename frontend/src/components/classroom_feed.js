@@ -31,12 +31,12 @@ function Classroom_feed(props) {
     const theme = createTheme();
 
   return (
-    <div>
+    <Box component='div' >
         <Box component='div'
-          sx={{ width: 250 , height: 'auto', alignItems: 'center',
+          sx={{ width: { xs: '60%', md: '15%'} , height: 'auto', alignItems: 'center',
                 bgcolor: '#008037', color: 'white', display: 'flex',
-                paddingleft: theme.spacing(3), marginBottom: theme.spacing(3), marginLeft: theme.spacing(8), 
-                borderRadius: 3, }}>
+                paddingleft: theme.spacing(3), marginBottom: theme.spacing(3), marginLeft: { xs: theme.spacing(2) ,md: theme.spacing(8) }, 
+                marginTop: { xs : theme.spacing(2)} ,borderRadius: 3, }}>
           <HistoryEduIcon sx={{ paddingLeft: theme.spacing(2), fontSize: 35 }}/>
           <Typography
             sx={{ display:'flex' , fontWeight: 500 , fontSize: 20, 
@@ -61,40 +61,43 @@ function Classroom_feed(props) {
         }}
       >
         <Paper elevation={3}>
-          <Box component='h1' sx={{ paddingLeft: theme.spacing(10) ,  }}>
+          <Box component='h2' sx={{ paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10)} }}>
             ประกาศข้อความของคุณ
           </Box>
           <Grid  direction="row" spacing={2} direction='row'>
             <Grid item sx={{ textAlign: 'center' }} >
             <TextField
-              label="สร้างโพสต์"
+              label="คุณกำลังคิดอะไรอยู่"
               placeholder="พิมพ์ข้อความที่ต้องการบอกสมาชิกในห้องเรียน"
-              margin="normal"
-              sx={{ width: "85%", }}
+              sx={{ width: "85%"}}
               multiline
             />
             </Grid>
             <Grid item container spacing={3}>
-              <Grid item xs={5} sx={{textAlign: 'center', paddingRight: theme.spacing(6), marginTop: theme.spacing(1)}} >
+              <Grid item xs={7} md={6} 
+                sx={{display: 'flex' ,textAlign: 'center', paddingRight: theme.spacing(6), marginTop: theme.spacing(1)}} >
                 <Button 
                   variant="contained"
-                  sx={{ width: 'auto', height: 'auto', borderRadius: 4, bgcolor: '#212121' }}
+                  sx={{ width: 'auto', height: 'auto', borderRadius: 4, bgcolor: '#212121', 
+                        marginLeft: { xs: theme.spacing(3) , md: theme.spacing(10)} ,
+                        fontSize: '75%' }}
                 >
-                  <AttachFileIcon />
+                  <AttachFileIcon sx={{ fontSize: '200%'}}/>
                   แนบไฟล์
                 </Button>
                 <Button 
                   variant="contained"
-                  sx={{ width: 'auto', height: 'auto', borderRadius: 4, bgcolor: '#212121', marginLeft: theme.spacing(1) }}
+                  sx={{ width: 'auto', height: 'auto', borderRadius: 4, bgcolor: '#212121', marginLeft: theme.spacing(1), 
+                      fontSize: '75%'}}
                 >
                   <AddPhotoAlternateIcon />
                   แนบรูปภาพ
                 </Button>
               </Grid>
-              <Grid item xs={6} sx={{ textAlign: 'right', marginRight: theme.spacing(5)}} >
+              <Grid item xs={4} md={5} sx={{ textAlign: 'right', marginRight: { xs: theme.spacing(1) , md: theme.spacing(3) }}} >
                 <Button 
                   variant="contained"
-                  sx={{ width: 100, height: 50, borderRadius: 4, bgcolor: '#212121' }}
+                  sx={{ width: { xs:'100%' , md: '30%'}, height: 50, borderRadius: 4, bgcolor: '#212121' , marginTop: theme.spacing(1)}}
                 >
                   โพสต์
                 </Button>
@@ -120,7 +123,7 @@ function Classroom_feed(props) {
       >
         <Paper elevation={3}></Paper>
       </Box>
-    </div>
+    </Box>
   )
 }
 

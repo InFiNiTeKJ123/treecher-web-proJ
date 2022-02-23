@@ -74,27 +74,27 @@ function Left_Menu_class_th() {
   return (
     <Container className={classes.container} >
           <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             หน้าหลัก
           </Button>
           <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             โปรไฟล์
           </Button>
           <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             นักเรียน
           </Button>
           <Button startIcon = {<AddTaskIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             สร้างแบบฝึกหัด
           </Button>
           <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             คะแนนของนักเรียน
           </Button>
           <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
-               sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+               sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             ออกจากระบบ
           </Button>
           {/* <Box className={classes.box} >

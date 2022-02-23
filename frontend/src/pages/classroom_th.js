@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Grid } from '@mui/material'
-import { useTheme, createTheme } from '@mui/material/styles';
+import { Drawer, Grid } from '@mui/material'
+import { useTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
-import Mainfeed from '../components/teacher/mainfeed'
-import Left_Menu from '../components/teacher/left_menu'
 import Navbar from '../components/teacher/navbar'
-import Avartar_mobile from '../components/teacher/avartar_mobile'
-import Add_classroomPopup_th from '../components/teacher/add_classroompopup_th';
-import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
 import Classroom_feed from '../components/classroom_feed';
+import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
+import Left_slidebar_class_th from '../components/teacher/left_slidebar_class_th';
+import Avartar_mobile from '../components/teacher/avartar_mobile';
+import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
+
 
 const useStyles = makeStyles(({ theme = useTheme() }) => ({
   container: {
@@ -39,24 +39,29 @@ function Classroom_Teacher() {
 
   const classes = useStyles()
 
-  const [open, setOpen] = useState(false)
-  
-  const handleOpenPopup = () => {
-    setOpen(true)
-  }
+  const [color, setColor] = useState(true)
 
-  const handleClosePopup = () => {
-    setOpen(false)
+  const handleClick = () => {
+    setColor(!color)
+  };
+
+  const [openslide, setOpenslide] = useState(false)
+
+  const toggleslider = () => {
+    setOpenslide(!openslide)
   }
 
 
   return (
     <Box position='flex'>
-      <Navbar/>
+      <Navbar toggleslider={toggleslider}/>
       <Grid container item spacing={0.5}>
         <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex' }}}>
-            <Left_Menu_class_th />
+            <Left_Menu_class_th changecolor={color} handleClick={handleClick}/>
         </Grid>
+        <Drawer open={openslide} anchor="left" onClose={toggleslider}>
+            <Left_slidebar_class_st />
+          </Drawer>
         <Grid item xs > 
           <Grid item classname={classes.gridavartar}>
             <Avartar_mobile className={classes.avartar_mobile}/>

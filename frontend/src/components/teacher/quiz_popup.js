@@ -46,7 +46,7 @@ function Quiz_popup(props) {
         </Box>
         </DialogContent>
         <DialogActions>
-          <Button startIcon = {<CheckCircleOutlineIcon/>} variant="contained" color="success" onClick={props.handleclose}>รดน้ำต้นไม้แล้ว</Button>
+          <Button startIcon = {<CheckCircleOutlineIcon/>} variant="contained" color="success" onClick={props.clickcheckpoint}>รดน้ำต้นไม้แล้ว</Button>
           <Button startIcon = {<DoNotDisturbAltIcon/>} variant="contained" color="error" onClick={props.handleclose}>ว้าแย่จังยังไม่รดน้ำต้นไม้เลย</Button>
         </DialogActions>
       </Dialog>

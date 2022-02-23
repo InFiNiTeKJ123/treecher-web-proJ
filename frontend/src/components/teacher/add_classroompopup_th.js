@@ -4,7 +4,6 @@ import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Box, createTheme, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
@@ -13,8 +12,8 @@ function Add_classroomPopup_th(props) {
     const theme = createTheme()
 
   return (
-    <Box>
-      <Dialog open={props.Open} onClose={props.handleClose}>
+    <Box >
+      <Dialog open={props.Open} onClose={props.handleClose} >
         <DialogTitle sx={{ textAlign : 'center' }}>
             สร้างห้องเรียน
         </DialogTitle>

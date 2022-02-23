@@ -1,6 +1,7 @@
 import React from 'react'
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Box, Typography, Container} from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import '../App.css';
 
 
 function Login() {

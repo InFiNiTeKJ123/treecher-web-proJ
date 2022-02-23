@@ -44,19 +44,19 @@ function Left_Menu_st(props) {
   return (
     <Container className={classes.container} >
           <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" 
-            sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+            sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             หน้าหลัก
           </Button>
           <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             โปรไฟล์
           </Button>
           <Button startIcon = {<AddCircleIcon className={classes.icon} />} variant="contained" color="success" 
-              onClick={props.openpopup} sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              onClick={props.openpopup} sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             เพิ่มห้องเรียน
           </Button>
           <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
-               sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+               sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             ออกจากระบบ
           </Button>
           {/* <Box className={classes.box} >

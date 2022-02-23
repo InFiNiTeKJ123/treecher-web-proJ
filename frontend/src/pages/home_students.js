@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid } from '@mui/material'
+import { Drawer, Grid } from '@mui/material'
 import { createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
@@ -8,6 +8,7 @@ import Navbarst from '../components/students/navbarst'
 import Avartarst_mobile from '../components/students/avartarst_mobile'
 import Add_classroomPopup_st from '../components/students/add_classroompopup_st';
 import Left_Menu_st from '../components/students/left_menust';
+import Left_slidebar_st from '../components/students/left_slidebar_st';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -48,13 +49,22 @@ function Home_teacher() {
     setOpen(false)
   }
 
+  const [openslide, setOpenslide] = useState(false)
+
+  const toggleslider = () => {
+    setOpenslide(!openslide)
+  }
+
   return (
     <Box > 
-      <Navbarst/>
+      <Navbarst toggleslider={toggleslider}/>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }}}>
           <Left_Menu_st openpopup={handleOpenPopup}/>
         </Grid>
+        <Drawer open={openslide} anchor="left" onClose={toggleslider}>
+            <Left_slidebar_st openpopup={handleOpenPopup} />
+          </Drawer>
         <Grid item xs> 
           <Grid item classname={classes.gridavartar}>
             <Avartarst_mobile className={classes.avartar_mobile}/>

@@ -1,18 +1,13 @@
-import { Box, Button, Container, IconButton, Typography } from '@mui/material'
-import React, { useState } from 'react';
+import { Button, Container, } from '@mui/material'
+import React from 'react';
 import { ExitToApp, Person, Settings, } from "@mui/icons-material";
 import SchoolIcon from '@mui/icons-material/School';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { makeStyles } from '@mui/styles';
-import { createTheme } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import FilterVintageIcon from '@mui/icons-material/FilterVintage';
-import { Link, useHref } from "react-router-dom";
-
-
-
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -32,46 +27,48 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
       color: "white",
     },
   },
-  text: {
-    fontWeight: 500,
-    color: "white",
-    [theme.breakpoints.down("md")]: {
-      color: "white",
-      display: "none",
-    },
-  },
 }));
+
+const { palette } = createTheme();
+const { augmentColor } = palette;
+const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
+const theme = createTheme({
+  palette: {
+    check: createColor('#70ff68'),
+  },
+});
 
 function Left_Menu_class_st(props) {
 
   const classes = useStyles()
 
-  const theme = createTheme()
-
   return (
-    <Container className={classes.container} >
+      <ThemeProvider theme={theme}>
+        <Container className={classes.container} >
           <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
             หน้าหลัก
           </Button>
           <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             โปรไฟล์
           </Button>
           <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             เพื่อนในห้องเรียน
           </Button>
-          <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained" color={props.changecolor ? "success" : "error"} 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} onClick={props.handleClick} href='/quiz' >
+          <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained"  
+                  color={props.changecolor ? "success" : "check" }
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
+              onClick={props.handleClick} href='/quiz' >
             แบบฝึกหัด
           </Button>
           <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             คะแนนของฉัน
           </Button>
           <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
-               sx={{ width: 170, height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+               sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             ออกจากระบบ
           </Button>
           {/* <Box className={classes.box} >
@@ -111,6 +108,7 @@ function Left_Menu_class_st(props) {
             </Button>
           </Box> */}
       </Container>
+      </ThemeProvider>
   );
 }
 

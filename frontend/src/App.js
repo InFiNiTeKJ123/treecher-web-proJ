@@ -4,6 +4,7 @@ import Login from './pages/login';
 import Home_st from './pages/home_students';
 import Home_teacher from './pages/home_teacher';
 import Quiz from './pages/quiz';
+import MakeQuiz_th from './pages/makequiz';
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
         <Route path="/home_th" element={<Home_teacher/>}/>
         <Route path="/home_st" element={<Home_st />}/>
         <Route path="/quiz" element={<Quiz />}/>
+        <Route path="/quizth" element={<MakeQuiz_th />}/>
+
       </Routes>
     </BrowserRouter>
   );

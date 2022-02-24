@@ -4,8 +4,6 @@ import { createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import React, { useState } from 'react'
 import Avartarst_mobile from '../components/students/avartarst_mobile'
-import Main_quiz from '../components/teacher/main_quiz'
-import Quiz_popup from '../components/teacher/quiz_popup';
 
 import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
 import Navbar from '../components/teacher/navbar';

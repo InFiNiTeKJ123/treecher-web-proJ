@@ -43,7 +43,8 @@ function Left_slidebar_th(props) {
               />
         </Avatar>
         <Typography component="h2" variant="h5" color="white" 
-                    sx={{ fontWeight: 500, paddingLeft: theme.spacing(6.5), paddingBottom: theme.spacing(1) }}>
+                    sx={{ fontWeight: 500, paddingLeft: theme.spacing(6.5), 
+                            paddingBottom: theme.spacing(1) }}>
           TreeCher
         </Typography>
         <List>

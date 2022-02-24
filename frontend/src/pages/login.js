@@ -52,7 +52,7 @@ function Login() {
                     border="20"
                     width="200"/>
                 </Avatar>
-                <Typography component="h1" variant="h5" color="white" sx={{ paddingTop: theme.spacing(2) }}>
+                <Typography component="h1" variant="h5" color="white" sx={{ paddingTop: theme.spacing(2), fontFamily: 'Kanit'}}>
                 TREECHER
                 </Typography>
             </Container>

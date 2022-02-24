@@ -21,7 +21,7 @@ const useStyles = makeStyles(({theme = createTheme()}) => ({
 }) )
 
 
-function Left_slidebar_st() {
+function Left_slidebar_st(props) {
 
     const theme = createTheme()
 
@@ -59,7 +59,7 @@ function Left_slidebar_st() {
                 </ListItemIcon>
                 <ListItemText primary='โปรไฟล์' sx={{ color: 'white'}}/>
             </ListItem>
-            <ListItem button >
+            <ListItem button onClick={props.openpopup}>
                 <ListItemIcon sx={{ color: 'white'}}>
                     <AddCircleIcon />
                 </ListItemIcon>

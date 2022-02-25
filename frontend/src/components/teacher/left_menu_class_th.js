@@ -3,13 +3,13 @@ import React from "react";
 import { ExitToApp, Person } from "@mui/icons-material";
 import SchoolIcon from "@mui/icons-material/School";
 import { makeStyles } from "@mui/styles";
-import { createTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 
-const useStyles = makeStyles(({ theme = createTheme() }) => ({
+const useStyles = makeStyles(({ theme = useTheme() }) => ({
   container: {
     height: "100vh",
     color: "white",
@@ -20,28 +20,11 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
       border: "1px solid #ece7e7",
     },
   },
-  box: {
-    display: "flex",
-    borderRadius: theme.shape.borderRadius,
+  button:{
+    width: "95%",
+    height: 50,
+    fontSize: 16,
     marginBottom: theme.spacing(3),
-    cursor: "pointer",
-    [theme.breakpoints.up("md")]: {
-      backgroundColor: "#008037",
-      padding: theme.spacing(1),
-      width: "auto",
-      height: "auto",
-    },
-  },
-  boxlogout: {
-    display: "flex",
-    alignItems: "center",
-    borderRadius: theme.shape.borderRadius,
-    marginBottom: theme.spacing(3),
-    cursor: "pointer",
-    [theme.breakpoints.up("md")]: {
-      padding: theme.spacing(1),
-      backgroundColor: "#FF0000",
-    },
   },
   icon: {
     marginRight: theme.spacing(1),
@@ -67,7 +50,7 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
 function Left_Menu_class_th() {
   const classes = useStyles();
 
-  const theme = createTheme();
+  const theme = useTheme();
 
   return (
     <Container className={classes.container}>
@@ -115,6 +98,7 @@ function Left_Menu_class_th() {
         startIcon={<AddTaskIcon className={classes.icon} />}
         variant="contained"
         color="success"
+        href="/quizth"
         sx={{
           width: "95%",
           height: 50,

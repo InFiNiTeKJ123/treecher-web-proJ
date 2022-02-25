@@ -1,10 +1,14 @@
+import React from 'react'
 import { makeStyles } from "@mui/styles";
-import { createTheme } from "@mui/material/styles";
-import React from "react";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import QuizIcon from "@mui/icons-material/Quiz";
 import {
   Button,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
   Grid,
   Paper,
   Stack,
@@ -12,34 +16,63 @@ import {
   Typography,
 } from "@mui/material";
 import { Box, grid, spacing } from "@mui/system";
+import { createTheme } from '@mui/material/styles';
+
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
-  container: {
-    width: "auto",
-    [theme.breakpoints.down("sm")]: {
-      paddingTop: theme.spacing(3),
+    container: {
+      width: 'auto', 
+      [theme.breakpoints.down("sm")]: {
+        paddingTop: theme.spacing(3),
+      }
     },
-  },
-  card_classroom: {
-    maxWidth: 345,
-    marginBottom: theme.spacing(3),
-  },
-}));
+    card_classroom: {
+      maxWidth: 345 ,
+      marginBottom: theme.spacing(3)
+    }
+  }));
 
-function Classroom_feed(props) {
-  const classes = useStyles();
+function Makequiz_form(props) {
 
-  const theme = createTheme();
+    const classes = useStyles()
+
+    const theme = createTheme()
+
+    const main_quiz = () => (
+        <Box>
+            <Card className={classes.card_classroom}>
+            <CardActionArea >
+                <CardMedia
+                component="img"
+                alt="green iguana"
+                height="100"
+                image="https://www.img.in.th/images/83b7c243c2ca76e853ca96df4c2e3514.png"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 500 }}>
+                    แบบฝึกหัด
+                </Typography>
+                <Typography gutterBottom variant="body2" component="div" sx={{ fontWeight: 500 }}>
+                    มารดน้ำต้นไม้กันเถอะ
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions CardActions >
+                <Button size="small">เข้าทำควิซ</Button>
+            </CardActions>
+        </Card>
+      </Box>
+    )
 
   return (
     <Box component="div">
       <Box
         component="div"
         sx={{
-          width: { xs: "60%", md: "15%" },
+          width: { xs: "60%", md: "20%" },
           height: "auto",
           alignItems: "center",
           bgcolor: "#008037",
@@ -62,7 +95,7 @@ function Classroom_feed(props) {
             paddingLeft: theme.spacing(2.5),
           }}
         >
-          240-124
+          สร้างแบบฝึกหัด
         </Typography>
       </Box>
       <Box
@@ -88,7 +121,7 @@ function Classroom_feed(props) {
               paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
             }}
           >
-            ประกาศข้อความของคุณ
+            สร้างแบบฝึกหัด
           </Box>
           <Grid direction="row" spacing={2} direction="row">
             <Grid item sx={{ textAlign: "center" }}>
@@ -166,7 +199,7 @@ function Classroom_feed(props) {
           </Grid>
         </Paper>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           display: "flex",
           flexWrap: "wrap",
@@ -174,17 +207,22 @@ function Classroom_feed(props) {
             m: 1,
 
             width: "90%",
-            height: 200,
+            height: "50%",
             borderRadius: 3,
             marginLeft: "auto",
             marginRight: "auto",
           },
         }}
       >
-        <Paper elevation={3}></Paper>
-      </Box>
+        <Paper elevation={3} sx={{ padding: theme.spacing(5)}}>
+            {main_quiz()}
+        </Paper>
+      </Box> */}
+        <Box sx={{ margin: theme.spacing(3) }}> 
+            {main_quiz()}
+        </Box>
     </Box>
   );
 }
 
-export default Classroom_feed;
+export default Makequiz_form

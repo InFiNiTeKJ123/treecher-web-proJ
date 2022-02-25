@@ -26,31 +26,11 @@ function Add_classroomPopup_th(props) {
             fullWidth
             variant="standard"
           />
-            <Box sx={{ textAlign: 'right', paddingLeft: theme.spacing(3)}}>
-                <FormControl sx={{ mt: 2, minWidth: 120 }}>
-                <InputLabel htmlFor="max-width">จำนวนนักเรียน</InputLabel>
-                <Select
-                    autoFocus
-                    // value={maxWidth}
-                    // onChange={handleMaxWidthChange}
-                    label="maxWidth"
-                    inputProps={{
-                    name: 'max-width',
-                    id: 'max-width',
-                    }}
-                >
-                    <MenuItem value="10">10</MenuItem>
-                    <MenuItem value="20">20</MenuItem>
-                    <MenuItem value="30">30</MenuItem>
-                    <MenuItem value="40">40</MenuItem>
-                    <MenuItem value="50">50</MenuItem>
-                </Select>
-                </FormControl>
-            </Box>
+            
         </DialogContent>
         <DialogActions >
           <Button variant="contained" color= "error" onClick={props.handleClose}>ยกเลิก</Button>
-          <Button variant="contained" color="success" onClick={props.handleClose}>ยืนยันการสร้างห้องเรียน</Button>
+          <Button variant="contained" color="success" onClick={props.handleClose}>ยืนยัน</Button>
         </DialogActions>
       </Dialog>
     </Box>

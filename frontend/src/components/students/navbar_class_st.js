@@ -47,7 +47,7 @@ const listItems = [
   },
   {
     listIcon: <PeopleAltIcon />,
-    listText: "เพิ่มห้องเรียน"
+    listText: "เพื่อน"
   },
   {
     listIcon: <AssignmentIcon />,
@@ -55,7 +55,7 @@ const listItems = [
   },
   {
     listIcon: <FilterVintageIcon />,
-    listText: "คะแนนของฉัน"
+    listText: "คะแนน"
   },
   {
     listIcon: <ExitToApp />,

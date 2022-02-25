@@ -53,7 +53,7 @@ function Left_Menu_st(props) {
           </Button>
           <Button startIcon = {<AddCircleIcon className={classes.icon} />} variant="contained" color="success" 
               onClick={props.openpopup} sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-            เพิ่มห้องเรียน
+            เพื่อน
           </Button>
           <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>

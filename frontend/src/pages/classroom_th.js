@@ -8,7 +8,7 @@ import Classroom_feed from '../components/classroom_feed';
 import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
 import Left_slidebar_class_th from '../components/teacher/left_slidebar_class_th';
 import Avartar_mobile from '../components/teacher/avartar_mobile';
-import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
+
 
 
 const useStyles = makeStyles(({ theme = useTheme() }) => ({
@@ -60,7 +60,7 @@ function Classroom_Teacher() {
             <Left_Menu_class_th changecolor={color} handleClick={handleClick}/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
-            <Left_slidebar_class_st />
+            <Left_slidebar_class_th />
           </Drawer>
         <Grid item xs > 
           <Grid item classname={classes.gridavartar}>

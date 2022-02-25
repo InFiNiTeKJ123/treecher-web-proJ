@@ -6,9 +6,10 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
-import { Box, createTheme } from '@mui/material';
+import { Box, createTheme, IconButton } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import DoNotDisturbAltIcon from '@mui/icons-material/DoNotDisturbAlt';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -27,7 +28,14 @@ function Quiz_popup(props) {
         onClose={props.handleclose}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"บันทึกการรดน้ำต้นไม้ครั้งที่ 1"}</DialogTitle>
+        <DialogTitle sx={{display:"flex"}}>
+          {"บันทึกการรดน้ำต้นไม้ครั้งที่ 1"}
+          <IconButton  aria-label="CancelIcon" size="small"  color="error"  onClick={props.handleclose} sx={{  
+                paddingleft: theme.spacing(3), marginBottom: theme.spacing(3), marginLeft: { xs: theme.spacing(5) ,md: theme.spacing(8) }, 
+                 borderRadius: 3 }}>
+            <CancelIcon /> 
+          </IconButton>
+        </DialogTitle>
         <DialogContent>
           
         <Box component='div'
@@ -46,8 +54,8 @@ function Quiz_popup(props) {
         </Box>
         </DialogContent>
         <DialogActions>
-          <Button startIcon = {<CheckCircleOutlineIcon/>} variant="contained" color="success" onClick={props.clickcheckpoint}>รดน้ำต้นไม้แล้ว</Button>
-          <Button startIcon = {<DoNotDisturbAltIcon/>} variant="contained" color="error" onClick={props.handleclose}>ว้าแย่จังยังไม่รดน้ำต้นไม้เลย</Button>
+          <Button startIcon = {<CheckCircleOutlineIcon/>} variant="contained" color="success" onClick={props.clickcheckpoint}>ยืนยัน</Button>
+          <Button startIcon = {<DoNotDisturbAltIcon/>} variant="contained" color="error" onClick={props.handleclose}>ยกเลิก</Button>
         </DialogActions>
       </Dialog>
     </Box>

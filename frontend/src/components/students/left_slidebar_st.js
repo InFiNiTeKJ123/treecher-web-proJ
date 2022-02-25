@@ -63,7 +63,7 @@ function Left_slidebar_st(props) {
                 <ListItemIcon sx={{ color: 'white'}}>
                     <AddCircleIcon />
                 </ListItemIcon>
-                <ListItemText primary='เพิ่มห้องเรียน' sx={{ color: 'white'}}/>
+                <ListItemText primary='เพื่อน' sx={{ color: 'white'}}/>
             </ListItem>
             <ListItem button >
                 <ListItemIcon sx={{ color: 'white'}}>

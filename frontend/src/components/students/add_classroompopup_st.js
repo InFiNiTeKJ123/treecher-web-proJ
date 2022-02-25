@@ -28,7 +28,7 @@ function Add_classroomPopup_st(props) {
         </DialogContent>
         <DialogActions>
           <Button variant="contained" color= "error" onClick={props.handleClose}>ยกเลิก</Button>
-          <Button variant="contained" color="success" onClick={props.handleClose}>ยินยันรหัส</Button>
+          <Button variant="contained" color="success" onClick={props.handleClose}>ยินยัน</Button>
         </DialogActions>
       </Dialog>
     </Box>

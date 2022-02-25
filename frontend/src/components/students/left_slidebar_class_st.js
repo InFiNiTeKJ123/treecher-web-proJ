@@ -65,7 +65,7 @@ function Left_slidebar_class_st(props) {
                 <ListItemIcon sx={{ color: 'white'}}>
                     <PeopleAltIcon />
                 </ListItemIcon>
-                <ListItemText primary='เพื่อนในห้องเรียน' sx={{ color: 'white'}}/>
+                <ListItemText primary='เพื่อน' sx={{ color: 'white'}}/>
             </ListItem>
             <ListItem button href="/quiz">
                 <ListItemIcon sx={{ color: 'white'}}>
@@ -77,7 +77,7 @@ function Left_slidebar_class_st(props) {
                 <ListItemIcon sx={{ color: 'white'}}>
                     <FilterVintageIcon />
                 </ListItemIcon>
-                <ListItemText primary='คะแนนของฉัน' sx={{ color: 'white'}}/>
+                <ListItemText primary='คะแนน' sx={{ color: 'white'}}/>
             </ListItem>
             <ListItem button >
                 <ListItemIcon sx={{ color: 'white'}}>

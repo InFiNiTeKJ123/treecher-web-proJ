@@ -49,7 +49,7 @@ function Left_slidebar_class_th() {
           TreeCher
         </Typography>
         <List>
-            <ListItem button >
+            <ListItem button component="a" href="/home_th">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <SchoolIcon />
                 </ListItemIcon>
@@ -77,7 +77,7 @@ function Left_slidebar_class_th() {
                 <ListItemIcon sx={{ color: 'white'}}>
                     <FilterVintageIcon />
                 </ListItemIcon>
-                <ListItemText primary='คะแนนของนักเรียน' sx={{ color: 'white'}}/>
+                <ListItemText primary='คะแนน' sx={{ color: 'white'}}/>
             </ListItem>
             <ListItem button >
                 <ListItemIcon sx={{ color: 'white'}}>

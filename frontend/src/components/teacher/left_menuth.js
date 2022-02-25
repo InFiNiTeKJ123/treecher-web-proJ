@@ -1,10 +1,10 @@
-import { Box, Button, Container, Typography } from '@mui/material'
-import React from 'react';
-import { ExitToApp, Person, Settings, } from "@mui/icons-material";
-import SchoolIcon from '@mui/icons-material/School';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import { makeStyles } from '@mui/styles';
-import { createTheme } from '@mui/material/styles';
+import { Box, Button, Container, Typography } from "@mui/material";
+import React from "react";
+import { ExitToApp, Person, Settings } from "@mui/icons-material";
+import SchoolIcon from "@mui/icons-material/School";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { makeStyles } from "@mui/styles";
+import { createTheme } from "@mui/material/styles";
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -35,54 +35,67 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
 }));
 
 function Left_Menu(props) {
+  const classes = useStyles();
 
-  const classes = useStyles()
+  const theme = createTheme();
 
-  const theme = createTheme()
-  
   return (
-    <Container className={classes.container} >
-          <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-            หน้าหลัก
-          </Button>
-          <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-            โปรไฟล์
-          </Button>
-          <Button startIcon = {<AddCircleIcon className={classes.icon} />} variant="contained" color="success" 
-              onClick={props.openpopup} sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-            เพิ่มห้องเรียน
-          </Button>
-          <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
-               sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-            ออกจากระบบ
-          </Button>
-          {/* <Box className={classes.box} >
-            <Button>
-              <SchoolIcon className={classes.icon} />
-              <Typography className={classes.text}>หน้าหลัก</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.box}>
-            <Button>
-              <Person className={classes.icon} />
-              <Typography className={classes.text}>โปรไฟล์</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.box}>
-            <Button onClick={props.openpopup}>
-              <AddCircleIcon className={classes.icon} />
-              <Typography className={classes.text}>เพิ่มห้องเรียน</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.boxlogout}>
-            <Button>
-              <ExitToApp className={classes.icon} />
-              <Typography className={classes.text}>ออกจากระบบ</Typography>
-            </Button>
-          </Box> */}
-      </Container>
+    <Container className={classes.container}>
+      <Button
+        startIcon={<SchoolIcon className={classes.icon} />}
+        variant="contained"
+        color="success"
+        href="/home_th"
+        sx={{
+          width: "95%",
+          height: 50,
+          fontSize: 16,
+          marginBottom: theme.spacing(3),
+        }}
+      >
+        หน้าหลัก
+      </Button>
+      <Button
+        startIcon={<Person className={classes.icon} />}
+        variant="contained"
+        color="success"
+        sx={{
+          width: "95%",
+          height: 50,
+          fontSize: 16,
+          marginBottom: theme.spacing(3),
+        }}
+      >
+        โปรไฟล์
+      </Button>
+      <Button
+        startIcon={<AddCircleIcon className={classes.icon} />}
+        variant="contained"
+        color="success"
+        onClick={props.openpopup}
+        sx={{
+          width: "95%",
+          height: 50,
+          fontSize: 16,
+          marginBottom: theme.spacing(3),
+        }}
+      >
+        เพิ่มห้องเรียน
+      </Button>
+      <Button
+        startIcon={<ExitToApp className={classes.icon} />}
+        variant="contained"
+        color="error"
+        sx={{
+          width: "95%",
+          height: 50,
+          fontSize: 16,
+          marginBottom: theme.spacing(3),
+        }}
+      >
+        ออกจากระบบ
+      </Button>
+    </Container>
   );
 }
 

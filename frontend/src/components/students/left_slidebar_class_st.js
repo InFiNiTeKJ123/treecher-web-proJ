@@ -1,4 +1,4 @@
-import { Avatar, Link, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material"
+import { Avatar, Link ,List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import React from "react"
 import { useTheme , createTheme } from '@mui/material/styles';
@@ -48,8 +48,8 @@ function Left_slidebar_class_st(props) {
                     sx={{ fontWeight: 500, paddingLeft: theme.spacing(6.5), paddingBottom: theme.spacing(1) }}>
           TreeCher
         </Typography>
-        <List>
-            <ListItem button >
+        <List component="nav">
+            <ListItem button component="a" href="/home_st">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <SchoolIcon />
                 </ListItemIcon>
@@ -67,7 +67,7 @@ function Left_slidebar_class_st(props) {
                 </ListItemIcon>
                 <ListItemText primary='เพื่อน' sx={{ color: 'white'}}/>
             </ListItem>
-            <ListItem button href="/quiz">
+            <ListItem button component="a" href="/quiz">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <AssignmentIcon />
                 </ListItemIcon>

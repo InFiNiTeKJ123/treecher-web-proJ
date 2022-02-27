@@ -55,14 +55,20 @@ function Home_teacher() {
     setOpenslide(!openslide)
   }
 
+  const [color, setColor] = useState(true)
+
+  const handleClick = () => {
+    setColor(!color)
+  };
+
   return (
     <Box > 
       <Navbarst toggleslider={toggleslider}/>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, }}>
-          <Left_Menu_st openpopup={handleOpenPopup}/>
+          <Left_Menu_st openpopup={handleOpenPopup} changecolor={color} clickcolor={handleClick}/>
         </Grid>
-        <Drawer open={openslide} anchor="left" onClose={toggleslider}>
+        <Drawer open={openslide} anchor="left" onClose={toggleslider} >
             <Left_slidebar_st openpopup={handleOpenPopup} />
           </Drawer>
         <Grid item xs> 

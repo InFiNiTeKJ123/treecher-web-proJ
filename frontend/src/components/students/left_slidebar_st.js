@@ -53,7 +53,7 @@ function Left_slidebar_st(props) {
                 </ListItemIcon>
                 <ListItemText primary='หน้าหลัก' sx={{ color: 'white'}}/>
             </ListItem>
-            <ListItem button >
+            <ListItem button component="a" href="/profile">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <Person />
                 </ListItemIcon>
@@ -63,9 +63,9 @@ function Left_slidebar_st(props) {
                 <ListItemIcon sx={{ color: 'white'}}>
                     <AddCircleIcon />
                 </ListItemIcon>
-                <ListItemText primary='เพื่อน' sx={{ color: 'white'}}/>
+                <ListItemText primary='เพิ่มห้องเรียน' sx={{ color: 'white'}}/>
             </ListItem>
-            <ListItem button >
+            <ListItem button component="a" href="/login">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <ExitToApp />
                 </ListItemIcon>

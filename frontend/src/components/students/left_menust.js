@@ -43,46 +43,23 @@ function Left_Menu_st(props) {
   
   return (
     <Container className={classes.container} >
-          <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" 
+          <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
             sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             หน้าหลัก
           </Button>
-          <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" 
+          <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
               sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             โปรไฟล์
           </Button>
           <Button startIcon = {<AddCircleIcon className={classes.icon} />} variant="contained" color="success" 
               onClick={props.openpopup} sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-            เพื่อน
+            เพิ่มห้องเรียน
           </Button>
-          <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
+          <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             ออกจากระบบ
           </Button>
-          {/* <Box className={classes.box} >
-            <Button>
-              <SchoolIcon className={classes.icon} />
-              <Typography className={classes.text}>หน้าหลัก</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.box}>
-            <Button>
-              <Person className={classes.icon} />
-              <Typography className={classes.text}>โปรไฟล์</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.box}>
-            <Button onClick={props.openpopup}>
-              <AddCircleIcon className={classes.icon} />
-              <Typography className={classes.text}>เพิ่มห้องเรียน</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.boxlogout}>
-            <Button>
-              <ExitToApp className={classes.icon} />
-              <Typography className={classes.text}>ออกจากระบบ</Typography>
-            </Button>
-          </Box> */}
+
       </Container>
   );
 }

@@ -45,11 +45,11 @@ function Left_Menu_class_st(props) {
   return (
       <ThemeProvider theme={theme}>
         <Container className={classes.container} >
-          <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" 
+          <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
               sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
             หน้าหลัก
           </Button>
-          <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" 
+          <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
               sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             โปรไฟล์
           </Button>
@@ -67,46 +67,10 @@ function Left_Menu_class_st(props) {
               sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             คะแนน
           </Button>
-          <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" 
+          <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             ออกจากระบบ
           </Button>
-          {/* <Box className={classes.box} >
-            <Button  href='http://localhost:3000/home_st'>
-              <SchoolIcon className={classes.icon} />
-              <Typography className={classes.text}>หน้าหลัก</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.box}>
-            <Button>
-              <Person className={classes.icon} />
-              <Typography className={classes.text}>โปรไฟล์</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.box}>
-            <Button>
-              <PeopleAltIcon className={classes.icon} />
-              <Typography className={classes.text}>เพื่อนในห้องเรียน</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.box} sx={{ bgcolor: '#81FF5B'}}>
-            <Button>
-              <AssignmentIcon className={classes.icon} />
-              <Typography className={classes.text}>แบบฝึกหัด</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.box}>
-            <Button>
-              <FilterVintageIcon className={classes.icon} />
-              <Typography className={classes.text}>คะแนนของฉัน</Typography>
-            </Button>
-          </Box>
-          <Box className={classes.boxlogout}>
-            <Button>
-              <ExitToApp className={classes.icon} />
-              <Typography className={classes.text}>ออกจากระบบ</Typography>
-            </Button>
-          </Box> */}
       </Container>
       </ThemeProvider>
   );

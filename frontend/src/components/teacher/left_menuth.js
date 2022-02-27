@@ -59,6 +59,7 @@ function Left_Menu(props) {
         startIcon={<Person className={classes.icon} />}
         variant="contained"
         color="success"
+        href="/profile"
         sx={{
           width: "95%",
           height: 50,
@@ -86,6 +87,7 @@ function Left_Menu(props) {
         startIcon={<ExitToApp className={classes.icon} />}
         variant="contained"
         color="error"
+        href="/login"
         sx={{
           width: "95%",
           height: 50,

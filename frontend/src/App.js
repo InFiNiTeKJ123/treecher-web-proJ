@@ -8,6 +8,7 @@ import MakeQuiz_th from './pages/makequiz';
 import Classroom_Teacher from './pages/classroom_th';
 import Classroom_Students from './pages/classroom_st';
 import SignUp from './pages/signup';
+import Profile from './pages/profile';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Navigate replace to ="/login"/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/profile" element={<Profile/>}/>
         <Route path="/home_th" element={<Home_teacher/>}/>
         <Route path="/home_st" element={<Home_st />}/>
         <Route path="/quiz" element={<Quiz />}/>

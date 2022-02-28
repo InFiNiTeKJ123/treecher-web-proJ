@@ -47,7 +47,7 @@ function Left_slidebar_st(props) {
           TreeCher
         </Typography>
         <List>
-            <ListItem button >
+            <ListItem button component="a" href="/home_st">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <SchoolIcon />
                 </ListItemIcon>

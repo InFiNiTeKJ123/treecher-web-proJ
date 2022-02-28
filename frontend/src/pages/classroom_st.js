@@ -9,7 +9,7 @@ import Left_Menu_class_st from '../components/students/left_menu_class_st';
 import Navbarst from '../components/students/navbarst';
 import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
 
-const useStyles = makeStyles(({ theme = useTheme() }) => ({
+const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
     paddingTop: theme.spacing(3),
   },
@@ -54,13 +54,13 @@ function Classroom_Students() {
     <Box position='flex'>
       <Navbarst toggleslider={toggleslider}/>
       <Grid container item spacing={0.5}>
-        <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex' }}}>
+        <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex', position: 'fixed' }}}>
             <Left_Menu_class_st changecolor={color} handleClick={handleClick}/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
             <Left_slidebar_class_st />
           </Drawer>
-        <Grid item xs > 
+        <Grid item xs sx={{ marginLeft: {md:"15%"}}}> 
           <Grid item classname={classes.gridavartar}>
             <Avartarst_mobile className={classes.avartar_mobile}/>
           </Grid>

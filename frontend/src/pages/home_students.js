@@ -65,7 +65,7 @@ function Home_teacher() {
     <Box > 
       <Navbarst toggleslider={toggleslider}/>
       <Grid container>
-        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, }}>
+        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
           <Left_Menu_st openpopup={handleOpenPopup} changecolor={color} clickcolor={handleClick}/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider} >
@@ -75,7 +75,7 @@ function Home_teacher() {
           <Grid item classname={classes.gridavartar}>
             <Avartarst_mobile className={classes.avartar_mobile}/>
           </Grid>
-          <Grid item xs >
+          <Grid item xs sx={{ marginLeft: {md:"15%"}}}>
             <Mainfeed_st/>
             <Add_classroomPopup_st Open={open} handleClose={handleClosePopup}/>
           </Grid>

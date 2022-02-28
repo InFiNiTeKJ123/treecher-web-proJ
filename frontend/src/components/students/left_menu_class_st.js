@@ -54,7 +54,7 @@ function Left_Menu_class_st(props) {
             โปรไฟล์
           </Button>
           <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}  href='/friends'>
             เพื่อน
           </Button>
           <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained"  

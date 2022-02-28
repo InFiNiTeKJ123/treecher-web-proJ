@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Drawer, Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import { createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
@@ -12,6 +12,7 @@ import Main_quiz from '../components/teacher/main_quiz'
 import Quiz_popup from '../components/quiz_popup';
 import Left_Menu_class_st from '../components/students/left_menu_class_st';
 import Navbar_class_st from '../components/students/navbar_class_st';
+import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -54,6 +55,12 @@ function Quiz() {
     setOpen(false)
   }
 
+  const [openslide, setOpenslide] = useState(false)
+
+  const toggleslider = () => {
+    setOpenslide(!openslide)
+  }
+
   const [opensnackbar, setOpensnackbar] = useState(false);
 
   const handleClick = () => {
@@ -80,16 +87,19 @@ function Quiz() {
 
   return (
     <Box position='flex'> 
-      <Navbar_class_st/>
+      <Navbar_class_st toggleslider={toggleslider}/>
       <Grid container>
-        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }}}>
+        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
           <Left_Menu_class_st />
         </Grid>
+        <Drawer open={openslide} anchor="left" onClose={toggleslider}>
+            <Left_slidebar_class_st />
+        </Drawer>
         <Grid item xs> 
           <Grid item classname={classes.gridavartar}>
             <Avartarst_mobile className={classes.avartar_mobile}/>
           </Grid>
-          <Grid item xs >
+          <Grid item xs sx={{ marginLeft: {md:"15%"}}} >
             <Main_quiz Openpopup={handleOpenPopup}/>
             <Quiz_popup Open={open} handleclose={handleClosePopup} clickcheckpoint={handleClick}/>
             {Checkpoint()}

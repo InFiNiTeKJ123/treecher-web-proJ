@@ -59,7 +59,7 @@ function Home_teacher() {
     <Box > 
       <Navbar toggleslider={toggleslider}/>
       <Grid container>
-        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }}}>
+        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' },}}>
           <Left_Menu openpopup={handleOpenPopup}/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>

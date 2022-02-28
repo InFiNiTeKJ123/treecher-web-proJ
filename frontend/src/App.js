@@ -9,6 +9,8 @@ import Classroom_Teacher from './pages/classroom_th';
 import Classroom_Students from './pages/classroom_st';
 import SignUp from './pages/signup';
 import Profile from './pages/profile';
+import CardProfile from './pages/test_profile';
+import Friends from './pages/friends';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route path="/quizth" element={<MakeQuiz_th />}/>
         <Route path="/classroom_th" element={<Classroom_Teacher />}/>
         <Route path="/classroom_st" element={<Classroom_Students />}/>
+        <Route path="/friends" element={<Friends />}/>
+        <Route path="/testprofile" element={<CardProfile />}/>
       </Routes>
     </BrowserRouter>
   );

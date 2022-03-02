@@ -11,6 +11,7 @@ import SignUp from './pages/signup';
 import Profile from './pages/profile';
 import CardProfile from './pages/test_profile';
 import Friends from './pages/friends';
+import Score_st from './pages/score_st';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/classroom_st" element={<Classroom_Students />}/>
         <Route path="/friends" element={<Friends />}/>
         <Route path="/testprofile" element={<CardProfile />}/>
+        <Route path="/score_st" element={<Score_st />}/>
       </Routes>
     </BrowserRouter>
   );

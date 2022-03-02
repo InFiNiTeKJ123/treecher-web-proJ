@@ -47,7 +47,7 @@ const listItems = [
   },
   {
     listIcon: <PeopleAltIcon />,
-    listText: "เพื่อน"
+    listText: "สมาชิก"
   },
   {
     listIcon: <AssignmentIcon />,

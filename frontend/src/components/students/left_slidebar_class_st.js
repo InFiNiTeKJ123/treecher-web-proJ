@@ -65,7 +65,7 @@ function Left_slidebar_class_st(props) {
                 <ListItemIcon sx={{ color: 'white'}}>
                     <PeopleAltIcon />
                 </ListItemIcon>
-                <ListItemText primary='เพื่อน' sx={{ color: 'white'}}/>
+                <ListItemText primary='สมาชิก' sx={{ color: 'white'}}/>
             </ListItem>
             <ListItem button component="a" href="/quiz">
                 <ListItemIcon sx={{ color: 'white'}}>

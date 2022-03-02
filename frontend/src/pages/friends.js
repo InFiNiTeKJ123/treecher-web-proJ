@@ -79,7 +79,7 @@ const left_menu_class_st_friend = () => (
             </Button>
             <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="check" 
                 sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}  href='/friends'>
-                เพื่อน
+                สมาชิก
             </Button>
             <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained" color='success'
                 sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
@@ -111,7 +111,7 @@ const Friends_list = () => (
           <Typography
             sx={{ display:'flex' , fontWeight: "bold" , fontSize: "20px",
                   padding: theme.spacing(2) , }}>
-            เพื่อน
+            สมาชิก
           </Typography>
         </Box>
       <Box
@@ -135,10 +135,39 @@ const Friends_list = () => (
                   sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                         }} 
                   aria-label="avatar" >
+                  ก
+            </Avatar>
+            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+                กมลชนก ชูชื่น
+            </Typography>
+          </Grid>
+        </Card>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          height: 40,
+          borderRadius: 20,
+          marginTop: 3,
+          marginBottom: 10,
+        }}
+      >
+        <Card variant="contained" sx={{ borderRadius: 4 }}>
+          <Grid
+            container
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="center"
+            sx={{ background: "#E4E4E5", padding: 3 }}
+          >
+            <Avatar 
+                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                       }} 
+                  aria-label="avatar" >
                   ฉ
             </Avatar>
             <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
-                ฉัตรชัย จันทร์แก้ว
+              ฉัตรชัย จันทร์แก้ว
             </Typography>
           </Grid>
         </Card>
@@ -167,7 +196,94 @@ const Friends_list = () => (
                   ธ
             </Avatar>
             <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
-                ธนภัทร์ เพ็ชร์ดวงจันทร์
+              ธนภัทร์ เพ็ชร์ดวงจันทร์
+            </Typography>
+          </Grid>
+        </Card>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          height: 40,
+          borderRadius: 20,
+          marginTop: 3,
+          marginBottom: 10,
+        }}
+      >
+        <Card variant="contained" sx={{ borderRadius: 4 }}>
+          <Grid
+            container
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="center"
+            sx={{ background: "#E4E4E5", padding: 3 }}
+          >
+            <Avatar 
+                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                       }} 
+                  aria-label="avatar" >
+                  ธ
+            </Avatar>
+            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+              ธนวรรณ แซ่เจียง
+            </Typography>
+          </Grid>
+        </Card>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          height: 40,
+          borderRadius: 20,
+          marginTop: 3,
+          marginBottom: 10,
+        }}
+      >
+        <Card variant="contained" sx={{ borderRadius: 4 }}>
+          <Grid
+            container
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="center"
+            sx={{ background: "#E4E4E5", padding: 3 }}
+          >
+            <Avatar 
+                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                       }} 
+                  aria-label="avatar" >
+                  น
+            </Avatar>
+            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+                นูรียะห์ หะยีเจะโซะ
+            </Typography>
+          </Grid>
+        </Card>
+      </Box>
+      <Box
+        sx={{
+          width: "100%",
+          height: 40,
+          borderRadius: 20,
+          marginTop: 3,
+          marginBottom: 10,
+        }}
+      >
+        <Card variant="contained" sx={{ borderRadius: 4 }}>
+          <Grid
+            container
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="center"
+            sx={{ background: "#E4E4E5", padding: 3 }}
+          >
+            <Avatar 
+                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                       }} 
+                  aria-label="avatar" >
+                  บ
+            </Avatar>
+            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+              บูรฮันนูรดิน สะอง
             </Typography>
           </Grid>
         </Card>

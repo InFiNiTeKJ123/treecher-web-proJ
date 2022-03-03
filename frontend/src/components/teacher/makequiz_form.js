@@ -52,16 +52,16 @@ function Makequiz_form(props) {
                 image="https://www.img.in.th/images/83b7c243c2ca76e853ca96df4c2e3514.png"
                 />
                 <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 500 }}>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 500 ,fontFamily: "Kanit"}}>
                     แบบฝึกหัด
                 </Typography>
-                <Typography gutterBottom variant="body2" component="div" sx={{ fontWeight: 500 }}>
+                <Typography gutterBottom variant="body2" component="div" sx={{ fontWeight: 500 ,fontFamily: "Kanit"}}>
                     มารดน้ำต้นไม้กันเถอะ
                 </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions CardActions >
-                <Button size="small">เข้าทำควิซ</Button>
+                <Button sx={{fontFamily: "Kanit"}} size="small">เข้าทำควิซ</Button>
             </CardActions>
         </Card>
       </Box>
@@ -126,6 +126,8 @@ function Makequiz_form(props) {
           <Grid direction="row" spacing={2} direction="row">
             <Grid item sx={{ textAlign: "center" }}>
               <TextField
+                inputProps={{style: {fontFamily: "Kanit"}}} 
+                InputLabelProps={{style: {fontFamily: "Kanit"}}}
                 label="คุณกำลังคิดอะไรอยู่"
                 placeholder="พิมพ์ข้อความที่ต้องการบอกสมาชิกในห้องเรียน"
                 sx={{ width: "85%" }}

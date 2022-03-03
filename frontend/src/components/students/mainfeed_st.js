@@ -32,7 +32,7 @@ function Mainfeed_st() {
                 borderRadius: 3, }}>
           <SchoolIcon sx={{ paddingLeft: theme.spacing(2) }}/>
           <Typography 
-            sx={{ display:'flex' , fontWeight: 500 ,
+            sx={{ fontFamily: "Kanit", display:'flex' , fontWeight: 500 ,
                   padding: theme.spacing(2) , paddingLeft: theme.spacing(2.5)}}>
             ห้องเรียน
           </Typography>
@@ -47,16 +47,16 @@ function Mainfeed_st() {
               image="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 500 }}>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                   240-124
                 </Typography>
-                <Typography gutterBottom variant="body2" component="div" sx={{ fontWeight: 500 }}>
+                <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                   ห้องเรียนสำหรับคนรักโลก
                 </Typography>
               </CardContent>
             </CardActionArea>
             <CardActions CardActions>
-              <Button size="small">เข้าห้องเรียน</Button>
+              <Button sx={{ fontFamily: "Kanit" }} size="small">เข้าห้องเรียน</Button>
             </CardActions>
         </Card>
         </Box>
@@ -70,16 +70,16 @@ function Mainfeed_st() {
               image="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 500 }}>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                   240-124
                 </Typography>
-                <Typography gutterBottom variant="body2" component="div" sx={{ fontWeight: 500 }}>
+                <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                   ห้องเรียนสำหรับคนรักโลก
                 </Typography>
               </CardContent>
             </CardActionArea>
             <CardActions CardActions>
-              <Button size="small">เข้าห้องเรียน</Button>
+              <Button sx={{ fontFamily: "Kanit" }} size="small">เข้าห้องเรียน</Button>
             </CardActions>
         </Card>
         </Box>

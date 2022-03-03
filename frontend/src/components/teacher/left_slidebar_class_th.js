@@ -45,7 +45,7 @@ function Left_slidebar_class_th() {
               />
         </Avatar>
         <Typography component="h2" variant="h5" color="white" 
-                    sx={{ fontWeight: 500, paddingLeft: theme.spacing(6.5), paddingBottom: theme.spacing(1) }}>
+                    sx={{ fontFamily : "Kanit",fontWeight: 500, paddingLeft: theme.spacing(6.5), paddingBottom: theme.spacing(1) }}>
           TreeCher
         </Typography>
         <List>
@@ -53,37 +53,37 @@ function Left_slidebar_class_th() {
                 <ListItemIcon sx={{ color: 'white'}}>
                     <SchoolIcon />
                 </ListItemIcon>
-                <ListItemText primary='หน้าหลัก' sx={{ color: 'white'}}/>
+                <ListItemText primary='หน้าหลัก' sx={{ fontFamily: "Kanit",color: 'white'}}/>
             </ListItem>
             <ListItem button component="a" href="/profile">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <Person />
                 </ListItemIcon>
-                <ListItemText primary='โปรไฟล์' sx={{ color: 'white'}}/>
+                <ListItemText primary='โปรไฟล์' sx={{fontFamily: "Kanit", color: 'white'}}/>
             </ListItem>
             <ListItem button >
                 <ListItemIcon sx={{ color: 'white'}}>
                     <PeopleAltIcon />
                 </ListItemIcon>
-                <ListItemText primary='นักเรียน' sx={{ color: 'white'}}/>
+                <ListItemText primary='นักเรียน' sx={{ fontFamily: "Kanit",color: 'white'}}/>
             </ListItem>
             <ListItem button href="/quiz">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <AddTaskIcon />
                 </ListItemIcon>
-                <ListItemText primary='สร้างแบบฝึกหัด' sx={{ color: 'white'}}/>
+                <ListItemText primary='สร้างแบบฝึกหัด' sx={{ fontFamily: "Kanit",color: 'white'}}/>
             </ListItem>
             <ListItem button  >
                 <ListItemIcon sx={{ color: 'white'}}>
                     <FilterVintageIcon />
                 </ListItemIcon>
-                <ListItemText primary='คะแนน' sx={{ color: 'white'}}/>
+                <ListItemText primary='คะแนน' sx={{ fontFamily: "Kanit",color: 'white'}}/>
             </ListItem>
             <ListItem button component="a" href="/login">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <ExitToApp />
                 </ListItemIcon>
-                <ListItemText primary='ออกจากระบบ' sx={{ color: 'white'}}/>
+                <ListItemText primary='ออกจากระบบ' sx={{fontFamily: "Kanit", color: 'white'}}/>
             </ListItem>
         </List>
       </Box>

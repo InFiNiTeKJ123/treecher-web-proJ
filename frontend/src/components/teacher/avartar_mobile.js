@@ -48,16 +48,16 @@ function Avartar_mobile() {
                 <Grid item xs={12} sm container>
                     <Grid item xs container direction="column" spacing={2}>
                         <Grid item xs>
-                            <Typography gutterBottom variant="h4" component="div" className={classes.text_teacher}>
+                            <Typography sx={{ fontFamily: "Kanit" }} gutterBottom variant="h4" component="div" className={classes.text_teacher}>
                                 คุณครู
                             </Typography>
-                            <Typography variant="body2" gutterBottom className={classes.text} >
+                            <Typography sx={{ fontFamily: "Kanit" }} variant="body2" gutterBottom className={classes.text} >
                                 เพ็ชรัตน์ สุริยะไชย
                             </Typography>
                         </Grid>
                     </Grid>
                     <Grid item className={classes.gridavatar}>
-                        <Avatar sx={{ fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', display: { xs: 'flex', sm: 'none' }}} size="small" aria-label="avatar">
+                        <Avatar sx={{fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', display: { xs: 'flex', sm: 'none' }}} size="small" aria-label="avatar">
                                 พ
                         </Avatar>
                     </Grid>

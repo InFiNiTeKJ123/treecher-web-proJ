@@ -70,17 +70,17 @@ function Navbar(props) {
                     width="36"/>
                 </Avatar>
             </IconButton>
-          <Typography variant='h6' sx={{ display: 'flex' }}> 
+          <Typography variant='h6' sx={{ display: 'flex', fontFamily: "Kanit" }}> 
             TreeCher
           </Typography>
           <Box sx={{ flexGrow: 100 }} />
           <container>
             <Box sx={{ flexGrow: 50}} />
-            <Typography variant='h4'  sx={{ fontWeight: 'bold',color:'#ffffff',display: { xs: 'none', sm: 'flex' } }}> 
+            <Typography variant='h4'  sx={{ fontFamily: "Kanit", fontWeight: 'bold',color:'#ffffff',display: { xs: 'none', sm: 'flex' } }}> 
                 คุณครู
             </Typography>
             <Box sx={{ flexGrow: 5 }} /> 
-            <Typography variant='h6' sx={{color: '#fcf872', display: { xs: 'none', sm: 'flex' } }}> 
+            <Typography variant='h6' sx={{ fontFamily: "Kanit", color: '#fcf872', display: { xs: 'none', sm: 'flex' } }}> 
                 เพ็ชรัตน์ สุริยะไชย
             </Typography>
           </container>
@@ -95,7 +95,7 @@ function Navbar(props) {
                 color="inherit"
               >
                 <Avatar 
-                  sx={{ fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', 
                         display: { xs: 'none', sm: 'flex' }}} 
                   size="small" aria-label="avatar" >
                   พ

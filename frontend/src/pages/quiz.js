@@ -78,7 +78,7 @@ function Quiz() {
   const Checkpoint = () => (
     <Stack spacing={2} sx={{ width: '100%' }}>
         <Snackbar open={opensnackbar} autoHideDuration={6000} onClose={handleClose}>
-          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          <Alert onClose={handleClose} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
             เย้ คุณได้รดน้ำต้นไม้แล้ว
           </Alert>
         </Snackbar>

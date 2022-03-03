@@ -37,6 +37,7 @@ function Quiz_popup(props) {
           <Typography
             variant="h6"
             sx={{
+              fontFamily: "Kanit",
               marginLeft: theme.spacing(1),
               marginRight: theme.spacing(10),
               fontWeight: "bold",
@@ -61,7 +62,7 @@ function Quiz_popup(props) {
         </DialogTitle>
         <DialogContent>
           <Box component="div" sx={{ textAlign: "center" }}>
-            <DialogContentText id="alert-dialog-slide-description">
+            <DialogContentText  sx={{ fontFamily: "Kanit" }} id="alert-dialog-slide-description">
               วันนี้นักเรียนรดน้ำต้นไม้แล้วหรือยังคะ
             </DialogContentText>
           </Box>
@@ -76,6 +77,7 @@ function Quiz_popup(props) {
         </DialogContent>
         <DialogActions>
           <Button
+            sx = {{ fontFamily: "Kanit"}}
             startIcon={<CheckCircleOutlineIcon />}
             variant="contained"
             color="success"
@@ -86,7 +88,8 @@ function Quiz_popup(props) {
           >
             ยืนยัน
           </Button>
-          <Button
+          <Button 
+            sx = {{ fontFamily: "Kanit"}}
             startIcon={<DoNotDisturbAltIcon />}
             variant="contained"
             color="error"

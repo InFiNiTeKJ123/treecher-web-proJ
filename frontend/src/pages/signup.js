@@ -117,6 +117,8 @@ function SignUp() {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  inputProps={{style: {fontFamily: "Kanit"}}} 
+                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
                   autoComplete="given-name"
                   name="firstName"
                   required
@@ -128,6 +130,8 @@ function SignUp() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  inputProps={{style: {fontFamily: "Kanit"}}} 
+                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
                   required
                   fullWidth
                   id="lastName"
@@ -138,6 +142,8 @@ function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  inputProps={{style: {fontFamily: "Kanit"}}} 
+                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
                   required
                   fullWidth
                   id="email"
@@ -148,6 +154,8 @@ function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  inputProps={{style: {fontFamily: "Kanit"}}} 
+                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
                   required
                   fullWidth
                   name="password"
@@ -159,6 +167,8 @@ function SignUp() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  inputProps={{style: {fontFamily: "Kanit"}}} 
+                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
                   required
                   fullWidth
                   name="password"
@@ -179,7 +189,7 @@ function SignUp() {
                 <Button variant="contained" color="success" size="large"
                         startIcon={<FaceRetouchingNaturalIcon />}
                         className={classes.teacher_button}
-                        sx={{ fontSize: 18, fontWeight: "bold" , width: { xs: 130, md:180 },}}>
+                        sx={{ fontFamily: "Kanit", fontSize: 18, fontWeight: "bold" , width: { xs: 130, md:180 },}}>
                   คุณครู
                 </Button>
               </Grid>
@@ -187,7 +197,7 @@ function SignUp() {
                 <Button variant="contained" color="success" size="large"
                         startIcon={<ChildCareIcon />}
                         className={classes.student_button} 
-                        sx={{ fontSize: 18, fontWeight: "bold", width: { xs: 130, md:180 },}}>
+                        sx={{ fontFamily: "Kanit", fontSize: 18, fontWeight: "bold", width: { xs: 130, md:180 },}}>
                   นักเรียน
                 </Button>
               </Grid>
@@ -197,13 +207,13 @@ function SignUp() {
               fullWidth
               variant="contained"
               className={classes.signup_button}
-              sx={{ marginTop: 5, fontSize: 20, fontWeight: "bold" }}
+              sx={{ fontFamily: "Kanit", marginTop: 5, fontSize: 20, fontWeight: "bold" }}
             >
               ลงทะเบียน
             </Button>
             <Grid container justifyContent="flex-end" sx={{ marginTop: 2, marginBottom: 5 }}>
               <Grid item>
-                <Link href="/login" variant="body2">
+                <Link href="/login" variant="body2" sx={{ fontFamily: "Kanit" }}>
                   มีบัญชีอยู่แล้วใช่ไหม? ไปที่ล็อกอิน
                 </Link>
               </Grid>

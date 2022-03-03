@@ -60,17 +60,17 @@ function Navbarst(props) {
                     width="36"/>
                 </Avatar>
             </IconButton>
-          <Typography variant='h6' sx={{ display: 'flex' }}> 
+          <Typography variant='h6' sx={{ fontFamily: "Kanit", display: 'flex' }}> 
             TreeCher
           </Typography>
           <Box sx={{ flexGrow: 100 }} />
           <container>
             <Box sx={{ flexGrow: 50}} />
-            <Typography variant='h4'  sx={{ fontWeight: 'bold',color:'#ffffff',display: { xs: 'none', sm: 'flex' } }}> 
+            <Typography variant='h4'  sx={{ fontFamily: "Kanit", fontWeight: 'bold',color:'#ffffff',display: { xs: 'none', sm: 'flex' } }}> 
                 นักเรียน
             </Typography>
             <Box sx={{ flexGrow: 5 }} /> 
-            <Typography variant='h6' sx={{color: '#fcf872', display: { xs: 'none', sm: 'flex' } }}> 
+            <Typography variant='h6' sx={{ fontFamily: "Kanit", color: '#fcf872', display: { xs: 'none', sm: 'flex' } }}> 
                 ฉัตรชัย จันทร์แก้ว
             </Typography>
           </container>
@@ -85,7 +85,7 @@ function Navbarst(props) {
                 color="inherit"
               >
                 <Avatar 
-                  sx={{ fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                         display: { xs: 'none', sm: 'flex' }}} 
                   size="small" aria-label="avatar" >
                   ฉ

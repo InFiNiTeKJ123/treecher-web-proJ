@@ -65,6 +65,7 @@ function Classroom_feed(props) {
           sx={{
             display: "flex",
             fontWeight: 500,
+            fontFamily: "Kanit",
             fontSize: 20,
             padding: theme.spacing(2),
             paddingLeft: theme.spacing(2.5),
@@ -93,6 +94,7 @@ function Classroom_feed(props) {
           <Box
             component="h2"
             sx={{
+              fontFamily: "Kanit",
               paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
             }}
           >
@@ -101,9 +103,11 @@ function Classroom_feed(props) {
           <Grid direction="row" spacing={2} direction="row">
             <Grid item sx={{ textAlign: "center" }}>
               <TextField
+                inputProps={{style: {fontFamily: "Kanit"}}} 
+                InputLabelProps={{style: {fontFamily: "Kanit"}}}
                 label="คุณกำลังคิดอะไรอยู่"
                 placeholder="พิมพ์ข้อความที่ต้องการบอกสมาชิกในห้องเรียน"
-                sx={{ width: "85%" }}
+                sx={{ fontFamily: "Kanit", width: "85%" }}
                 multiline
               />
             </Grid>
@@ -128,6 +132,7 @@ function Classroom_feed(props) {
                     bgcolor: "#212121",
                     marginLeft: { xs: theme.spacing(3), md: theme.spacing(10) },
                     fontSize: "75%",
+                    fontFamily: "Kanit",
                   }}
                 >
                   <AttachFileIcon sx={{ fontSize: "200%" }} />
@@ -142,6 +147,7 @@ function Classroom_feed(props) {
                     bgcolor: "#212121",
                     marginLeft: theme.spacing(1),
                     fontSize: "75%",
+                    fontFamily: "Kanit",
                   }}
                 >
                   <AddPhotoAlternateIcon />
@@ -153,6 +159,7 @@ function Classroom_feed(props) {
                 xs={4}
                 md={5}
                 sx={{
+                  fontFamily: "Kanit",
                   textAlign: "right",
                   marginRight: { xs: theme.spacing(1), md: theme.spacing(3) },
                 }}
@@ -165,6 +172,7 @@ function Classroom_feed(props) {
                     borderRadius: 4,
                     bgcolor: "#212121",
                     marginTop: theme.spacing(1),
+                    fontFamily: "Kanit",
                   }}
                 >
                   โพสต์
@@ -193,13 +201,13 @@ function Classroom_feed(props) {
           <Grid container >
             <Grid item xs={6} sx={{ display: 'flex'}}>
               <Avatar 
-                  sx={{ fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', fontFamily: "Kanit",
+                  sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', fontFamily: "Kanit",
                         display: { xs: 'none', sm: 'flex' }, marginLeft: theme.spacing(4), marginTop: theme.spacing(2)}} 
                   size="small" aria-label="avatar" >
                   พ
                 </Avatar>
                 <Typography variant="h6" 
-                sx={{ marginTop: theme.spacing(2), marginLeft: theme.spacing(2), color: "white", fontFamily: "Kanit"}}>
+                sx={{ fontFamily: "Kanit", marginTop: theme.spacing(2), marginLeft: theme.spacing(2), color: "white", fontFamily: "Kanit"}}>
                   คุณครู
                   <Typography
                     sx={{ color: "white", fontFamily: "Kanit" }}>

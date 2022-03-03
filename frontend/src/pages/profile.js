@@ -124,7 +124,7 @@ function Profile() {
               />
         </Avatar>
         <Typography component="h2" variant="h5" color="white" 
-                    sx={{ fontWeight: 500, paddingLeft: theme.spacing(6.5), 
+                    sx={{ fontFamily: "Kanit", fontWeight: 500, paddingLeft: theme.spacing(6.5), 
                             paddingBottom: theme.spacing(1) }}>
           TreeCher
         </Typography>

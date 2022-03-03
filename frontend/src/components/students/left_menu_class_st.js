@@ -46,29 +46,29 @@ function Left_Menu_class_st(props) {
       <ThemeProvider theme={theme}>
         <Container className={classes.container} >
           <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
+              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
             หน้าหลัก
           </Button>
           <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             โปรไฟล์
           </Button>
           <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}  href='/friends'>
+              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}  href='/friends'>
             สมาชิก
           </Button>
           <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained"  
                   color={props.changecolor ? "success" : "check" }
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
+              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
               onClick={props.handleClick} href='/quiz' >
             แบบฝึกหัด
           </Button>
           <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             คะแนน
           </Button>
           <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
-               sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+               sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             ออกจากระบบ
           </Button>
       </Container>

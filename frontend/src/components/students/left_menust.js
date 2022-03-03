@@ -52,20 +52,20 @@ function Left_Menu_st(props) {
     <ThemeProvider theme={theme}>
       <Container className={classes.container} >
             <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
               หน้าหลัก
             </Button>
             <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}
                 color={props.changecolor ? "success" : "check" } onClick={props.clickcolor}>
               โปรไฟล์
             </Button>
             <Button startIcon = {<AddCircleIcon className={classes.icon} />} variant="contained" color="success" 
-                onClick={props.openpopup} sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                onClick={props.openpopup} sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
               เพิ่มห้องเรียน
             </Button>
             <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
               ออกจากระบบ
             </Button>
 

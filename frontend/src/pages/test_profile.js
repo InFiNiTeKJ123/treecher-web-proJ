@@ -90,7 +90,7 @@ const Last_Name =({
         </label>
         <div className="name">{name} {lastname}</div>
         <div className="email">{email}</div>
-        <button type="submit" className="edit">แก้ไขโปรไฟล์</button>
+        <button sx={{ fontFamily: "Kanit" }} type="submit" className="edit">แก้ไขโปรไฟล์</button>
       </form>
     </div>
        

@@ -13,11 +13,13 @@ function Add_classroomPopup_st(props) {
   return (
     <Box>
       <Dialog open={props.Open} onClose={props.handleClose}>
-        <DialogTitle sx={{ textAlign : 'center' }}>
+        <DialogTitle sx={{ textAlign : 'center', fontFamily: "Kanit" }}>
           {"รหัสห้องเรียน"}
           </DialogTitle>
-        <DialogContent>
+        <DialogContent >
           <TextField
+            inputProps={{style: {fontFamily: "Kanit"}}} 
+            InputLabelProps={{style: {fontFamily: "Kanit"}}}
             autoFocus
             margin="dense"
             id="name"
@@ -26,9 +28,9 @@ function Add_classroomPopup_st(props) {
             variant="standard"
           />
         </DialogContent>
-        <DialogActions>
-          <Button variant="contained" color= "error" onClick={props.handleClose}>ยกเลิก</Button>
-          <Button variant="contained" color="success" onClick={props.handleClose}>ยินยัน</Button>
+        <DialogActions >
+          <Button variant="contained" color= "error" sx={{ fontFamily: "Kanit" }} onClick={props.handleClose}>ยกเลิก</Button>
+          <Button variant="contained" color="success" sx={{ fontFamily: "Kanit" }} onClick={props.handleClose}>ยินยัน</Button>
         </DialogActions>
       </Dialog>
     </Box>

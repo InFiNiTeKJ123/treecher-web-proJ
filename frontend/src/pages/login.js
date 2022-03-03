@@ -81,6 +81,8 @@ function Login() {
               sx={{ mt: 1 }}
             >
               <TextField
+                inputProps={{style: {fontFamily: "Kanit"}}} 
+                InputLabelProps={{style: {fontFamily: "Kanit"}}}
                 margin="normal"
                 required
                 fullWidth
@@ -92,6 +94,8 @@ function Login() {
                 autoFocus
               />
               <TextField
+                inputProps={{style: {fontFamily: "Kanit"}}} 
+                InputLabelProps={{style: {fontFamily: "Kanit"}}}
                 margin="normal"
                 required
                 fullWidth
@@ -103,8 +107,13 @@ function Login() {
                 color="success"
               />
               <FormControlLabel
+                label={
+                <Typography sx={{ fontFamily: "Kanit" }}>
+                จดจำรหัสผ่าน
+              </Typography>
+            }
                 control={<Checkbox value="remember" color="success" />}
-                label="จดจำรหัสผ่าน"
+                
               />
               <Button
                 type="submit"
@@ -112,7 +121,7 @@ function Login() {
                 variant="contained"
                 color="success"
                 href="http://localhost:3000/home_st"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ fontFamily: "Kanit", mt: 3, mb: 2 }}
               >
                 เข้าสู่ระบบ
               </Button>
@@ -121,7 +130,8 @@ function Login() {
                 fullWidth
                 variant="contained"
                 color="secondary"
-                sx={{ mt: 3, mb: 2 }}
+                href="http://localhost:3000/signup"
+                sx={{ fontFamily: "Kanit", mt: 3, mb: 2 }}
               >
                 ลงทะเบียน
               </Button>

@@ -76,31 +76,30 @@ const left_menu_class_st_friend = () => (
     <ThemeProvider theme={theme}>
         <Container className={classes.left_menu_container} >
             <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
                 หน้าหลัก
             </Button>
             <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
                 โปรไฟล์
             </Button>
             <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="check" 
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}  href='/friends'>
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}  href='/friends'>
                 สมาชิก
             </Button>
             <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained" color='success'
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
                  href='/quiz' >
                 แบบฝึกหัด
             </Button>
             <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
                 คะแนน
             </Button>
             <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
                 ออกจากระบบ
             </Button>
-    
         </Container>
     </ThemeProvider>
 )
@@ -115,7 +114,7 @@ const Friends_list = () => (
                 borderRadius: 3, }}>
             <AccountCircleIcon sx={{ paddingLeft: theme.spacing(2), width: "20%" }}/>
           <Typography
-            sx={{ display:'flex' , fontWeight: "bold" , fontSize: "20px",
+            sx={{ fontFamily: "Kanit", display:'flex' , fontWeight: "bold" , fontSize: "20px",
                   padding: theme.spacing(2) , }}>
             สมาชิก
           </Typography>
@@ -138,12 +137,12 @@ const Friends_list = () => (
             sx={{ background: "#E4E4E5", padding: 3 }}
           >
             <Avatar 
-                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                         }} 
                   aria-label="avatar" >
                   ก
             </Avatar>
-            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+            <Typography sx={{ fontFamily: "Kanit", marginLeft: 3, fontSize: "18px" }}>
                 กมลชนก ชูชื่น
             </Typography>
           </Grid>
@@ -167,12 +166,12 @@ const Friends_list = () => (
             sx={{ background: "#E4E4E5", padding: 3 }}
           >
             <Avatar 
-                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                        }} 
                   aria-label="avatar" >
                   ฉ
             </Avatar>
-            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+            <Typography sx={{ fontFamily: "Kanit", marginLeft: 3, fontSize: "18px" }}>
               ฉัตรชัย จันทร์แก้ว
             </Typography>
           </Grid>
@@ -196,12 +195,12 @@ const Friends_list = () => (
             sx={{ background: "#E4E4E5", padding: 3 }}
           >
             <Avatar 
-                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                        }} 
                   aria-label="avatar" >
                   ธ
             </Avatar>
-            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+            <Typography sx={{ fontFamily: "Kanit", marginLeft: 3, fontSize: "18px" }}>
               ธนภัทร์ เพ็ชร์ดวงจันทร์
             </Typography>
           </Grid>
@@ -225,12 +224,12 @@ const Friends_list = () => (
             sx={{ background: "#E4E4E5", padding: 3 }}
           >
             <Avatar 
-                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                        }} 
                   aria-label="avatar" >
                   ธ
             </Avatar>
-            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+            <Typography sx={{ fontFamily: "Kanit", marginLeft: 3, fontSize: "18px" }}>
               ธนวรรณ แซ่เจียง
             </Typography>
           </Grid>
@@ -254,12 +253,12 @@ const Friends_list = () => (
             sx={{ background: "#E4E4E5", padding: 3 }}
           >
             <Avatar 
-                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                        }} 
                   aria-label="avatar" >
                   น
             </Avatar>
-            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+            <Typography sx={{ fontFamily: "Kanit", marginLeft: 3, fontSize: "18px" }}>
                 นูรียะห์ หะยีเจะโซะ
             </Typography>
           </Grid>
@@ -283,12 +282,12 @@ const Friends_list = () => (
             sx={{ background: "#E4E4E5", padding: 3 }}
           >
             <Avatar 
-                  sx={{ width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                        }} 
                   aria-label="avatar" >
                   บ
             </Avatar>
-            <Typography sx={{ marginLeft: 3, fontSize: "18px" }}>
+            <Typography sx={{ fontFamily: "Kanit", marginLeft: 3, fontSize: "18px" }}>
               บูรฮันนูรดิน สะอง
             </Typography>
           </Grid>

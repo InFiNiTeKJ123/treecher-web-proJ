@@ -64,6 +64,7 @@ function Left_Menu_class_th() {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         หน้าหลัก
@@ -78,6 +79,7 @@ function Left_Menu_class_th() {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         โปรไฟล์
@@ -91,6 +93,7 @@ function Left_Menu_class_th() {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         นักเรียน
@@ -105,6 +108,7 @@ function Left_Menu_class_th() {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         สร้างแบบฝึกหัด
@@ -118,6 +122,7 @@ function Left_Menu_class_th() {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         คะแนนของนักเรียน
@@ -132,6 +137,7 @@ function Left_Menu_class_th() {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         ออกจากระบบ

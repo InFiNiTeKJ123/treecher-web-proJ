@@ -51,6 +51,7 @@ function Left_Menu(props) {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         หน้าหลัก
@@ -65,6 +66,7 @@ function Left_Menu(props) {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         โปรไฟล์
@@ -79,6 +81,7 @@ function Left_Menu(props) {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         เพิ่มห้องเรียน
@@ -93,6 +96,7 @@ function Left_Menu(props) {
           height: 50,
           fontSize: 16,
           marginBottom: theme.spacing(3),
+          fontFamily: "Kanit",
         }}
       >
         ออกจากระบบ

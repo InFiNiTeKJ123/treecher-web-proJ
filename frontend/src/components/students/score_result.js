@@ -1,11 +1,11 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 //import Button from '@mui/material/Button';
-
+import SportsScoreIcon from '@mui/icons-material/SportsScore';
 
 const bull = (
     <Box
@@ -19,22 +19,19 @@ const bull = (
   const card = (
     <React.Fragment>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
+        <Typography variant="h6">
+          สรุปผลคะแนน
         </Typography>
-        <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
+        <Typography sx={{ fontSize: 25 }} color="text.secondary" gutterBottom>
+          แบบฝึกหัดที่ 1 
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
+        <Typography variant="h2" component="div">
+          คะแนน
         </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
+        <Grid variant="h3" sx={{ fontSize: 50, mb: 2 , background: '#fcf872', padding: 1}} >
+          10/10
+        </Grid>
       </CardContent>
-      
     </React.Fragment>
   );
 

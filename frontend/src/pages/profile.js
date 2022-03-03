@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Container, Drawer, Grid, Paper, TextField, Typography } from '@mui/material'
+import { Avatar, Box, Button, Container, Drawer, Grid, List, ListItem, ListItemIcon, ListItemText, Paper, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
@@ -47,6 +47,14 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
       fontSize: "20px",
       color: "white",
     },
+  },
+  menuSliderContainer: {
+    width: 200,
+    background: "#008037",
+    height: "100%"
+  },
+  listItem: {
+    color: "white"
   },
 }));
 
@@ -99,6 +107,49 @@ function Profile() {
         </Container>
       </ThemeProvider>
   )
+  
+  const left_slidebar_st_profile = () => (
+    <Box className={classes.menuSliderContainer} component="div">
+        <Avatar
+        sx={{width: 75, height: 75, backgroundColor: 'success.main', 
+              marginLeft: theme.spacing(8), 
+              marginTop: theme.spacing(3) , 
+              marginBottom: theme.spacing(2)}} 
+          >
+            <img 
+              src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png" 
+              alt="TreeCherLOGO.png"  
+              border="0"
+              width="75"
+              />
+        </Avatar>
+        <Typography component="h2" variant="h5" color="white" 
+                    sx={{ fontWeight: 500, paddingLeft: theme.spacing(6.5), 
+                            paddingBottom: theme.spacing(1) }}>
+          TreeCher
+        </Typography>
+        <List>
+            <ListItem button component="a" href="/home_st">
+                <ListItemIcon sx={{ color: 'white'}}>
+                    <SchoolIcon />
+                </ListItemIcon>
+                <ListItemText primary='หน้าหลัก' sx={{ color: 'white'}}/>
+            </ListItem>
+            <ListItem button component="a" href="/profile">
+                <ListItemIcon sx={{ color: 'white'}}>
+                    <Person />
+                </ListItemIcon>
+                <ListItemText primary='โปรไฟล์' sx={{ color: 'white'}}/>
+            </ListItem>
+            <ListItem button component="a" href="/login" >
+                <ListItemIcon sx={{ color: 'white'}}>
+                    <ExitToApp />
+                </ListItemIcon>
+                <ListItemText primary='ออกจากระบบ' sx={{ color: 'white'}}/>
+            </ListItem>
+        </List>
+      </Box>
+  )
 
   const profile_info = () => (
     <Box component="div">
@@ -133,7 +184,8 @@ function Profile() {
           {left_menust_profile()}
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
-            <Left_slidebar_st openpopup={handleOpenPopup} />
+            {/* <Left_slidebar_st openpopup={handleOpenPopup} /> */}
+            {left_slidebar_st_profile()}
           </Drawer>
         <Grid item xs> 
           <Grid item classname={classes.gridavartar}>

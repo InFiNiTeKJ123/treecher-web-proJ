@@ -22,6 +22,12 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
       paddingTop: theme.spacing(2),
     },
+    left_menu_container:{
+      paddingTop: theme.spacing(5),
+      backgroundColor: "white",
+      color: "#555",
+      border: "1px solid #ece7e7",
+    },
     avartar_mobile: {
       alignItems: 'right', 
       justifyContent: 'flex-end',
@@ -68,7 +74,7 @@ function Friends() {
 
 const left_menu_class_st_friend = () => (
     <ThemeProvider theme={theme}>
-        <Container className={classes.container} >
+        <Container className={classes.left_menu_container} >
             <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
                 sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
                 หน้าหลัก

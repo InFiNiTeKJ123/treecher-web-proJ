@@ -2,6 +2,7 @@
 FrontEnd: ไม่ต้องลงเพิ่ม
 
 Backend: pip install -r requirements.txt
+         py manage.py migrate 
 
 หลังจาก Git Clone เสร็จ ขอให้แยก branch กันทำนะ 
 วิธีแยก branch: 

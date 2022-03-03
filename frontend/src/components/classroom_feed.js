@@ -5,17 +5,24 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import QuizIcon from "@mui/icons-material/Quiz";
 import EditIcon from '@mui/icons-material/Edit';
 import {
+  Box,
+  IconButton,
   Button,
   Grid,
   Paper,
   Stack,
   TextField,
   Typography,
+  Avatar,
+  Card,
 } from "@mui/material";
-import { Box, grid, Spacing, IconButton } from "@mui/system";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import { FavoriteBorder } from "@mui/icons-material";
+
+
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -34,8 +41,6 @@ function Classroom_feed(props) {
   const classes = useStyles();
 
   const theme = createTheme();
-
-
 
   return (
     <Box component="div">
@@ -184,23 +189,59 @@ function Classroom_feed(props) {
           },
         }}
       >
-        <Paper elevation={3}>
-        <Box
-            component="h3"
-            sx={{
-              paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
-            }}
-        >
-            ประกาศ 
-          </Box>
-          <Box
-              component="h3"
-                sx={{
-                  paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
-                }}
-          >
-            วันนี้คุณครูของดการเรียนการสอนนะคะ คุณครูได้มอบหมายงานแบบฝึกหัด ให้ทำคาบเรียนแล้ว นักเรียนสามารถทำแบบฝึกหัดในคาบเรียนได้เลยค่ะ
-          </Box>
+        <Paper elevation={5} variant="contained" sx={{ bgcolor: "#33995F", height: "100vh" }}>
+          <Grid container >
+            <Grid item xs={6} sx={{ display: 'flex'}}>
+              <Avatar 
+                  sx={{ fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', fontFamily: "Kanit",
+                        display: { xs: 'none', sm: 'flex' }, marginLeft: theme.spacing(4), marginTop: theme.spacing(2)}} 
+                  size="small" aria-label="avatar" >
+                  พ
+                </Avatar>
+                <Typography variant="h6" 
+                sx={{ marginTop: theme.spacing(2), marginLeft: theme.spacing(2), color: "white", fontFamily: "Kanit"}}>
+                  คุณครู
+                  <Typography
+                    sx={{ color: "white", fontFamily: "Kanit" }}>
+                    29 ก.พ. 2565
+                  </Typography>
+                </Typography>
+            </Grid>
+            <Grid item xs={6} sx={{ justifyContent: 'right' }}>
+              <IconButton
+                  aria-label="Editicon"
+                  sx={{
+                    color: "white",
+                    paddingTop: "3%",
+                    marginLeft: "90%",
+
+                  }}
+                >
+                  <EditIcon />
+                </IconButton> 
+            </Grid>
+            <Grid item xs={12} >
+              <Box
+                  component="h4" variant="contained"
+                    sx={{ borderRadius: 5 ,marginLeft: {xs: theme.spacing(2), md: theme.spacing(12),},
+                      padding: "1%" , width: "80%", bgcolor: "#C9E265",  
+                    }}
+              >
+                <Typography sx={{ fontFamily: "Kanit" }}>
+                  วันนี้คุณครูของดการเรียนการสอนนะคะ คุณครูได้มอบหมายงานแบบฝึกหัด ให้ทำคาบเรียนแล้ว นักเรียนสามารถทำแบบฝึกหัดในคาบเรียนได้เลยค่ะ
+                </Typography>
+              </Box>
+            </Grid>
+            {/* <Grid item xs>
+              <IconButton aria-label="favoriteicon" 
+                  sx={{ color: "red" }}>
+                <FavoriteIcon />
+              </IconButton>
+              <Typography sx={{ fontFamily: "Kanit" ,color: "white", }}>
+                14
+              </Typography>
+            </Grid> */}
+          </Grid>
         </Paper>
       </Box>
     </Box>

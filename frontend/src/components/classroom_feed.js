@@ -3,6 +3,7 @@ import { createTheme } from "@mui/material/styles";
 import React from "react";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import QuizIcon from "@mui/icons-material/Quiz";
+import EditIcon from '@mui/icons-material/Edit';
 import {
   Button,
   Grid,
@@ -11,7 +12,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Box, grid, spacing } from "@mui/system";
+import { Box, grid, Spacing, IconButton } from "@mui/system";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
@@ -33,6 +34,8 @@ function Classroom_feed(props) {
   const classes = useStyles();
 
   const theme = createTheme();
+
+
 
   return (
     <Box component="div">
@@ -181,7 +184,24 @@ function Classroom_feed(props) {
           },
         }}
       >
-        <Paper elevation={3}></Paper>
+        <Paper elevation={3}>
+        <Box
+            component="h3"
+            sx={{
+              paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
+            }}
+        >
+            ประกาศ 
+          </Box>
+          <Box
+              component="h3"
+                sx={{
+                  paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
+                }}
+          >
+            วันนี้คุณครูของดการเรียนการสอนนะคะ คุณครูได้มอบหมายงานแบบฝึกหัด ให้ทำคาบเรียนแล้ว นักเรียนสามารถทำแบบฝึกหัดในคาบเรียนได้เลยค่ะ
+          </Box>
+        </Paper>
       </Box>
     </Box>
   );

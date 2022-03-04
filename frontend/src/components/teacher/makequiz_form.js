@@ -20,7 +20,9 @@ import { createTheme } from '@mui/material/styles';
 
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
-import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import SaveAltIcon from '@mui/icons-material/SaveAlt'
+
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
@@ -103,8 +105,7 @@ function Makequiz_form(props) {
           display: "flex",
           flexWrap: "wrap",
           "& > :not(style)": {
-            m: 1,
-
+            m: 1, 
             width: "90%",
             height: "auto",
             borderRadius: 3,
@@ -128,12 +129,90 @@ function Makequiz_form(props) {
               <TextField
                 inputProps={{style: {fontFamily: "Kanit"}}} 
                 InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                label="คุณกำลังคิดอะไรอยู่"
-                placeholder="พิมพ์ข้อความที่ต้องการบอกสมาชิกในห้องเรียน"
+                label="หัวข้อแบบฝึกหัด"
+                placeholder="หัวข้อแบบฝึกหัด"
                 sx={{ width: "85%" }}
                 multiline
               />
+                <Box
+                  sx={{
+                    paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
+                  }}
+                >
+                </Box>
+              
+              
+              <TextField
+                inputProps={{style: {fontFamily: "Kanit"}}} 
+                InputLabelProps={{style: {fontFamily: "Kanit"}}}
+                label="โจทย์"
+                placeholder="โจทย์"
+                sx={{ paddingTop: theme.spacing(5), paddingBottom: theme.spacing(3),  width: "85%" }}
+                multiline
+              />
+
+              <TextField
+                inputProps={{style: {fontFamily: "Kanit"}}} 
+                InputLabelProps={{style: {fontFamily: "Kanit"}}}
+                label="คำตอบ"
+                placeholder="คำตอบ"
+                sx={{ paddingBottom: theme.spacing(2), width: "85%"}}
+                multiline
+              />
+              <TextField
+                inputProps={{style: {fontFamily: "Kanit"}}} 
+                InputLabelProps={{style: {fontFamily: "Kanit"}}}
+                label="ตัวเลือกที่ 1"
+                placeholder="ตัวเลือกที่ 1"
+                sx={{ paddingBottom: theme.spacing(2), width: "85%" }}
+                multiline
+              />
+              <TextField
+                inputProps={{style: {fontFamily: "Kanit"}}} 
+                InputLabelProps={{style: {fontFamily: "Kanit"}}}
+                label="ตัวเลือกที่ 2"
+                placeholder="ตัวเลือกที่ 2"
+                sx={{ paddingBottom: theme.spacing(1), width: "85%"}}
+                multiline
+              />
+              <Grid>
+                <Grid
+                  item
+                  xs={5}
+                  md={6}
+                  sx={{
+                    textAlign: "center",
+                    paddingRight: theme.spacing(6),
+                    marginTop: theme.spacing(1),
+                  }}
+                >
+                </Grid>
+                <Grid
+                  item
+                  
+                  sx={{
+                  textAlign: "center",
+                  margin: { xs: theme.spacing(1), md: theme.spacing(2) },
+                  }}
+                >
+                <Button startIcon = {<AddCircleIcon />}
+                  variant="contained"
+                  sx={{
+                    width: "85%",
+                    height: 'auto',
+                    borderRadius: 4,
+                    bgcolor: '#81DBEA',
+                    paddingTop: theme.spacing(1),
+                    paddingLeft: theme.spacing(1),
+                    color:'#000000',
+                  }}
+                >
+                    เพิ่มตัวเลือก
+                </Button>
+              </Grid>
             </Grid>
+          </Grid>
+
             <Grid item container spacing={3}>
               <Grid
                 item
@@ -146,60 +225,48 @@ function Makequiz_form(props) {
                   marginTop: theme.spacing(1),
                 }}
               >
-                <Button
-                  variant="contained"
-                  sx={{
-                    width: "auto",
-                    height: "auto",
-                    borderRadius: 4,
-                    bgcolor: "#212121",
-                    marginLeft: { xs: theme.spacing(3), md: theme.spacing(10) },
-                    fontSize: "75%",
-                  }}
-                >
-                  <AttachFileIcon sx={{ fontSize: "200%" }} />
-                  แนบไฟล์
-                </Button>
-                <Button
-                  variant="contained"
-                  sx={{
-                    width: "auto",
-                    height: "auto",
-                    borderRadius: 4,
-                    bgcolor: "#212121",
-                    marginLeft: theme.spacing(1),
-                    fontSize: "75%",
-                  }}
-                >
-                  <AddPhotoAlternateIcon />
-                  แนบรูปภาพ
-                </Button>
               </Grid>
               <Grid
                 item
                 xs={4}
                 md={5}
                 sx={{
-                  textAlign: "right",
-                  marginRight: { xs: theme.spacing(1), md: theme.spacing(3) },
+                  textAlign: "center",
+                  margin: { xs: theme.spacing(1), md: theme.spacing(3) },
                 }}
               >
-                <Button
+                <Button startIcon = {<SaveAltIcon />}
                   variant="contained"
                   sx={{
-                    width: { xs: "100%", md: "30%" },
-                    height: 50,
-                    borderRadius: 4,
+                    width: '30%',
+                    height: 'auto',
+                    borderRadius: 3,
                     bgcolor: "#212121",
+                    color: "#000000",
                     marginTop: theme.spacing(1),
+                    paddingRight: theme.spacing(2),
+                    background: '#fff200',
                   }}
                 >
-                  โพสต์
+                  บันทึก
                 </Button>
               </Grid>
             </Grid>
           </Grid>
         </Paper>
+        <Button startIcon = {<AddCircleIcon />}
+            variant="contained"
+            sx={{
+            width: "30%",
+            height: "85",
+            borderRadius: 4,
+            bgcolor: "#008037",
+            marginLeft: theme.spacing(10),
+            }}
+        >
+            
+              เพิ่มโจทย์
+        </Button>
       </Box>
       {/* <Box
         sx={{
@@ -221,7 +288,7 @@ function Makequiz_form(props) {
         </Paper>
       </Box> */}
         <Box sx={{ margin: theme.spacing(3) }}> 
-            {main_quiz()}
+            {/* {main_quiz()} */}
         </Box>
     </Box>
   );

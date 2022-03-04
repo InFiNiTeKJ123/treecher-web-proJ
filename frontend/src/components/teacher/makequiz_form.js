@@ -90,6 +90,7 @@ function Makequiz_form(props) {
         <HistoryEduIcon sx={{ paddingLeft: theme.spacing(2), fontSize: 35 }} />
         <Typography
           sx={{
+            fontFamily: "Kanit",
             display: "flex",
             fontWeight: 500,
             fontSize: 20,
@@ -119,6 +120,7 @@ function Makequiz_form(props) {
           <Box
             component="h2"
             sx={{
+              fontFamily: "Kanit",
               paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
             }}
           >
@@ -198,6 +200,7 @@ function Makequiz_form(props) {
                 <Button startIcon = {<AddCircleIcon />}
                   variant="contained"
                   sx={{
+                    fontFamily: "Kanit",
                     width: "85%",
                     height: 'auto',
                     borderRadius: 4,
@@ -235,16 +238,31 @@ function Makequiz_form(props) {
                   margin: { xs: theme.spacing(1), md: theme.spacing(3) },
                 }}
               >
+                <TextField
+                  inputProps={{style: {fontFamily: "Kanit"}}} 
+                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
+                  id="datetime-local"
+                  label="กำหนดส่ง"
+                  type="datetime-local"
+                  defaultValue="2017-05-24T10:30"
+                  sx={{
+                    fontFamily: "Kanit", 
+                    textAlign: "Left",
+                    width: 250,
+                    paddingRight: theme.spacing(1),
+                  }}
+                />
                 <Button startIcon = {<SaveAltIcon />}
                   variant="contained"
                   sx={{
-                    width: '30%',
+                    fontFamily: "Kanit",
+                    width: '25%',
                     height: 'auto',
                     borderRadius: 3,
                     bgcolor: "#212121",
                     color: "#000000",
                     marginTop: theme.spacing(1),
-                    paddingRight: theme.spacing(2),
+                    paddingLeft: theme.spacing(2),
                     background: '#fff200',
                   }}
                 >
@@ -257,12 +275,13 @@ function Makequiz_form(props) {
         <Button startIcon = {<AddCircleIcon />}
             variant="contained"
             sx={{
-            width: "30%",
-            height: "85",
-            borderRadius: 4,
-            bgcolor: "#008037",
-            marginLeft: theme.spacing(10),
-            }}
+              fontFamily: "Kanit",
+              width: "30%",
+              height: "85",
+              borderRadius: 4,
+              bgcolor: "#008037",
+              marginLeft: theme.spacing(10),
+              }}
         >
             
               เพิ่มโจทย์

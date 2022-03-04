@@ -152,13 +152,20 @@ function Makequiz_form(props) {
                 sx={{ paddingTop: theme.spacing(5), paddingBottom: theme.spacing(3),  width: "85%" }}
                 multiline
               />
+              <Box>
+              <img 
+                src="https://www.img.in.th/images/0f9b48e6133c8f997195402b9ed492f9.png" 
+                alt="0f9b48e6133c8f997195402b9ed492f9.png" 
+                width="60%"
+                border="2" />
+              </Box>
 
               <TextField
                 inputProps={{style: {fontFamily: "Kanit"}}} 
                 InputLabelProps={{style: {fontFamily: "Kanit"}}}
                 label="คำตอบ"
                 placeholder="คำตอบ"
-                sx={{ paddingBottom: theme.spacing(2), width: "85%"}}
+                sx={{ paddingTop: theme.spacing(3), paddingBottom: theme.spacing(2), width: "85%"}}
                 multiline
               />
               <TextField

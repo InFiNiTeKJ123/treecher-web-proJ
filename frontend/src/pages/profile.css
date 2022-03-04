@@ -33,6 +33,7 @@
   }
 
   .formprofile{
+    font-Family: "Kanit";
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,12 +94,14 @@
   }
   
   .form_label{
+    font-Family: "Kanit";
     text-transform: uppercase;
     font-weight: 700;
     color: #676767;
   }
   
   .text_input{
+    font-Family: "Kanit";
     border-radius: 15px;
     border: 1px solid #b7b7b7;
     padding: 5px 5px 5px 10px;
@@ -106,6 +109,7 @@
     transition: 0.2s;
   }
   .text_input:focus{
+    font-Family: "Kanit";
     outline: none;
     border: 1px solid #64d488;
   }
@@ -115,6 +119,7 @@
   }
 
   .name{ 
+    font-Family: "Kanit";
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
@@ -123,16 +128,19 @@
     overflow-wrap: break-word;
   }
   .status{
+    font-Family: "Kanit";
     text-align: center;
     max-width: 220px;
     overflow-wrap: break-word;
   }
   .lastname{
+    font-Family: "Kanit";
     text-align: center;
     max-width: 220px;
     overflow-wrap: break-word;
   }
   .email{
+    font-Family: "Kanit";
     text-align: center;
     max-width: 220px;
     overflow-wrap: break-word;
@@ -153,6 +161,7 @@
     background: #64d488;
   } */
   .save{
+    font-Family: "Kanit";
     font-weight: 600;
     left: -20px;
     text-transform: uppercase;
@@ -174,6 +183,7 @@
     background: #64d488;
   }
   .edit{
+    font-Family: "Kanit";
     color: #fff;
     width: 180px;
     position: relative;
@@ -241,6 +251,7 @@
     font-size: 38px;
   }
   .fa-instagram:hover{
+    font-Family: "Kanit";
     font-size: 42px;
     color: #caff81;
     transition: all .1s linear;

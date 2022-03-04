@@ -91,16 +91,16 @@ function Profile() {
     <ThemeProvider theme={theme}>
       <Container className={classes.container} >
             <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
-              sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ fontFamily:"Kanit",width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
               หน้าหลัก
             </Button>
             <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="check" href="/profile"
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white", }}
+                sx={{ fontFamily:"Kanit",width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white", }}
                 >
               โปรไฟล์
             </Button>
             <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
-                sx={{ width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                sx={{fontFamily:"Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
               ออกจากระบบ
             </Button>
 

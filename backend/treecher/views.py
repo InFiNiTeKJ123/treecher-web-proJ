@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import NewUser
-from .serializers import CreateStudentSerializer, CreateTeacherSerializer
+from .serializers import CreateStudentSerializer, CreateTeacherSerializer, NewUserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny
 
@@ -33,6 +33,11 @@ class TeacherUserCreate(APIView):
                 json = serializer.data
                 return Response(json, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+#UserViewset
+class UserViewset(viewsets.ModelViewSet):
+    queryset = NewUser.objects.all()
+    serializer_class = NewUserSerializer
 
 
 class BlacklistTokenUpdateView(APIView):

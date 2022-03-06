@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -15,6 +15,8 @@ import ChildCareIcon from "@mui/icons-material/ChildCare";
 import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles"
+import { useNavigate } from "react-router-dom";
+import axiosInstance from "../config/axios";
 
 const theme = createTheme();
 
@@ -54,16 +56,46 @@ function SignUp_TH() {
 
   const classes = useStyles()
 
+  const navigate = useNavigate()
+
+  const initialFormData = Object.freeze({
+		email: '',
+		firstname: '',
+    lastname: '',
+		password: '',
+	});
+
+	const [formData, updateFormData] = useState(initialFormData);
+
+  const handleChange = (e) => {
+		updateFormData({
+			...formData,
+			// Trimming any whitespace
+			[e.target.name]: e.target.value.trim(),
+		});
+	};
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(formData);
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-    console.log({
-      firstname: data.get("firstName"),
-      lastname: data.get("lastName") ,
+
+    axiosInstance.post(`user/create/th`,{
       email: data.get("email"),
-      password: data.get("password"),
-    });
+      first_name: data.get("firstName"),
+      last_name: data.get("lastName"),
+      password: data.get("password")
+    }).then((res) => {
+      console.log(res.data)
+    })
+
+    // console.log({
+    //   firstname: data.get("firstName"),
+    //   lastname: data.get("lastName") ,
+    //   email: data.get("email"),
+    //   password: data.get("password"),
+    // });
   };
 
   return (

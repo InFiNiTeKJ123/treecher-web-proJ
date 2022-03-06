@@ -127,7 +127,7 @@ function Makequiz_form(props) {
           >
             สร้างแบบฝึกหัด
           </Box>
-          <Grid direction="row" spacing={2} direction="row">
+          <Grid direction="row" spacing={2}>
             <Grid item sx={{ textAlign: "center" }}>
               <TextField
                 inputProps={{style: {fontFamily: "Kanit"}}} 

@@ -52,3 +52,10 @@ class CreateTeacherSerializer(serializers.ModelSerializer):
             instance.set_password(password)      
         instance.save()
         return instance
+
+
+class NewUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NewUser
+        fields = '__all__'
+

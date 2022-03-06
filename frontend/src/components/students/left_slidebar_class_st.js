@@ -73,7 +73,7 @@ function Left_slidebar_class_st(props) {
                 </ListItemIcon>
                 <ListItemText primary='แบบฝึกหัด' sx={{ fontFamily: "Kanit", color: 'white'}}/>
             </ListItem>
-            <ListItem button  >
+            <ListItem button component="a" href="/score_st" >
                 <ListItemIcon sx={{ fontFamily: "Kanit", color: 'white'}}>
                     <FilterVintageIcon />
                 </ListItemIcon>

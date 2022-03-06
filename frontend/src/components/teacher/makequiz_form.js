@@ -22,6 +22,7 @@ import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import SaveAltIcon from '@mui/icons-material/SaveAlt'
+import Addchoice from './addchoice';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -168,22 +169,7 @@ function Makequiz_form(props) {
                 sx={{ paddingTop: theme.spacing(3), paddingBottom: theme.spacing(2), width: "85%"}}
                 multiline
               />
-              <TextField
-                inputProps={{style: {fontFamily: "Kanit"}}} 
-                InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                label="ตัวเลือกที่ 1"
-                placeholder="ตัวเลือกที่ 1"
-                sx={{ paddingBottom: theme.spacing(2), width: "85%" }}
-                multiline
-              />
-              <TextField
-                inputProps={{style: {fontFamily: "Kanit"}}} 
-                InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                label="ตัวเลือกที่ 2"
-                placeholder="ตัวเลือกที่ 2"
-                sx={{ paddingBottom: theme.spacing(1), width: "85%"}}
-                multiline
-              />
+              <Addchoice/>
               <Grid>
                 <Grid
                   item

@@ -220,8 +220,8 @@ function Classroom_feed(props) {
                   aria-label="Editicon"
                   sx={{
                     color: "white",
-                    paddingTop: "3%",
-                    marginLeft: "90%",
+                    paddingTop: "5%",
+                    marginLeft: "75%",
 
                   }}
                 >
@@ -232,7 +232,7 @@ function Classroom_feed(props) {
               <Box
                   component="h4" variant="contained"
                     sx={{ borderRadius: 5 ,marginLeft: {xs: theme.spacing(2), md: theme.spacing(12),},
-                      padding: "1%" , width: "80%", bgcolor: "#C9E265",  
+                      paddingLeft: "1%", paddingRight: "3%", width: "80%", bgcolor: "#C9E265",  
                     }}
               >
                 <Typography sx={{ fontFamily: "Kanit" }}>
@@ -240,15 +240,15 @@ function Classroom_feed(props) {
                 </Typography>
               </Box>
             </Grid>
-            {/* <Grid item xs>
+            <Grid item xs>
               <IconButton aria-label="favoriteicon" 
-                  sx={{ color: "red" }}>
+                  sx={{ padding: "1%" , color: "red" }}>
                 <FavoriteIcon />
               </IconButton>
               <Typography sx={{ fontFamily: "Kanit" ,color: "white", }}>
                 14
               </Typography>
-            </Grid> */}
+            </Grid>
           </Grid>
         </Paper>
       </Box>

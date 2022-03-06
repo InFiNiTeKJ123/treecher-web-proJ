@@ -64,7 +64,7 @@ function Left_Menu_class_st(props) {
             แบบฝึกหัด
           </Button>
           <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
-              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href="/score_st" >
             คะแนน
           </Button>
           <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"

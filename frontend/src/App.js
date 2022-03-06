@@ -7,11 +7,13 @@ import Quiz from './pages/quiz';
 import MakeQuiz_th from './pages/makequiz';
 import Classroom_Teacher from './pages/classroom_th';
 import Classroom_Students from './pages/classroom_st';
-import SignUp from './pages/signup';
 import Profile from './pages/profile';
 import CardProfile from './pages/test_profile';
 import Friends from './pages/friends';
 import Score_st from './pages/score_st';
+import SignUp_Type from './pages/signup_type';
+import SignUp_TH from './pages/signup_th';
+import SignUp_ST from './pages/signup_st';
 
 
 function App() {
@@ -20,7 +22,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate replace to ="/login"/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/signup" element={<SignUp_Type/>}/>
+        <Route path="/signup/student" element={<SignUp_ST/>}/>
+        <Route path="/signup/teacher" element={<SignUp_TH/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/home_th" element={<Home_teacher/>}/>
         <Route path="/home_st" element={<Home_st />}/>

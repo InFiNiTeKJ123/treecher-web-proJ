@@ -1,6 +1,5 @@
 import React , { useState } from "react";
-import { Container } from '@mui/material';
-import TextField from '@material-ui/core/TextField';
+import { Container, TextField } from '@mui/material';
 import {makeStyles} from '@mui/styles'
 import {Button,IconButton} from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -43,27 +42,28 @@ function Addchoice() {
     <Container>
         <form className={classes.root}>
         { inputFields.map((inputField, index) =>(
-          <div key={index}>
+          <div key={index} sx={{ display: 'flex' }}>
             <TextField
              inputProps={{style: {fontFamily: "Kanit"}}} 
              InputLabelProps={{style: {fontFamily: "Kanit"}}}
-              choice="choice"
-              label="ตัวเลือก"
+             choice="choice"
+             label="ตัวเลือก"
               sx={{ 
-                paddingTop: theme.spacing(3),
-                paddingLeft: theme.spacing(4),
-                width: "100%" }}
+                // paddingTop: theme.spacing(3),
+                // paddingLeft: theme.spacing(4),
+                marginBottom: theme.spacing(2),
+                width: "80%" }}
               value={inputField.choice}
               onChange={event => handleChangeIput(index,event)}
             />
-            <IconButton
-                onClick={() => handleRemoveFields(index)}>
-                <RemoveIcon/>
-            </IconButton>
-            <IconButton
-                onClick={() => handleAddFields()}>
-                <AddCircleIcon/>
-            </IconButton>
+              <IconButton sx={{ marginTop: theme.spacing(1), marginLeft: theme.spacing(2)}}
+                  onClick={() => handleRemoveFields(index)}>
+                  <RemoveIcon/>
+              </IconButton>
+              <IconButton sx={{ marginTop: theme.spacing(1),}}
+                  onClick={() => handleAddFields()}>
+                  <AddCircleIcon/>
+              </IconButton>
           </div>
         )) }
         </form>

@@ -21,8 +21,8 @@ function Login() {
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+      email: data.get('email'),
+      password: data.get('password'),
     });
   };
 
@@ -120,7 +120,7 @@ function Login() {
                 fullWidth
                 variant="contained"
                 color="success"
-                href="http://localhost:3000/home_st"
+                href="#"
                 sx={{ fontFamily: "Kanit", mt: 3, mb: 2 }}
               >
                 เข้าสู่ระบบ

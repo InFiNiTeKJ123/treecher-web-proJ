@@ -50,7 +50,7 @@ const useStyles = makeStyles({
   ,
 })
 
-function SignUp() {
+function SignUp_TH() {
 
   const classes = useStyles()
 
@@ -179,7 +179,7 @@ function SignUp() {
                 />
               </Grid>
             </Grid>
-            <Grid
+            {/* <Grid
               container
               justifyContent="center"
               spacing={2}
@@ -201,7 +201,7 @@ function SignUp() {
                   นักเรียน
                 </Button>
               </Grid>
-            </Grid>
+            </Grid> */}
             <Button
               type="submit"
               fullWidth
@@ -225,4 +225,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignUp_TH;

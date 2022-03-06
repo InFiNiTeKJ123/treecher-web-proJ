@@ -144,13 +144,12 @@ function Makequiz_form(props) {
                 >
                 </Box>
               
-              
               <TextField
                 inputProps={{style: {fontFamily: "Kanit"}}} 
                 InputLabelProps={{style: {fontFamily: "Kanit"}}}
                 label="โจทย์"
                 placeholder="โจทย์"
-                sx={{ paddingTop: theme.spacing(5), paddingBottom: theme.spacing(3),  width: "85%" }}
+                sx={{ marginTop: theme.spacing(3), marginBottom: theme.spacing(5),  width: "85%" }}
                 multiline
               />
               <Box>
@@ -166,7 +165,7 @@ function Makequiz_form(props) {
                 InputLabelProps={{style: {fontFamily: "Kanit"}}}
                 label="คำตอบ"
                 placeholder="คำตอบ"
-                sx={{ paddingTop: theme.spacing(3), paddingBottom: theme.spacing(2), width: "85%"}}
+                sx={{ marginTop: theme.spacing(5), marginBottom: theme.spacing(2),  width: "85%"}}
                 multiline
               />
               <Addchoice/>
@@ -182,30 +181,6 @@ function Makequiz_form(props) {
                   }}
                 >
                 </Grid>
-                <Grid
-                  item
-                  
-                  sx={{
-                  textAlign: "center",
-                  margin: { xs: theme.spacing(1), md: theme.spacing(2) },
-                  }}
-                >
-                <Button startIcon = {<AddCircleIcon />}
-                  variant="contained"
-                  sx={{
-                    fontFamily: "Kanit",
-                    width: "85%",
-                    height: 'auto',
-                    borderRadius: 4,
-                    bgcolor: '#81DBEA',
-                    paddingTop: theme.spacing(1),
-                    paddingLeft: theme.spacing(1),
-                    color:'#000000',
-                  }}
-                >
-                    เพิ่มตัวเลือก
-                </Button>
-              </Grid>
             </Grid>
           </Grid>
 

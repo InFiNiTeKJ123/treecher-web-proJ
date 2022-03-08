@@ -48,7 +48,7 @@ function Quiz_popup(props) {
           <IconButton
             aria-label="CancelIcon"
             size="small"
-            color="error"
+            // color="disabled"
             onClick={props.handleclose}
             sx={{
               position: "absolute",

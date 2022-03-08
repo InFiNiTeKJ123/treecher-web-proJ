@@ -23,6 +23,7 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import SaveAltIcon from '@mui/icons-material/SaveAlt'
 import Addchoice from './addchoice';
+import Addproblem from './addproblem';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -118,6 +119,7 @@ function Makequiz_form(props) {
         }}
       >
         <Paper elevation={3}>
+          
           <Box
             component="h2"
             sx={{
@@ -137,145 +139,32 @@ function Makequiz_form(props) {
                 sx={{ width: "85%" }}
                 multiline
               />
-                <Box
-                  sx={{
-                    paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
-                  }}
-                >
-                </Box>
-              
-              <TextField
-                inputProps={{style: {fontFamily: "Kanit"}}} 
-                InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                label="โจทย์"
-                placeholder="โจทย์"
-                sx={{ marginTop: theme.spacing(3), marginBottom: theme.spacing(5),  width: "85%" }}
-                multiline
-              />
-              <Box>
-              <img 
-                src="https://www.img.in.th/images/0f9b48e6133c8f997195402b9ed492f9.png" 
-                alt="0f9b48e6133c8f997195402b9ed492f9.png" 
-                width="60%"
-                border="2" />
-              </Box>
-
-              <TextField
-                inputProps={{style: {fontFamily: "Kanit"}}} 
-                InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                label="คำตอบ"
-                placeholder="คำตอบ"
-                sx={{ marginTop: theme.spacing(5), marginBottom: theme.spacing(2),  width: "85%"}}
-                multiline
-              />
-              <Addchoice/>
-              <Grid>
-                <Grid
-                  item
-                  xs={5}
-                  md={6}
-                  sx={{
-                    textAlign: "center",
-                    paddingRight: theme.spacing(6),
-                    marginTop: theme.spacing(1),
-                  }}
-                >
-                </Grid>
             </Grid>
           </Grid>
-
-            <Grid item container spacing={3}>
-              <Grid
-                item
-                xs={7}
-                md={6}
-                sx={{
-                  display: "flex",
-                  textAlign: "center",
-                  paddingRight: theme.spacing(6),
-                  marginTop: theme.spacing(1),
-                }}
-              >
-              </Grid>
-              <Grid
-                item
-                xs={4}
-                md={5}
-                sx={{
-                  textAlign: "center",
-                  margin: { xs: theme.spacing(1), md: theme.spacing(3) },
-                }}
-              >
-                <TextField
-                  inputProps={{style: {fontFamily: "Kanit"}}} 
-                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                  id="datetime-local"
-                  label="กำหนดส่ง"
-                  type="datetime-local"
-                  defaultValue="2017-05-24T10:30"
-                  sx={{
-                    fontFamily: "Kanit", 
-                    textAlign: "Left",
-                    width: 250,
-                    paddingRight: theme.spacing(1),
-                  }}
-                />
-                <Button startIcon = {<SaveAltIcon />}
+        </Paper>
+      </Box>
+  
+        <Box sx={{ margin: theme.spacing(5) , margintop: theme.spacing(2) }}> 
+            <Addproblem/>
+        </Box>
+        <Box  sx={{ textAlign: "right"}}>
+        <Button startIcon = {<SaveAltIcon />}
                   variant="contained"
                   sx={{
                     fontFamily: "Kanit",
+                    fontSize: 20,
                     width: '25%',
                     height: 'auto',
                     borderRadius: 3,
                     bgcolor: "#212121",
                     color: "#000000",
                     marginTop: theme.spacing(1),
-                    paddingLeft: theme.spacing(2),
+                    paddingRight: theme.spacing(2),
                     background: '#fff200',
                   }}
                 >
                   บันทึก
-                </Button>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Paper>
-        <Button startIcon = {<AddCircleIcon />}
-            variant="contained"
-            sx={{
-              fontFamily: "Kanit",
-              width: "30%",
-              height: "85",
-              borderRadius: 4,
-              bgcolor: "#008037",
-              marginLeft: theme.spacing(10),
-              }}
-        >
-            
-              เพิ่มโจทย์
         </Button>
-      </Box>
-      {/* <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          "& > :not(style)": {
-            m: 1,
-
-            width: "90%",
-            height: "50%",
-            borderRadius: 3,
-            marginLeft: "auto",
-            marginRight: "auto",
-          },
-        }}
-      >
-        <Paper elevation={3} sx={{ padding: theme.spacing(5)}}>
-            {main_quiz()}
-        </Paper>
-      </Box> */}
-        <Box sx={{ margin: theme.spacing(3) }}> 
-            {/* {main_quiz()} */}
         </Box>
     </Box>
   );

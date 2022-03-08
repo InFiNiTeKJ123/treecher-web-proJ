@@ -240,7 +240,7 @@ function Classroom_feed(props) {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs>
+            {/* <Grid item xs>
               <IconButton aria-label="favoriteicon" 
                   sx={{ padding: "1%" , color: "red" }}>
                 <FavoriteIcon />
@@ -248,7 +248,7 @@ function Classroom_feed(props) {
               <Typography sx={{ fontFamily: "Kanit" ,color: "white", }}>
                 14
               </Typography>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Paper>
       </Box>

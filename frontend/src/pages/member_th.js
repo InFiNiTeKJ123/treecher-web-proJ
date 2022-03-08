@@ -11,11 +11,11 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import FilterVintageIcon from '@mui/icons-material/FilterVintage';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
-import Navbarst from '../components/students/navbarst'
-import Avartarst_mobile from '../components/students/avartarst_mobile';
-import Left_slidebar_st from '../components/students/left_slidebar_st';
-import Left_Menu_class_st from '../components/students/left_menu_class_st';
+import Navbar from '../components/teacher/navbar'
+import Avartar_mobile from '../components/teacher/avartar_mobile';
 import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
+import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
+import Left_slidebar_class_th from '../components/teacher/left_slidebar_class_th';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -56,7 +56,7 @@ const theme = createTheme({
   },
 });
 
-function Friends() {
+function Member_th() {
 
     const classes = useStyles()
 
@@ -72,39 +72,39 @@ function Friends() {
       setOpenslide(!openslide)
     }
 
-const left_menu_class_st_friend = () => (
-    <ThemeProvider theme={theme}>
-        <Container className={classes.left_menu_container} >
-            <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
-                หน้าหลัก
-            </Button>
-            <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-                โปรไฟล์
-            </Button>
-            <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="check" 
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}  href='/friends'>
-                สมาชิก
-            </Button>
-            <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained" color='success'
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
-                 href='/quiz' >
-                แบบฝึกหัด
-            </Button>
-            <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/score_st'>
-                คะแนน
-            </Button>
-            <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-                ออกจากระบบ
-            </Button>
-        </Container>
-    </ThemeProvider>
-)
+// const left_menu_class_st_friend = () => (
+//     <ThemeProvider theme={theme}>
+//         <Container className={classes.left_menu_container} >
+//             <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
+//                 sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
+//                 หน้าหลัก
+//             </Button>
+//             <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
+//                 sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+//                 โปรไฟล์
+//             </Button>
+//             <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="check" 
+//                 sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}  href='/friends'>
+//                 สมาชิก
+//             </Button>
+//             <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained" color='success'
+//                 sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
+//                  href='/quiz' >
+//                 แบบฝึกหัด
+//             </Button>
+//             <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
+//                 sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href="/score_th">
+//                 คะแนน
+//             </Button>
+//             <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
+//                 sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+//                 ออกจากระบบ
+//             </Button>
+//         </Container>
+//     </ThemeProvider>
+// )
 
-const Friends_list = () => (
+const Member_list = () => (
     <Container className={classes.container}>
     <div>
         <Box component='div'
@@ -112,11 +112,11 @@ const Friends_list = () => (
                 bgcolor: '#008037', color: 'white', display: 'flex',
                 paddingleft: theme.spacing(3), 
                 borderRadius: 3, }}>
-            <AccountCircleIcon sx={{ paddingLeft: theme.spacing(2), fontSize: 35  }}/>
+            <AccountCircleIcon sx={{ paddingLeft: theme.spacing(2), fontSize: 35 }}/>
           <Typography
             sx={{ fontFamily: "Kanit", display:'flex' , fontWeight: "bold" , fontSize: "20px",
                   padding: theme.spacing(2) , }}>
-            สมาชิก
+            นักเรียน
           </Typography>
         </Box>
       <Box
@@ -303,21 +303,20 @@ const Friends_list = () => (
   return (
     <ThemeProvider theme={theme}>
     <Box position='flex'>
-      <Navbarst toggleslider={toggleslider}/>
+      <Navbar toggleslider={toggleslider}/>
       <Grid container item spacing={0.5}>
         <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex', position: 'fixed' }}}>
-            {/* <Left_Menu_class_st changecolor={color} handleClick={handleClick}/> */}
-            {left_menu_class_st_friend()}
+            <Left_Menu_class_th changecolor={color} handleClick={handleClick}/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
-            <Left_slidebar_class_st />
+            <Left_slidebar_class_th />
           </Drawer>
         <Grid item xs sx={{ marginLeft: {md: "15%"}}}> 
           <Grid item classname={classes.gridavartar}>
-            <Avartarst_mobile className={classes.avartar_mobile}/>
+            <avartar_mobile className={classes.avartar_mobile}/>
           </Grid>
           <Grid item xs >
-            {Friends_list()}
+            {Member_list()}
           </Grid>
         </Grid>
       </Grid>
@@ -326,4 +325,4 @@ const Friends_list = () => (
   )
 }
 
-export default Friends
+export default Member_th

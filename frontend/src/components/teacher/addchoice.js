@@ -1,7 +1,7 @@
 import React , { useState } from "react";
 import { Container, TextField } from '@mui/material';
 import {makeStyles} from '@mui/styles'
-import {Button,IconButton} from '@mui/material';
+import {Button, IconButton, Grid} from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { createTheme } from '@mui/material/styles';
@@ -43,6 +43,7 @@ function Addchoice() {
         <form className={classes.root}>
         { inputFields.map((inputField, index) =>(
           <div key={index} sx={{ display: 'flex' }}>
+            <Grid item sx={{ textAlign: "center" }}>
             <TextField
              inputProps={{style: {fontFamily: "Kanit"}}} 
              InputLabelProps={{style: {fontFamily: "Kanit"}}}
@@ -55,8 +56,9 @@ function Addchoice() {
                 width: "80%" }}
               value={inputField.choice}
               onChange={event => handleChangeIput(index,event)}
+              
             />
-              <IconButton sx={{ marginTop: theme.spacing(1), marginLeft: theme.spacing(2)}}
+            <IconButton sx={{ marginTop: theme.spacing(1), marginLeft: theme.spacing(2)}}
                   onClick={() => handleRemoveFields(index)}>
                   <RemoveIcon/>
               </IconButton>
@@ -64,6 +66,8 @@ function Addchoice() {
                   onClick={() => handleAddFields()}>
                   <AddCircleIcon/>
               </IconButton>
+            </Grid>
+              
           </div>
         )) }
         </form>

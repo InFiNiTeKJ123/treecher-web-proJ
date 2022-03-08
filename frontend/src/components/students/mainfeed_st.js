@@ -4,6 +4,7 @@ import React from 'react'
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+// import CardGroup from 'react-bootstrap/CardGroup'
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
@@ -59,15 +60,13 @@ function Mainfeed_st() {
             <CardActions CardActions>
               <Button sx={{ fontFamily: "Kanit" }} size="small">เข้าห้องเรียน</Button>
             </CardActions>
-        </Card>
-        </Box>
-        <Box>
+          </Card>
           <Card sx = {{background: 'linear-gradient(45deg, #ff7c7c 30%, #dd0b0e 90%)' }} className={classes.card_classroom}>
             <CardActionArea>
               <CardMedia
               component="img"
-              height="100%"
-              width="100%"
+              height="75%"
+              width="75%"
               src="https://www.img.in.th/images/94d979d914421959e394cb5ae806dcae.png" 
               alt="94d979d914421959e394cb5ae806dcae.png" 
               border="0" />
@@ -86,7 +85,7 @@ function Mainfeed_st() {
                  เข้าสู่หัวใจ</Button>
             </CardActions>
         </Card>
-        </Box>
+      </Box>
       </Container>
   )
 }

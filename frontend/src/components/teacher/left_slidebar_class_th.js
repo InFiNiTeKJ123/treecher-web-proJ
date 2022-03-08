@@ -61,7 +61,7 @@ function Left_slidebar_class_th() {
                 </ListItemIcon>
                 <ListItemText primary='โปรไฟล์' sx={{fontFamily: "Kanit", color: 'white'}}/>
             </ListItem>
-            <ListItem button >
+            <ListItem button href='/member_th' >
                 <ListItemIcon sx={{ color: 'white'}}>
                     <PeopleAltIcon />
                 </ListItemIcon>

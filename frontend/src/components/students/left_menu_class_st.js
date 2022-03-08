@@ -63,7 +63,7 @@ function Left_Menu_class_st(props) {
               onClick={props.handleClick} href='/quiz' >
             แบบฝึกหัด
           </Button>
-          <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success" 
+          <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success"
               sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href="/score_st" >
             คะแนน
           </Button>

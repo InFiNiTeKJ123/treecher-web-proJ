@@ -88,6 +88,7 @@ function Left_Menu_class_th() {
         startIcon={<PeopleAltIcon className={classes.icon} />}
         variant="contained"
         color="success"
+        href='/member_th'
         sx={{
           width: "95%",
           height: 50,
@@ -117,6 +118,7 @@ function Left_Menu_class_th() {
         startIcon={<FilterVintageIcon className={classes.icon} />}
         variant="contained"
         color="success"
+        href="/score_th"
         sx={{
           width: "95%",
           height: 50,

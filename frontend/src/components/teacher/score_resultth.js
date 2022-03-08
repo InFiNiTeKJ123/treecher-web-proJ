@@ -19,7 +19,11 @@ import { Box, grid, spacing } from "@mui/system";
 import { createTheme } from '@mui/material/styles';
 
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
-import Table_scorest from './tablescore_st';
+import Table_score from './tablescore';
+
+
+
+
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
@@ -34,7 +38,7 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
     }
   }));
 
-function Score_result(props) {
+function Score_resultth(props) {
 
     const classes = useStyles()
 
@@ -69,7 +73,7 @@ function Score_result(props) {
             paddingLeft: theme.spacing(2.5),
           }}
         >
-          คะแนน
+          คะแนนของนักเรียน
         </Typography>
       </Box>
       <Box
@@ -87,23 +91,11 @@ function Score_result(props) {
           },
         }}
       >
-        <Paper elevation={3}>
-          <Box
-            component="h2"
-            sx={{
-              fontFamily: "Kanit",
-              paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
-            }}
-          >
-            คะแนน
-          </Box>
-        </Paper>
-
+      
         <Grid>
-          <Table_scorest/>
+          <Table_score/>
         </Grid>
       </Box>
-      
         <Box sx={{ margin: theme.spacing(3) }}> 
             {/* {main_quiz()} */}
         </Box>
@@ -111,4 +103,4 @@ function Score_result(props) {
   );
 }
 
-export default Score_result
+export default Score_resultth

@@ -60,7 +60,7 @@ function Left_Menu(props) {
         startIcon={<Person className={classes.icon} />}
         variant="contained"
         color="success"
-        href="/profile"
+        href="/profile_th"
         sx={{
           width: "95%",
           height: 50,

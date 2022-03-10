@@ -55,7 +55,7 @@ function Left_slidebar_class_th() {
                 </ListItemIcon>
                 <ListItemText primary='หน้าหลัก' sx={{ fontFamily: "Kanit",color: 'white'}}/>
             </ListItem>
-            <ListItem button component="a" href="/profile">
+            <ListItem button component="a" href="/profile_th">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <Person />
                 </ListItemIcon>

@@ -16,6 +16,7 @@ import Score_th from './pages/score_th';
 import SignUp_Type from './pages/signup_type';
 import SignUp_TH from './pages/signup_th';
 import SignUp_ST from './pages/signup_st';
+import Profile_th from './pages/profile_th';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/signup/student" element={<SignUp_ST/>}/>
         <Route path="/signup/teacher" element={<SignUp_TH/>}/>
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/profile_th" element={<Profile_th/>}/>
         <Route path="/home_th" element={<Home_teacher/>}/>
         <Route path="/home_st" element={<Home_st />}/>
         <Route path="/quiz" element={<Quiz />}/>

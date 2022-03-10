@@ -21,6 +21,7 @@ import { createTheme } from '@mui/material/styles';
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
 import Table_scorest from './tablescore_st';
 
+
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
       width: 'auto', 
@@ -34,11 +35,14 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
     }
   }));
 
+ 
+
 function Score_result(props) {
 
     const classes = useStyles()
 
     const theme = createTheme()
+
 
   return (
     <Box component="div">
@@ -87,17 +91,7 @@ function Score_result(props) {
           },
         }}
       >
-        <Paper elevation={3}>
-          <Box
-            component="h2"
-            sx={{
-              fontFamily: "Kanit",
-              paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
-            }}
-          >
-            คะแนน
-          </Box>
-        </Paper>
+        
 
         <Grid>
           <Table_scorest/>

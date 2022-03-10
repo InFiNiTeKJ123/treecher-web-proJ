@@ -1,19 +1,28 @@
-import { Drawer, Grid } from '@mui/material'
+import { Drawer, Grid,Container } from '@mui/material'
 import { Box } from '@mui/system'
-import { createTheme } from '@mui/material/styles';
+import { createTheme,ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import React, { useState } from 'react'
-import Stack from '@mui/material/Stack';
-import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-
+import {Button} from "@mui/material";
 import Avartarst_mobile from '../components/students/avartarst_mobile'
-import Main_quiz from '../components/teacher/main_quiz'
-import Quiz_popup from '../components/quiz_popup';
-import Left_Menu_class_st from '../components/students/left_menu_class_st';
+
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import { ExitToApp, Person } from '@mui/icons-material';
+import SchoolIcon from '@mui/icons-material/School';
+import AssignmentIcon from '@mui/icons-material/Assignment';
 import Navbar_class_st from '../components/students/navbar_class_st';
 import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
 import Score_result from '../components/students/score_result';
+import FilterVintageIcon from "@mui/icons-material/FilterVintage";
+const { palette } = createTheme();
+const { augmentColor } = palette;
+const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
+const theme = createTheme({
+  palette: {
+    check: createColor('#70ff68'),
+  },
+}); 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -43,6 +52,39 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 
 function Score_st() {
+
+  
+  const left_menu_class_st_score = () => (
+    <ThemeProvider theme={theme}>
+        <Container className={classes.left_menu_container} >
+            <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
+                หน้าหลัก
+            </Button>
+            <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                โปรไฟล์
+            </Button>
+            <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="success" 
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}  href='/friends'>
+                สมาชิก
+            </Button>
+            <Button startIcon = {<AssignmentIcon className={classes.icon} />} variant="contained" color='success'
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
+                 href='/quiz' >
+                แบบฝึกหัด
+            </Button>
+            <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="check" 
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/score_st'>
+                คะแนน
+            </Button>
+            <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                ออกจากระบบ
+            </Button>
+        </Container>
+    </ThemeProvider>
+)
 
   const classes = useStyles()
 
@@ -84,7 +126,7 @@ function Score_st() {
       <Navbar_class_st toggleslider={toggleslider}/>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
-          <Left_Menu_class_st />
+          {left_menu_class_st_score()}
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
             <Left_slidebar_class_st />

@@ -115,7 +115,8 @@ function Classroom_feed(props) {
               <Grid
                 item
                 xs={7}
-                md={6}
+                md={12}
+                justifyContent="right"
                 sx={{
                   display: "flex",
                   textAlign: "center",
@@ -126,51 +127,13 @@ function Classroom_feed(props) {
                 <Button
                   variant="contained"
                   sx={{
-                    width: "auto",
-                    height: "auto",
-                    borderRadius: 4,
-                    bgcolor: "#212121",
-                    marginLeft: { xs: theme.spacing(3), md: theme.spacing(10) },
-                    fontSize: "75%",
-                    fontFamily: "Kanit",
-                  }}
-                >
-                  <AttachFileIcon sx={{ fontSize: "200%" }} />
-                  แนบไฟล์
-                </Button>
-                <Button
-                  variant="contained"
-                  sx={{
-                    width: "auto",
-                    height: "auto",
-                    borderRadius: 4,
-                    bgcolor: "#212121",
-                    marginLeft: theme.spacing(1),
-                    fontSize: "75%",
-                    fontFamily: "Kanit",
-                  }}
-                >
-                  <AddPhotoAlternateIcon />
-                  แนบรูปภาพ
-                </Button>
-              </Grid>
-              <Grid
-                item
-                xs={4}
-                md={5}
-                sx={{
-                  fontFamily: "Kanit",
-                  textAlign: "right",
-                  marginRight: { xs: theme.spacing(1), md: theme.spacing(3) },
-                }}
-              >
-                <Button
-                  variant="contained"
-                  sx={{
-                    width: { xs: "100%", md: "30%" },
+                    width: { xs: "100%", md: "20%" },
                     height: 50,
                     borderRadius: 4,
                     bgcolor: "#212121",
+                    textAlight: "right",
+                    marginLeft: theme.spacing(10),
+                    marginBottom: theme.spacing(2),
                     marginTop: theme.spacing(1),
                     fontFamily: "Kanit",
                   }}

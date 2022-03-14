@@ -1,7 +1,7 @@
 import { makeStyles } from '@mui/styles'
 import { createTheme } from '@mui/material/styles';
 import React from 'react'
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 // import CardGroup from 'react-bootstrap/CardGroup'
@@ -39,17 +39,18 @@ function Mainfeed_st() {
             ห้องเรียน
           </Typography>
         </Box>
-        <Box>
-          <Card sx = {{background: 'linear-gradient(45deg, #cfd7fd 30%, #a1e7db 90%)' }} className={classes.card_classroom}>
+        <Grid container sx={{ alignItems: "center" }}>
+          <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #77bb4c  90%)', flexDirection: 'column', marginRight: theme.spacing(5) }} className={classes.card_classroom}>
             <CardActionArea href='/classroom_st'>
               <CardMedia
               component="img"
               alt="green iguana"
-              height="100"
+              height="250"
+              width="125"
               image="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500  }}>
                   240-124
                 </Typography>
                 <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
@@ -58,34 +59,76 @@ function Mainfeed_st() {
               </CardContent>
             </CardActionArea>
             <CardActions CardActions>
-              <Button sx={{ fontFamily: "Kanit" }} size="small">เข้าห้องเรียน</Button>
+              <Button sx={{ fontFamily: "Kanit", color:"#008037" }} size="small" href='/classroom_st' >เข้าห้องเรียน</Button>
             </CardActions>
           </Card>
-          <Card sx = {{background: 'linear-gradient(45deg, #ff7c7c 30%, #dd0b0e 90%)' }} className={classes.card_classroom}>
-            <CardActionArea>
+      
+          <Card sx = {{background: 'linear-gradient(45deg, #ff6868 30%, #efc2cc  80%)', flexDirection: 'column', marginRight: theme.spacing(5) }} className={classes.card_classroom}>
+              <CardActionArea href='/classroom_st'>
+                <CardMedia
+                component="img"
+                alt="green iguana"
+                height="250"
+                width="125"
+                image="https://www.img.in.th/images/7318bff9408bfd1dddf7fe3c0539c1a8.png"/>
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
+                    502-002
+                  </Typography>
+                  <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
+                    ห้องเรียนดนตรี
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions CardActions>
+                <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_st' >เข้าห้องเรียน</Button>
+              </CardActions>
+            </Card>
+
+          <Card sx = {{background: 'linear-gradient(45deg, #ffc587 30%, #ecff84 60%)', flexDirection: 'column' , marginRight: theme.spacing(5) }} className={classes.card_classroom}>
+            <CardActionArea href='/classroom_st'>
               <CardMedia
               component="img"
-              height="75%"
-              width="75%"
-              src="https://www.img.in.th/images/94d979d914421959e394cb5ae806dcae.png" 
-              alt="94d979d914421959e394cb5ae806dcae.png" 
-              border="0" />
+              alt="green iguana"
+              height="250"
+              width="125"
+              image="https://www.img.in.th/images/c8efa1ac57689492fd93e235b6f8d3b9.png"/>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
-                  Status : "Feel Fan" 
+                  001-103
                 </Typography>
                 <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
-                  ห้องเรียนสำหรับคนโสด
+                  ห้องแนะแนว
                 </Typography>
               </CardContent>
             </CardActionArea>
             <CardActions CardActions>
-              <Button startIcon = { <FavoriteIcon/> }
-                sx={{ bgcolor: "error", fontFamily: "Kanit", color: '#ff0000' }} size="large">
-                 เข้าสู่หัวใจ</Button>
+              <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_st' >เข้าห้องเรียน</Button>
             </CardActions>
-        </Card>
-      </Box>
+          </Card>
+
+          <Card sx = {{background: 'linear-gradient(45deg, #af4fff 30%,#5396fc  60%)', flexDirection: 'column' , marginRight: theme.spacing(3) }} className={classes.card_classroom}>
+            <CardActionArea href='/classroom_st'>
+              <CardMedia
+              component="img"
+              alt="green iguana"
+              height="250"
+              width="125"
+              image="https://www.img.in.th/images/8174a40842545887fd91f9dc8df9adb9.png"/>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
+                  320-005
+                </Typography>
+                <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
+                  ห้องเรียนดาราศาสตร์
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions CardActions>
+              <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_st' >เข้าห้องเรียน</Button>
+            </CardActions>
+          </Card>
+        </Grid>
       </Container>
   )
 }

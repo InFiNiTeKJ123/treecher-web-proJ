@@ -38,7 +38,7 @@ function Mainfeed(props) {
           </Typography>
         </Box>
         <Box>
-          <Card className={classes.card_classroom}>
+          <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #7ad154 90%)' }} className={classes.card_classroom}>
             <CardActionArea onClick={props.Openpopup}>
               <CardMedia
               component="img"
@@ -61,7 +61,7 @@ function Mainfeed(props) {
         </Card>
         </Box>
         <Box>
-          <Card className={classes.card_classroom}>
+          <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #7ad154 90%)' }}  className={classes.card_classroom}>
             <CardActionArea onClick={props.Openpopup}>
               <CardMedia
               component="img"

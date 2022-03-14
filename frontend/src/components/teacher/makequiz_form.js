@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import QuizIcon from "@mui/icons-material/Quiz";
@@ -15,13 +15,15 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import Slide from "@mui/material/Slide";
 import { Box, grid, spacing } from "@mui/system";
 import { createTheme } from '@mui/material/styles';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
+import AssignmentIcon from '@mui/icons-material/Assignment';
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
-import AttachFileIcon from "@mui/icons-material/AttachFile";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import SaveAltIcon from '@mui/icons-material/SaveAlt'
+import NoteAddIcon from '@mui/icons-material/NoteAdd';
 import Addchoice from './addchoice';
 import Addproblem from './addproblem';
 
@@ -44,6 +46,51 @@ function Makequiz_form(props) {
     const classes = useStyles()
 
     const theme = createTheme()
+
+    const Alert = React.forwardRef(function Alert(props, ref) {
+      return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    });
+
+    const [open, setOpen] = useState(false)
+
+    const [close, setClose] = useState(false);
+
+    const clickonClose = (props) => {
+      setClose(!props.clickcheckpoint);
+    };
+    
+    const handleOpenPopup = () => {
+      setOpen(true)
+    }
+
+    const handleClosePopup = () => {
+      setOpen(false)
+    }
+
+    const [openslide, setOpenslide] = useState(false)
+
+    const toggleslider = () => {
+      setOpenslide(!openslide)
+    }
+
+    const [opensnackbar, setOpensnackbar] = useState(false);
+
+    const handleClick = () => {
+      setOpensnackbar(true);
+    };
+
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+
+    const Transition = React.forwardRef(function Transition(props, ref) {
+      return <Slide direction="up" ref={ref} {...props} />;
+});
+
+      setOpensnackbar(false);
+    };
+
 
     const main_quiz = () => (
         <Box>
@@ -118,8 +165,7 @@ function Makequiz_form(props) {
           },
         }}
       >
-        <Paper elevation={3}>
-          
+        <Paper elevation={3} >
           <Box
             component="h2"
             sx={{
@@ -130,7 +176,7 @@ function Makequiz_form(props) {
             สร้างแบบฝึกหัด
           </Box>
           <Grid direction="row" spacing={2}>
-            <Grid item sx={{ textAlign: "center" }}>
+            <Grid item sx={{ textAlign: "center", marginBottom: theme.spacing(3),}}>
               <TextField
                 inputProps={{style: {fontFamily: "Kanit"}}} 
                 InputLabelProps={{style: {fontFamily: "Kanit"}}}
@@ -144,12 +190,13 @@ function Makequiz_form(props) {
         </Paper>
       </Box>
   
-        <Box sx={{ margin: theme.spacing(5) , margintop: theme.spacing(2) }}> 
+        <Box> 
             <Addproblem/>
         </Box>
-        <Box  sx={{ textAlign: "right"}}>
-        <Button startIcon = {<SaveAltIcon />}
-                  variant="contained"
+        <Grid item sx={{ textAlign: "center" }}>
+        <Button startIcon = {<AssignmentIcon />}
+                  variant="outlined"
+                  href="/quizmade"
                   sx={{
                     fontFamily: "Kanit",
                     fontSize: 20,
@@ -158,15 +205,41 @@ function Makequiz_form(props) {
                     borderRadius: 3,
                     bgcolor: "#212121",
                     color: "#000000",
-                    marginTop: theme.spacing(1),
-                    paddingRight: theme.spacing(2),
+                    marginRight: theme.spacing(30),
+                    marginBottom: theme.spacing(5),
+                    marginTop: theme.spacing(3),
                     background: '#fff200',
                   }}
                 >
-                  บันทึก
+                แบบฝึกหัด
         </Button>
+        <Button startIcon = {<NoteAddIcon />} variant="outlined" onClick={handleClick}
+                  sx={{
+                    fontFamily: "Kanit",
+                    fontSize: 20,
+                    width: '25%',
+                    height: 'auto',
+                    borderRadius: 3,
+                    bgcolor: "#212121",
+                    color: "#000000",
+                    marginLeft: theme.spacing(30),
+                    marginBottom: theme.spacing(5),
+                    marginTop: theme.spacing(3),
+                    background: '#fff200',
+                  }}
+                >
+                สร้างแบบฝึกหัด
+          </Button>
+              <Snackbar 
+                open={opensnackbar} 
+                autoHideDuration={2000} 
+                onClose={handleClose}>
+                <Alert onClose={handleClose} severity="success"  >
+                  สร้างแบบฝึกหัดเรียบร้อยแล้ว
+                </Alert>
+              </Snackbar>
+        </Grid>
         </Box>
-    </Box>
   );
 }
 

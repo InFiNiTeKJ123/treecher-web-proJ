@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import { createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import React, { useState } from "react";
-import Avartarst_mobile from "../components/students/avartarst_mobile";
+import Avartar_mobile from "../components/teacher/avartar_mobile";
 
 import Left_Menu_class_th from "../components/teacher/left_menu_class_th";
 import Navbar from "../components/teacher/navbar";
@@ -54,7 +54,7 @@ function MakeQuiz_th() {
         </Grid>
         <Grid item xs>
           <Grid item classname={classes.gridavartar}>
-            <Avartarst_mobile className={classes.avartar_mobile} />
+            <Avartar_mobile className={classes.avartar_mobile} />
           </Grid>
           <Grid item xs>
             <Makequiz_form/>

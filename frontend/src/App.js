@@ -17,6 +17,7 @@ import SignUp_Type from './pages/signup_type';
 import SignUp_TH from './pages/signup_th';
 import SignUp_ST from './pages/signup_st';
 import Profile_th from './pages/profile_th';
+import Quizmade from './pages/quizmade';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/testprofile" element={<CardProfile />}/>
         <Route path="/score_st" element={<Score_st />}/>
         <Route path="/score_th" element={<Score_th />}/>
+        <Route path="/quizmade" element={<Quizmade />}/>
       </Routes>
     </BrowserRouter>
   );

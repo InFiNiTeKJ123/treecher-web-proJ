@@ -45,7 +45,7 @@ function Addproblem() {
         <form className={classes.root}>
         { inputFields.map((inputField, index) =>(
           <div key={index} sx={{ display: 'flex' }}>
-            <Paper elevation={3} sx={{marginTop:theme.spacing(2), textAlign: "center"}} >
+            <Paper elevation={3} sx={{marginTop:theme.spacing(3), textAlign: "center", width: "100%", borderRadius: 3,}} >
             <TextField
              inputProps={{style: {fontFamily: "Kanit"}}} 
              InputLabelProps={{style: {fontFamily: "Kanit"}}}
@@ -90,7 +90,6 @@ function Addproblem() {
             </Grid>
            
               <Addchoice/>
-
 
             <Grid item sx={{ textAlign: "center" }}>
             <Button startIcon = {<AddCircleIcon />}

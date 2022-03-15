@@ -38,7 +38,7 @@ function Mainfeed() {
           </Typography>
         </Box>
         <Grid container sx={{ alignItems: "center" }}>
-          <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #77bb4c  90%)', flexDirection: 'column', marginRight: theme.spacing(5) }} className={classes.card_classroom}>
+          <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #77bb4c  90%)', flexDirection: 'column', marginRight: theme.spacing(4) }} className={classes.card_classroom}>
             <CardActionArea href='/classroom_th'>
               <CardMedia
               component="img"
@@ -61,7 +61,7 @@ function Mainfeed() {
             </CardActions>
           </Card>
       
-          <Card sx = {{background: 'linear-gradient(45deg, #ff6868 30%, #efc2cc  80%)', flexDirection: 'column', marginRight: theme.spacing(5) }} className={classes.card_classroom}>
+          <Card sx = {{background: 'linear-gradient(45deg, #ff6868 30%, #efc2cc  80%)', flexDirection: 'column', marginRight: theme.spacing(4) }} className={classes.card_classroom}>
               <CardActionArea href='/classroom_th'>
                 <CardMedia
                 component="img"
@@ -83,7 +83,7 @@ function Mainfeed() {
               </CardActions>
             </Card>
 
-          <Card sx = {{background: 'linear-gradient(45deg, #ffc587 30%, #ecff84 60%)', flexDirection: 'column' , marginRight: theme.spacing(5) }} className={classes.card_classroom}>
+          <Card sx = {{background: 'linear-gradient(45deg, #ffc587 30%, #ecff84 60%)', flexDirection: 'column' , marginRight: theme.spacing(4) }} className={classes.card_classroom}>
             <CardActionArea href='/classroom_th'>
               <CardMedia
               component="img"
@@ -105,7 +105,7 @@ function Mainfeed() {
             </CardActions>
           </Card>
 
-          <Card sx = {{background: 'linear-gradient(45deg, #af4fff 30%,#5396fc  60%)', flexDirection: 'column' , marginRight: theme.spacing(3) }} className={classes.card_classroom}>
+          <Card sx = {{background: 'linear-gradient(45deg, #af4fff 30%,#5396fc  60%)', flexDirection: 'column' , marginRight: theme.spacing(4) }} className={classes.card_classroom}>
             <CardActionArea href='/classroom_th'>
               <CardMedia
               component="img"
@@ -114,10 +114,10 @@ function Mainfeed() {
               width="125"
               image="https://www.img.in.th/images/8174a40842545887fd91f9dc8df9adb9.png"/>
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
+                <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500, color:"#ffffff" }}>
                   320-005
                 </Typography>
-                <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
+                <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500, color:"#ffffff" }}>
                   ห้องเรียนดาราศาสตร์
                 </Typography>
               </CardContent>

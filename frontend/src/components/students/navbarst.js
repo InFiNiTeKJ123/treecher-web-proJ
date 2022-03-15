@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { AppBar, Avatar, Box, IconButton, Toolbar, Typography, List, ListItem, ListItemIcon, ListItemText, Drawer } from '@mui/material'
 import { useTheme , createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
+import Whoami from '../../config/whoami'
 import MenuIcon from '@mui/icons-material/Menu';
 
 
@@ -32,6 +33,8 @@ const useStyles = makeStyles(({theme = useTheme()}) => ({
 function Navbarst(props) {
 
   const classes = useStyles()
+
+  let user = Whoami()
 
   const theme = createTheme();
 
@@ -71,7 +74,7 @@ function Navbarst(props) {
             </Typography>
             <Box sx={{ flexGrow: 5 }} /> 
             <Typography variant='h6' sx={{ fontFamily: "Kanit", color: '#fcf872', display: { xs: 'none', sm: 'flex' } }}> 
-                ฉัตรชัย จันทร์แก้ว
+                {user.first_name} {user.last_name}
             </Typography>
           </container>
           <Box>
@@ -88,7 +91,7 @@ function Navbarst(props) {
                   sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                         display: { xs: 'none', sm: 'flex' }}} 
                   size="small" aria-label="avatar" >
-                  ฉ
+                  {user.first_name}
                 </Avatar>
               </IconButton> 
           </Box>

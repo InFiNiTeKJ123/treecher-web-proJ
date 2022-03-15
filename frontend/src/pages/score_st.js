@@ -15,6 +15,7 @@ import Navbar_class_st from '../components/students/navbar_class_st';
 import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
 import Score_result from '../components/students/score_result';
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
+import Navbarst from '../components/students/navbarst';
 const { palette } = createTheme();
 const { augmentColor } = palette;
 const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
@@ -26,7 +27,14 @@ const theme = createTheme({
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
-    paddingTop: theme.spacing(3),
+    height: "100vh",
+    color: "white",
+    paddingTop: theme.spacing(5),
+    [theme.breakpoints.up("md")]: {
+      backgroundColor: "white",
+      color: "#555",
+      border: "1px solid #ece7e7",
+    },
   },
   avartar_mobile: {
     alignItems: 'right', 
@@ -56,9 +64,9 @@ function Score_st() {
   
   const left_menu_class_st_score = () => (
     <ThemeProvider theme={theme}>
-        <Container className={classes.left_menu_container} >
+        <Container className={classes.container} >
             <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
                 หน้าหลัก
             </Button>
             <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
@@ -75,7 +83,7 @@ function Score_st() {
                 แบบฝึกหัด
             </Button>
             <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="check" 
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/score_st'>
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) , color: 'white'}} href='/score_st'>
                 คะแนน
             </Button>
             <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
@@ -123,7 +131,7 @@ function Score_st() {
 
   return (
     <Box position='flex'> 
-      <Navbar_class_st toggleslider={toggleslider}/>
+      <Navbarst toggleslider={toggleslider}/>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
           {left_menu_class_st_score()}

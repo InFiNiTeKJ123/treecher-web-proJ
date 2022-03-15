@@ -46,7 +46,7 @@ function Left_Menu_class_st(props) {
       <ThemeProvider theme={theme}>
         <Container className={classes.container} >
           <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_st"
-              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }} href='/home_st'>
+              sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
             หน้าหลัก
           </Button>
           <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"

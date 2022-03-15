@@ -14,8 +14,8 @@ class CreateStudentSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(required=True)
     last_name = serializers.CharField(required=True)
     password = serializers.CharField(min_length=8, write_only=True)
-    is_student = True
-    is_teacher = not is_student
+    is_student = serializers.BooleanField(default=True)
+    is_teacher = serializers.BooleanField(default=False)
 
     class Meta:
         model = NewUser
@@ -39,8 +39,8 @@ class CreateTeacherSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(required=True)
     last_name = serializers.CharField(required=True)
     password = serializers.CharField(min_length=8, write_only=True)
-    is_student = False
-    is_teacher = not is_student
+    is_student = serializers.BooleanField(default=False)
+    is_teacher = serializers.BooleanField(default=True)
 
     class Meta:
         model = NewUser

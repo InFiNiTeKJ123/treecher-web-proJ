@@ -13,6 +13,7 @@ import Quiz_popup from '../components/quiz_popup';
 import Left_Menu_class_st from '../components/students/left_menu_class_st';
 import Navbar_class_st from '../components/students/navbar_class_st';
 import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
+import Navbarst from '../components/students/navbarst';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -87,7 +88,7 @@ function Quiz() {
 
   return (
     <Box position='flex'> 
-      <Navbar_class_st toggleslider={toggleslider}/>
+      <Navbarst toggleslider={toggleslider}/>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
           <Left_Menu_class_st />

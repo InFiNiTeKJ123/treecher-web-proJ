@@ -1,7 +1,10 @@
 from dataclasses import field
+from xml.dom import UserDataHandler
 from rest_framework import serializers
 from treecher.models import NewUser
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
 class CreateStudentSerializer(serializers.ModelSerializer):
     """
@@ -11,8 +14,8 @@ class CreateStudentSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(required=True)
     last_name = serializers.CharField(required=True)
     password = serializers.CharField(min_length=8, write_only=True)
-    is_student = serializers.BooleanField(default=True)
-    is_teacher = serializers.BooleanField(default=False)
+    is_student = True
+    is_teacher = not is_student
 
     class Meta:
         model = NewUser
@@ -36,8 +39,8 @@ class CreateTeacherSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(required=True)
     last_name = serializers.CharField(required=True)
     password = serializers.CharField(min_length=8, write_only=True)
-    is_student = serializers.BooleanField(default=False)
-    is_teacher = serializers.BooleanField(default=True)
+    is_student = False
+    is_teacher = not is_student
 
     class Meta:
         model = NewUser
@@ -57,5 +60,9 @@ class CreateTeacherSerializer(serializers.ModelSerializer):
 class NewUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewUser
-        fields = '__all__'
+        fields = ('id', 'email', 'first_name', 'last_name', 'is_student', 'is_teacher')
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'email', 'first_name', 'last_name', 'is_student', 'is_teacher')

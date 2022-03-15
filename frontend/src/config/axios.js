@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8000/api/'
+const baseURL = 'http://127.0.0.1:8000/api/';
 
 const axiosInstance = axios.create({
 	baseURL: baseURL,
@@ -46,15 +46,15 @@ axiosInstance.interceptors.response.use(
 			const refreshToken = localStorage.getItem('refresh_token');
 
 			if (refreshToken) {
-				const tokenParts = JSON.parse(atob(refreshToken.split('.')[1]));
+				// const tokenParts = JSON.parse(atob(refreshToken.split('.')[1]));
 
 				// exp date in token is expressed in seconds, while now() returns milliseconds:
 				const now = Math.ceil(Date.now() / 1000);
-				console.log(tokenParts.exp);
+				console.log(refreshToken.exp);
 
-				if (tokenParts.exp > now) {
+				if (refreshToken.exp > now) {
 					return axiosInstance
-						.post('/token/refresh/', { refresh: refreshToken })
+						.post('token/refresh/', { refresh: refreshToken })
 						.then((response) => {
 							localStorage.setItem('access_token', response.data.access);
 							localStorage.setItem('refresh_token', response.data.refresh);
@@ -70,7 +70,7 @@ axiosInstance.interceptors.response.use(
 							console.log(err);
 						});
 				} else {
-					console.log('Refresh token is expired', tokenParts.exp, now);
+					console.log('Refresh token is expired', refreshToken.exp, now);
 					window.location.href = '/login/';
 				}
 			} else {
@@ -84,4 +84,4 @@ axiosInstance.interceptors.response.use(
 	}
 );
 
-export default axiosInstance
+export default axiosInstance;

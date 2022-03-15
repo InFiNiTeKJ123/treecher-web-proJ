@@ -1,5 +1,6 @@
 import React from "react"
 import { ReactDOM } from "react-dom"
+import Whoami from "../config/whoami"
 import './profile.css'
 
 const ImgUpload =({
@@ -156,6 +157,7 @@ const Last_Name =({
         active: activeP,
       })
     }
+
     
     render() {
       const {imagePreviewUrl, 

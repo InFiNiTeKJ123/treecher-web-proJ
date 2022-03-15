@@ -17,6 +17,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles"
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../config/axios";
+import axios from "axios";
 
 const theme = createTheme();
 
@@ -81,21 +82,15 @@ function SignUp_TH() {
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
 
-    axiosInstance.post(`user/create/th`,{
+    axios.post(`http://127.0.0.1:8000/api/user/create/th`,{
       email: data.get("email"),
       first_name: data.get("firstName"),
       last_name: data.get("lastName"),
       password: data.get("password")
     }).then((res) => {
       console.log(res.data)
+      navigate('/login')
     })
-
-    // console.log({
-    //   firstname: data.get("firstName"),
-    //   lastname: data.get("lastName") ,
-    //   email: data.get("email"),
-    //   password: data.get("password"),
-    // });
   };
 
   return (
@@ -211,29 +206,6 @@ function SignUp_TH() {
                 />
               </Grid>
             </Grid>
-            {/* <Grid
-              container
-              justifyContent="center"
-              spacing={2}
-              sx={{ marginTop: 1.5 }}
-            >
-              <Grid item>
-                <Button variant="contained" color="success" size="large"
-                        startIcon={<FaceRetouchingNaturalIcon />}
-                        className={classes.teacher_button}
-                        sx={{ fontFamily: "Kanit", fontSize: 18, fontWeight: "bold" , width: { xs: 130, md:180 },}}>
-                  คุณครู
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color="success" size="large"
-                        startIcon={<ChildCareIcon />}
-                        className={classes.student_button} 
-                        sx={{ fontFamily: "Kanit", fontSize: 18, fontWeight: "bold", width: { xs: 130, md:180 },}}>
-                  นักเรียน
-                </Button>
-              </Grid>
-            </Grid> */}
             <Button
               type="submit"
               fullWidth

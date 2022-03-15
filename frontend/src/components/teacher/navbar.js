@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import { AppBar, Avatar, Box, IconButton, Toolbar, Typography, List, ListItem, ListItemIcon, ListItemText, Drawer } from '@mui/material'
 import { useTheme , createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
+import Whoami from '../../config/whoami'
 import MenuIcon from '@mui/icons-material/Menu';
-import { ExitToApp, Person } from '@mui/icons-material';
-import SchoolIcon from '@mui/icons-material/School';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+
 
 
 const useStyles = makeStyles(({theme = useTheme()}) => ({
@@ -28,20 +27,14 @@ const useStyles = makeStyles(({theme = useTheme()}) => ({
     alignItems: "center",
     display: (props) => (props.open ? "none" : "flex"),
   },
-  menuSliderContainer: {
-    width: 200,
-    background: "#008037",
-    height: "100%"
-  },
-  listItem: {
-    color: "white"
-  },
 }));
 
 
 function Navbar(props) {
 
   const classes = useStyles()
+
+  let user = Whoami()
 
   const theme = createTheme();
 
@@ -70,7 +63,7 @@ function Navbar(props) {
                     width="36"/>
                 </Avatar>
             </IconButton>
-          <Typography variant='h6' sx={{ display: 'flex', fontFamily: "Kanit" }}> 
+          <Typography variant='h6' sx={{ fontFamily: "Kanit", display: 'flex' }}> 
             TreeCher
           </Typography>
           <Box sx={{ flexGrow: 100 }} />
@@ -81,7 +74,7 @@ function Navbar(props) {
             </Typography>
             <Box sx={{ flexGrow: 5 }} /> 
             <Typography variant='h6' sx={{ fontFamily: "Kanit", color: '#fcf872', display: { xs: 'none', sm: 'flex' } }}> 
-                เพ็ชรัตน์ สุริยะไชย
+                {user.first_name} {user.last_name}
             </Typography>
           </container>
           <Box>
@@ -98,7 +91,7 @@ function Navbar(props) {
                   sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', 
                         display: { xs: 'none', sm: 'flex' }}} 
                   size="small" aria-label="avatar" >
-                  พ
+                  {user.first_name}
                 </Avatar>
               </IconButton> 
           </Box>

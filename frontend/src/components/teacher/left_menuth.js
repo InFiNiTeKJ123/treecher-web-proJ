@@ -34,7 +34,7 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
   },
 }));
 
-function Left_Menu(props) {
+function Left_Menu_th(props) {
   const classes = useStyles();
 
   const theme = createTheme();
@@ -105,4 +105,4 @@ function Left_Menu(props) {
   );
 }
 
-export default Left_Menu;
+export default Left_Menu_th;

@@ -3,11 +3,12 @@ import { Drawer, Grid } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
-import Navbar from '../components/teacher/navbar'
+import Navbar from '../components/navbar'
 import Score_resultth from '../components/teacher/score_resultth';
 import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
 import Left_slidebar_class_th from '../components/teacher/left_slidebar_class_th';
 import Avartar_mobile from '../components/teacher/avartar_mobile';
+import Navbar_moblie from '../components/navbar_mobile';
 
 
 
@@ -54,15 +55,17 @@ function Score_th() {
 
   return (
     <Box position='flex'>
-      <Navbar toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'} }}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container item spacing={0.5}>
-        <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex' }}}>
+        <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex' }, position: 'fixed'}}>
             <Left_Menu_class_th changecolor={color} handleClick={handleClick}/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
             <Left_slidebar_class_th />
           </Drawer>
-        <Grid item xs > 
+        <Grid item xs sx={{ marginLeft: {md:"15%"}}} > 
           <Grid item classname={classes.gridavartar}>
             <Avartar_mobile className={classes.avartar_mobile}/>
           </Grid>

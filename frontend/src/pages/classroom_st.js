@@ -6,8 +6,8 @@ import { Box } from '@mui/system'
 import Avartarst_mobile from '../components/students/avartarst_mobile'
 import Classroom_feed from '../components/classroom_feed';
 import Left_Menu_class_st from '../components/students/left_menu_class_st';
-import Navbarst from '../components/students/navbarst';
 import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
+import Navbar_moblie from '../components/navbar_mobile';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -52,7 +52,9 @@ function Classroom_Students() {
 
   return (
     <Box position='flex'>
-      <Navbarst toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'}}}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container item spacing={0.5}>
         <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex', position: 'fixed' }}}>
             <Left_Menu_class_st changecolor={color} handleClick={handleClick}/>

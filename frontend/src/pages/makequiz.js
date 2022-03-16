@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Drawer, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import { createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
@@ -6,9 +6,11 @@ import React, { useState } from "react";
 import Avartar_mobile from "../components/teacher/avartar_mobile";
 
 import Left_Menu_class_th from "../components/teacher/left_menu_class_th";
-import Navbar from "../components/teacher/navbar";
+import Navbar from "../components/navbar";
 import Classroom_feed from "../components/classroom_feed";
 import Makequiz_form from "../components/teacher/makequiz_form";
+import Navbar_moblie from "../components/navbar_mobile";
+import Left_slidebar_class_th from "../components/teacher/left_slidebar_class_th";
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -35,24 +37,25 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
 function MakeQuiz_th() {
   const classes = useStyles();
 
-  const [open, setOpen] = useState(false);
+  const [openslide, setOpenslide] = useState(false)
 
-  const handleOpenPopup = () => {
-    setOpen(true);
-  };
-
-  const handleClosePopup = () => {
-    setOpen(false);
-  };
+  const toggleslider = () => {
+    setOpenslide(!openslide)
+  }
 
   return (
     <Box position="flex">
-      <Navbar />
+      <Box component='div' sx={{ display: {sm: 'none'} }}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container>
-        <Grid item sm={1.8} sx={{ display: { xs: "none", sm: "flex" } }}>
+        <Grid item sm={1.8} sx={{ display: { xs: "none", sm: "flex" }, position: 'fixed' }}>
           <Left_Menu_class_th />
         </Grid>
-        <Grid item xs>
+        <Drawer open={openslide} anchor="left" onClose={toggleslider}>
+            <Left_slidebar_class_th />
+        </Drawer>
+        <Grid item xs sx={{ marginLeft: {md:"15%"}}} >
           <Grid item classname={classes.gridavartar}>
             <Avartar_mobile className={classes.avartar_mobile} />
           </Grid>

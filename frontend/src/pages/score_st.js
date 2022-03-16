@@ -4,18 +4,19 @@ import { createTheme,ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import React, { useState } from 'react'
 import MuiAlert from '@mui/material/Alert';
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import Avartarst_mobile from '../components/students/avartarst_mobile'
 
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { ExitToApp, Person } from '@mui/icons-material';
 import SchoolIcon from '@mui/icons-material/School';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import Navbar_class_st from '../components/students/navbar_class_st';
 import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
 import Score_result from '../components/students/score_result';
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
-import Navbarst from '../components/students/navbarst';
+import Navbar_moblie from '../components/navbar_mobile';
+
+
 const { palette } = createTheme();
 const { augmentColor } = palette;
 const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
@@ -131,7 +132,9 @@ function Score_st() {
 
   return (
     <Box position='flex'> 
-      <Navbarst toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'}}}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
           {left_menu_class_st_score()}

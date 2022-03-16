@@ -1,17 +1,13 @@
 import { makeStyles } from '@mui/styles'
 import { createTheme } from '@mui/material/styles';
 import React from 'react'
-import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-// import CardGroup from 'react-bootstrap/CardGroup'
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
       width: 'auto', 
-      [theme.breakpoints.down("sm")]: {
-        paddingTop: theme.spacing(3),
-      }
+      marginTop: 5
     },
     card_classroom: {
       maxWidth: 345 ,
@@ -19,7 +15,7 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
     }
   }));
 
-function Mainfeed_st() {
+function Classroom_list_th() {
 
     const classes = useStyles();
 
@@ -34,17 +30,17 @@ function Mainfeed_st() {
                 borderRadius: 3, }}>
           <SchoolIcon sx={{ paddingLeft: theme.spacing(2) }}/>
           <Typography 
-            sx={{ fontFamily: "Kanit", display:'flex' , fontWeight: 500 ,
+            sx={{ display:'flex' , fontWeight: 500 , fontFamily: "Kanit" ,
                   padding: theme.spacing(2) , paddingLeft: theme.spacing(2.5)}}>
             ห้องเรียน
           </Typography>
         </Box>
         <Grid container sx={{ alignItems: "center" }}>
           <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #77bb4c  90%)', flexDirection: 'column', marginRight: theme.spacing(4) }} className={classes.card_classroom}>
-            <CardActionArea href='/classroom_st'>
+            <CardActionArea href='/classroom_th'>
               <CardMedia
               component="img"
-              alt="green iguana"
+              alt="TreeCherLOGO"
               height="250"
               width="125"
               image="https://www.img.in.th/images/ac8f4b6431d8f75047d2dd768e6c83fe.png"
@@ -59,12 +55,12 @@ function Mainfeed_st() {
               </CardContent>
             </CardActionArea>
             <CardActions CardActions>
-              <Button sx={{ fontFamily: "Kanit", color:"#008037" }} size="small" href='/classroom_st' >เข้าห้องเรียน</Button>
+              <Button sx={{ fontFamily: "Kanit", color:"#008037" }} size="small" href='/classroom_th' >เข้าห้องเรียน</Button>
             </CardActions>
           </Card>
       
           <Card sx = {{background: 'linear-gradient(45deg, #ff6868 30%, #efc2cc  80%)', flexDirection: 'column', marginRight: theme.spacing(4) }} className={classes.card_classroom}>
-              <CardActionArea href='/classroom_st'>
+              <CardActionArea href='/classroom_th'>
                 <CardMedia
                 component="img"
                 alt="green iguana"
@@ -81,12 +77,12 @@ function Mainfeed_st() {
                 </CardContent>
               </CardActionArea>
               <CardActions CardActions>
-                <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_st' >เข้าห้องเรียน</Button>
+                <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_th' >เข้าห้องเรียน</Button>
               </CardActions>
             </Card>
 
           <Card sx = {{background: 'linear-gradient(45deg, #ffc587 30%, #ecff84 60%)', flexDirection: 'column' , marginRight: theme.spacing(4) }} className={classes.card_classroom}>
-            <CardActionArea href='/classroom_st'>
+            <CardActionArea href='/classroom_th'>
               <CardMedia
               component="img"
               alt="green iguana"
@@ -103,12 +99,12 @@ function Mainfeed_st() {
               </CardContent>
             </CardActionArea>
             <CardActions CardActions>
-              <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_st' >เข้าห้องเรียน</Button>
+              <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_th' >เข้าห้องเรียน</Button>
             </CardActions>
           </Card>
 
           <Card sx = {{background: 'linear-gradient(45deg, #af4fff 30%,#5396fc  60%)', flexDirection: 'column' , marginRight: theme.spacing(4) }} className={classes.card_classroom}>
-            <CardActionArea href='/classroom_st'>
+            <CardActionArea href='/classroom_th'>
               <CardMedia
               component="img"
               alt="green iguana"
@@ -125,7 +121,7 @@ function Mainfeed_st() {
               </CardContent>
             </CardActionArea>
             <CardActions CardActions>
-              <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_st' >เข้าห้องเรียน</Button>
+              <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_th' >เข้าห้องเรียน</Button>
             </CardActions>
           </Card>
         </Grid>
@@ -133,4 +129,4 @@ function Mainfeed_st() {
   )
 }
 
-export default Mainfeed_st
+export default Classroom_list_th

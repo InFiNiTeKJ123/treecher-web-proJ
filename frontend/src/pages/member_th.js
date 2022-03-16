@@ -4,20 +4,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import FaceIcon from "@mui/icons-material/Face";
-import { ExitToApp, Person, Settings, } from "@mui/icons-material";
-import SchoolIcon from '@mui/icons-material/School';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import FilterVintageIcon from '@mui/icons-material/FilterVintage';
-import AssignmentIcon from '@mui/icons-material/Assignment';
-
-import Navbar from '../components/teacher/navbar'
-import Avartar_mobile from '../components/teacher/avartar_mobile';
-import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
+import Navbar from '../components/navbar'
 import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
 import Left_slidebar_class_th from '../components/teacher/left_slidebar_class_th';
 import axiosInstance from '../config/axios';
 import Friends_list from '../components/students/friends_list';
+import Navbar_moblie from '../components/navbar_mobile';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -86,7 +78,9 @@ function Member_th() {
   return (
     <ThemeProvider theme={theme}>
     <Box position='flex'>
-      <Navbar toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'} }}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container item spacing={0.5}>
         <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex', position: 'fixed' }}}>
             <Left_Menu_class_th changecolor={color} handleClick={handleClick}/>

@@ -59,26 +59,26 @@ function SignUp_ST() {
 
   const navigate = useNavigate()
 
-  const initialFormData = Object.freeze({
-		email: '',
-		firstname: '',
-    lastname: '',
-		password: '',
-	});
+  // const initialFormData = Object.freeze({
+	// 	email: '',
+	// 	firstname: '',
+  //   lastname: '',
+	// 	password: '',
+	// });
 
-	const [formData, updateFormData] = useState(initialFormData);
+	// const [formData, updateFormData] = useState(initialFormData);
 
-  const handleChange = (e) => {
-		updateFormData({
-			...formData,
-			// Trimming any whitespace
-			[e.target.name]: e.target.value.trim(),
-		});
-	};
+  // const handleChange = (e) => {
+	// 	updateFormData({
+	// 		...formData,
+	// 		// Trimming any whitespace
+	// 		[e.target.name]: e.target.value.trim(),
+	// 	});
+	// };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    // console.log(formData);
 
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
@@ -86,7 +86,7 @@ function SignUp_ST() {
       email: data.get("email"),
       first_name: data.get("firstName"),
       last_name: data.get("lastName"),
-      password: data.get("password")
+      password: data.get("password"),
     }).then((res) => {
       console.log(res.data)
       navigate('/login')

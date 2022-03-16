@@ -11,13 +11,13 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import FilterVintageIcon from '@mui/icons-material/FilterVintage';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
-import Navbarst from '../components/students/navbarst'
 import Avartarst_mobile from '../components/students/avartarst_mobile';
 import Left_slidebar_st from '../components/students/left_slidebar_st';
 import Left_Menu_class_st from '../components/students/left_menu_class_st';
 import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
 import axiosInstance from '../config/axios';
 import Friends_list from '../components/students/friends_list';
+import Navbar_moblie from '../components/navbar_mobile';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -118,7 +118,9 @@ const left_menu_class_st_friend = () => (
   return (
     <ThemeProvider theme={theme}>
     <Box position='flex'>
-      <Navbarst toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'}}}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container item spacing={0.5}>
         <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex', position: 'fixed' }}}>
             {/* <Left_Menu_class_st changecolor={color} handleClick={handleClick}/> */}
@@ -135,7 +137,7 @@ const left_menu_class_st_friend = () => (
             <Box component='div'
             sx={{ width: {xs: "50%", md:"15%"} , height: 'auto', alignItems: 'center',
                   bgcolor: '#008037', color: 'white', display: 'flex',
-                  paddingleft: theme.spacing(3), marginLeft: theme.spacing(5),
+                  paddingleft: theme.spacing(3), marginLeft: theme.spacing(5), marginTop: theme.spacing(3),
                   borderRadius: 3, }}>
               <AccountCircleIcon sx={{ paddingLeft: theme.spacing(2), fontSize: 35  }}/>
               <Typography

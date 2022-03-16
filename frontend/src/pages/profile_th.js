@@ -6,7 +6,8 @@ import { ExitToApp, Person} from "@mui/icons-material";
 import SchoolIcon from '@mui/icons-material/School';
 import Avartarst_mobile from '../components/students/avartarst_mobile'
 import CardProfile from './test_profile_th';
-import Navbar from '../components/teacher/navbar';
+import Navbar from '../components/navbar';
+import Navbar_moblie from '../components/navbar_mobile';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -174,7 +175,9 @@ function Profile_th() {
   return (
     <ThemeProvider theme={theme}>
     <Box > 
-      <Navbar toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'} }}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container >
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' } , position: 'fixed' }}>
           {/* <Left_Menu_st openpopup={handleOpenPopup} /> */}

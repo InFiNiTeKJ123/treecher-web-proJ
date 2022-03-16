@@ -3,12 +3,13 @@ import { Drawer, Grid } from '@mui/material'
 import { useTheme, createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
-import Mainfeed from '../components/teacher/mainfeed'
 import Left_Menu from '../components/teacher/left_menuth'
-import Navbar from '../components/teacher/navbar'
 import Avartar_mobile from '../components/teacher/avartar_mobile'
 import Add_classroomPopup_th from '../components/teacher/add_classroompopup_th';
 import Left_slidebar_th from '../components/teacher/left_slidebar_th';
+import Classroom_list_th from '../components/teacher/classroom_list_th';
+import Navbar_moblie from '../components/navbar_mobile';
+import Left_Menu_th from '../components/teacher/left_menuth';
 
 const useStyles = makeStyles(({ theme = useTheme() }) => ({
   container: {
@@ -57,10 +58,12 @@ function Home_teacher() {
 
   return (
     <Box > 
-      <Navbar toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'} }}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container>
-        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' },}}>
-          <Left_Menu openpopup={handleOpenPopup}/>
+        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
+          <Left_Menu_th openpopup={handleOpenPopup}/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
             <Left_slidebar_th openpopup={handleOpenPopup} />
@@ -69,8 +72,8 @@ function Home_teacher() {
           <Grid item classname={classes.gridavartar}>
             <Avartar_mobile className={classes.avartar_mobile}/>
           </Grid>
-          <Grid item xs >
-            <Mainfeed/>
+          <Grid item xs sx={{ marginLeft: {md:"15%"} }}>
+            <Classroom_list_th />
             <Add_classroomPopup_th Open={open} handleClose={handleClosePopup}/>
           </Grid>
         </Grid>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { AppBar, Avatar, Box, IconButton, Toolbar, Typography, List, ListItem, ListItemIcon, ListItemText, Drawer } from '@mui/material'
+import { AppBar, Avatar, Box, IconButton, Toolbar, Typography, } from '@mui/material'
 import { useTheme , createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
-import Whoami from '../../config/whoami'
+import Whoami from '../config/whoami'
 import MenuIcon from '@mui/icons-material/Menu';
 
 
@@ -30,7 +30,7 @@ const useStyles = makeStyles(({theme = useTheme()}) => ({
 }));
 
 
-function Navbar(props) {
+function Navbar_moblie(props) {
 
   const classes = useStyles()
 
@@ -70,7 +70,7 @@ function Navbar(props) {
           <container>
             <Box sx={{ flexGrow: 50}} />
             <Typography variant='h4'  sx={{ fontFamily: "Kanit", fontWeight: 'bold',color:'#ffffff',display: { xs: 'none', sm: 'flex' } }}> 
-                คุณครู
+                นักเรียน
             </Typography>
             <Box sx={{ flexGrow: 5 }} /> 
             <Typography variant='h6' sx={{ fontFamily: "Kanit", color: '#fcf872', display: { xs: 'none', sm: 'flex' } }}> 
@@ -88,7 +88,7 @@ function Navbar(props) {
                 color="inherit"
               >
                 <Avatar 
-                  sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                         display: { xs: 'none', sm: 'flex' }}} 
                   size="small" aria-label="avatar" >
                   {user.first_name}
@@ -102,4 +102,4 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+export default Navbar_moblie;

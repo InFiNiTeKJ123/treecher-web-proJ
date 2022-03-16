@@ -7,9 +7,8 @@ import SchoolIcon from '@mui/icons-material/School';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Avartarst_mobile from '../components/students/avartarst_mobile'
 import Left_Menu_st from '../components/students/left_menust'
-import Navbarst from '../components/students/navbarst'
-import Left_slidebar_st from '../components/students/left_slidebar_st';
 import CardProfile from './test_profile';
+import Navbar_moblie from '../components/navbar_mobile';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -177,7 +176,9 @@ function Profile() {
   return (
     <ThemeProvider theme={theme}>
     <Box > 
-      <Navbarst toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'}}}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container >
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' } , position: 'fixed' }}>
           {/* <Left_Menu_st openpopup={handleOpenPopup} /> */}

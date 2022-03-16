@@ -7,11 +7,11 @@ import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
-import Navbar from '../components/teacher/navbar'
+import Navbar from '../components/navbar'
 import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
 import Left_slidebar_class_th from '../components/teacher/left_slidebar_class_th';
 import Avartar_mobile from '../components/teacher/avartar_mobile'
-import Main_quiz from '../components/teacher/main_quiz'
+import Main_quiz from '../components/students/main_quiz'
 import Quiz_popup from '../components/quiz_popup';
 import Quizmade from '../components/teacher/quizth_made';
 

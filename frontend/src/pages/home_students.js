@@ -3,12 +3,12 @@ import { Drawer, Grid } from '@mui/material'
 import { createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
-import Navbarst from '../components/students/navbarst'
 import Avartarst_mobile from '../components/students/avartarst_mobile'
 import Add_classroomPopup_st from '../components/students/add_classroompopup_st';
 import Left_Menu_st from '../components/students/left_menust';
 import Left_slidebar_st from '../components/students/left_slidebar_st';
-import Mainfeed_st from '../components/students/mainfeed_st';
+import Mainfeed_st from '../components/students/classroom_list_st';
+import Navbar_moblie from '../components/navbar_mobile';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -33,7 +33,7 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
 }));
 
 
-function Home_teacher() {
+function Home_student() {
 
   const classes = useStyles()
   
@@ -63,7 +63,9 @@ function Home_teacher() {
 
   return (
     <Box > 
-      <Navbarst toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'} }}>
+        <Navbar_moblie toggleslider={toggleslider} />
+      </Box>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
           <Left_Menu_st openpopup={handleOpenPopup} changecolor={color} clickcolor={handleClick}/>
@@ -86,4 +88,4 @@ function Home_teacher() {
   )
 }
 
-export default Home_teacher
+export default Home_student

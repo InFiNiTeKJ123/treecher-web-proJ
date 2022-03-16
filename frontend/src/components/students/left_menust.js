@@ -55,7 +55,7 @@ function Left_Menu_st(props) {
               sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
               หน้าหลัก
             </Button>
-            <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile"
+            <Button startIcon = {<Person className={classes.icon} />} variant="contained" href="/profile"
                 sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}
                 color={props.changecolor ? "success" : "check" } onClick={props.clickcolor}>
               โปรไฟล์

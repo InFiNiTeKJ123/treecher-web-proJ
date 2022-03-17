@@ -7,7 +7,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Navigate, useNavigate } from "react-router-dom";
 import axiosInstance from "../config/axios";
 import Tree from "../assets/logo.png";
-import darkScrollbar from "@mui/material/darkScrollbar";
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -21,12 +20,6 @@ const theme = createTheme({
       styleOverrides: {
         body: {
           backgroundImage: `url(${Tree})`
-          // ...darkScrollbar(),
-          // color: "darkred",
-          // backgroundColor: "grey",
-          // "& h1": {
-          //   color: "black"
-          // }
         }
       }
     }

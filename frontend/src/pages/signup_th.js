@@ -13,8 +13,7 @@ import { makeStyles } from "@mui/styles"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Slide } from "@mui/material";
-
-const theme = createTheme();
+import Tree from "../assets/logo.png";
 
 const useStyles = makeStyles({
   icon: {
@@ -47,6 +46,19 @@ const useStyles = makeStyles({
   }
   ,
 })
+
+const theme = createTheme({
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundImage: `url(${Tree})`
+        }
+      }
+    }
+  }
+});
+
 
 function TransitionDown(props) {
   return <Slide {...props} direction="down" />;
@@ -103,6 +115,11 @@ function SignUp_TH(props) {
             marginTop: { xs: 2, md: 4 },
             display: "flex",
             flexDirection: "column",
+            backgroundColor: "#F5F5F5",
+            padding: 2,
+            borderRadius: 10,
+            // border: 5,
+            borderColor: "green",
             alignItems: "center",
           }}
         >

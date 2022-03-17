@@ -15,8 +15,8 @@ import ChildCareIcon from "@mui/icons-material/ChildCare";
 import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles"
+import Tree from "../assets/logo.png";
 
-const theme = createTheme();
 
 const useStyles = makeStyles({
   icon: {
@@ -53,6 +53,18 @@ const useStyles = makeStyles({
   ,
 })
 
+const theme = createTheme({
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundImage: `url(${Tree})`
+        }
+      }
+    }
+  }
+});
+
 function SignUp_Type() {
 
   const classes = useStyles()
@@ -71,14 +83,20 @@ function SignUp_Type() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="sm" >
         <CssBaseline />
         <Box
           sx={{
-            // marginTop: { xs: 2, md: 4 },
+            marginTop: { xs: 2, md: 3 },
             display: "flex",
             flexDirection: "column",
+            backgroundColor: "#F5F5F5",
+            padding: 2,
+            borderRadius: 10,
+            // border: 5,
+            borderColor: "green",
             alignItems: "center",
+            height: "100%"
           }}
         >
           <Container

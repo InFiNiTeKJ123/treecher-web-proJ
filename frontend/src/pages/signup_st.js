@@ -13,8 +13,8 @@ import { makeStyles } from "@mui/styles"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Slide } from "@mui/material";
+import Tree from "../assets/logo.png";
 
-const theme = createTheme();
 
 const useStyles = makeStyles({
   icon: {
@@ -48,6 +48,18 @@ const useStyles = makeStyles({
   ,
 })
 
+const theme = createTheme({
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          backgroundImage: `url(${Tree})`
+        }
+      }
+    }
+  }
+});
+
 function TransitionDown(props) {
   return <Slide {...props} direction="down" />;
 }
@@ -66,15 +78,15 @@ function SignUp_ST(props) {
     navigate('/login')
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-    // axios.post(`http://127.0.0.1:8000/api/user/create/st`,{
-    //   email: data.get("email"),
-    //   first_name: data.get("firstName"),
-    //   last_name: data.get("lastName"),
-    //   password: data.get("password"),
-    // }).then((res) => {
-    //   console.log(res.data)
-    //   navigate('/login')
-    // })
+    axios.post(`http://127.0.0.1:8000/api/user/create/st`,{
+      email: data.get("email"),
+      first_name: data.get("firstName"),
+      last_name: data.get("lastName"),
+      password: data.get("password"),
+    }).then((res) => {
+      console.log(res.data)
+      navigate('/login')
+    })
    };
 
 
@@ -87,6 +99,11 @@ function SignUp_ST(props) {
             marginTop: { xs: 2, md: 4 },
             display: "flex",
             flexDirection: "column",
+            backgroundColor: "#F5F5F5",
+            padding: 2,
+            borderRadius: 10,
+            // border: 5,
+            borderColor: "green",
             alignItems: "center",
           }}
         >

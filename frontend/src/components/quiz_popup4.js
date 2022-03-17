@@ -123,8 +123,6 @@ function Quiz_popup4(props) {
             variant="contained"
             color="success"
             onClick={props.handleclose}
-            // onClose={}
-            // onClick={(props) => {props.checkpoint && props.handleclose}}
           >
             ปลอดภัย
           </Button>

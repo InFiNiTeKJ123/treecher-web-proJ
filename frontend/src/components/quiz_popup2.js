@@ -10,12 +10,19 @@ import { Box, createTheme, IconButton, Typography } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DoNotDisturbAltIcon from "@mui/icons-material/DoNotDisturbAlt";
 import CancelIcon from "@mui/icons-material/Cancel";
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-function Quiz_popup(props) {
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+function Quiz_popup2(props) {
   const theme = createTheme();
 
   const [close, setClose] = useState(false);
@@ -23,6 +30,40 @@ function Quiz_popup(props) {
   const clickonClose = (props) => {
     setClose(!props.clickcheckpoint);
   };
+
+  const [open2, setOpen2] = useState(false)
+  
+  const handleOpenPopup2 = () => {
+    setOpen2(true)
+  }
+
+  const handleClosePopup2 = () => {
+    setOpen2(false)
+  }
+
+  const [opensnackbar2, setOpensnackbar2] = useState(false);
+
+  const handleClick2 = () => {
+    setOpensnackbar2(true);
+  };
+
+  const handleClose2 = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpensnackbar2(false);
+  };
+
+  const Checkpoint2 = () => (
+    <Stack spacing={2} sx={{ width: '100%' }}>
+        <Snackbar open={opensnackbar2} autoHideDuration={6000} onClose={handleClose2}>
+          <Alert onClose={handleClose2} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
+            เย้ คุณได้แยกขยะเรียบร้อยแล้ว
+          </Alert>
+        </Snackbar>
+      </Stack>
+  )
 
   return (
     <Box>
@@ -43,7 +84,7 @@ function Quiz_popup(props) {
               fontWeight: "bold",
             }}
           >
-            {"บันทึกการรดน้ำต้นไม้ครั้งที่ 1"}
+            {"แบบฝึกหัดการแยกขยะ"}
           </Typography>
           <IconButton
             aria-label="CancelIcon"
@@ -63,14 +104,14 @@ function Quiz_popup(props) {
         <DialogContent>
           <Box component="div" sx={{ textAlign: "center" }}>
             <DialogContentText  sx={{ fontFamily: "Kanit" }} id="alert-dialog-slide-description">
-              วันนี้นักเรียนรดน้ำต้นไม้แล้วหรือยังคะ
+              ขวดน้ำพลาสติกเป็นขยะรีไซเคิล ใช่หรือไม่ ?
             </DialogContentText>
           </Box>
           <Box component="div" sx={{ textAlign: "center" }}>
             <Box
               component="img"
-              src="https://www.img.in.th/images/83b7c243c2ca76e853ca96df4c2e3514.png"
-              alt="quiztree.png"
+              src="https://www.img.in.th/images/0f8eb250bb1a33d87240596da9509b29.jpg"
+              alt="bottle.png"
               sx={{ width: { xs: 150, md: 225 }, height: { xs: 150, md: 225 } }}
             />
           </Box>
@@ -86,7 +127,7 @@ function Quiz_popup(props) {
             // onClose={}
             // onClick={(props) => {props.checkpoint && props.handleclose}}
           >
-            ยืนยัน
+            ใช่
           </Button>
           <Button 
             sx = {{ fontFamily: "Kanit"}}
@@ -95,7 +136,7 @@ function Quiz_popup(props) {
             color="error"
             onClick={props.handleclose}
           >
-            ยกเลิก
+            ไม่ใช่
           </Button>
         </DialogActions>
       </Dialog>
@@ -103,6 +144,6 @@ function Quiz_popup(props) {
   );
 }
 
-export default Quiz_popup;
+export default Quiz_popup2;
 
 

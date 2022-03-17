@@ -9,7 +9,7 @@ import MuiAlert from '@mui/material/Alert';
 
 import Avartarst_mobile from '../components/students/avartarst_mobile'
 import Main_quiz from '../components/students/main_quiz'
-import Quiz_popup from '../components/quiz_popup';
+import Quiz_popup from '../components/quiz_popup1';
 import Left_Menu_class_st from '../components/students/left_menu_class_st';
 import Left_slidebar_class_st from '../components/students/left_slidebar_class_st';
 import Navbar_moblie from '../components/navbar_mobile';
@@ -56,12 +56,54 @@ function Quiz() {
     setOpen(false)
   }
 
+
+  const [open1, setOpen1] = useState(false)
+  
+  const handleOpenPopup1 = () => {
+    setOpen1(true)
+  }
+
+  const handleClosePopup1 = () => {
+    setOpen1(false)
+  }
+
+  const [open2, setOpen2] = useState(false)
+  
+  const handleOpenPopup2 = () => {
+    setOpen2(true)
+  }
+
+  const handleClosePopup2 = () => {
+    setOpen2(false)
+  }
+
+  const [open3, setOpen3] = useState(false)
+  
+  const handleOpenPopup3 = () => {
+    setOpen3(true)
+  }
+
+  const handleClosePopup3 = () => {
+    setOpen3(false)
+  }
+
+  const [open4, setOpen4] = useState(false)
+  
+  const handleOpenPopup4 = () => {
+    setOpen4(true)
+  }
+
+  const handleClosePopup4 = () => {
+    setOpen4(false)
+  }
+// popup
+
+
   const [openslide, setOpenslide] = useState(false)
 
   const toggleslider = () => {
     setOpenslide(!openslide)
   }
-
   const [opensnackbar, setOpensnackbar] = useState(false);
 
   const handleClick = () => {
@@ -85,6 +127,8 @@ function Quiz() {
         </Snackbar>
       </Stack>
   )
+
+
 
   return (
     <Box position='flex'> 

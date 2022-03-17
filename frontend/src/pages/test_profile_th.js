@@ -68,7 +68,7 @@ const Last_Name =({
         onChange={onChange} 
         maxLength="35" 
         value={value} 
-        placeholder="6410110xxx@psu.ac.th" 
+        placeholder="xxxx@psu.ac.th" 
         required/>
     </div>
   
@@ -176,9 +176,9 @@ const Last_Name =({
             <Profile 
             onSubmit={this.handleSubmit} 
             src={imagePreviewUrl} 
-            name={name}
-            lastname={lastname}
-            email={email}/>)}
+            name="เพ็ชรัตน์"
+            lastname="สุริยะไชย" 
+            email="petcharat.s@psu.ac.th"/>)}
 
           
         </div>

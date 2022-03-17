@@ -12,8 +12,8 @@ import Left_Menu_class_th from '../components/teacher/left_menu_class_th';
 import Left_slidebar_class_th from '../components/teacher/left_slidebar_class_th';
 import Avartar_mobile from '../components/teacher/avartar_mobile'
 import Main_quiz from '../components/students/main_quiz'
-import Quiz_popup from '../components/quiz_popup';
-import Quizmade from '../components/teacher/quizth_made';
+import Quiz_popup from '../components/quiz_popup1';
+import Quizth_made from '../components/teacher/quizth_made';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -43,7 +43,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 
-function Quiz() {
+function Quizmade() {
 
   const classes = useStyles()
 
@@ -89,7 +89,9 @@ function Quiz() {
 
   return (
     <Box position='flex'> 
-      <Navbar toggleslider={toggleslider}/>
+      <Box component='div' sx={{ display: {sm: 'none'}}}>
+        <Navbar toggleslider={toggleslider} />
+      </Box>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
           <Left_Menu_class_th />
@@ -102,7 +104,7 @@ function Quiz() {
             <Avartar_mobile className={classes.avartar_mobile}/>
           </Grid>
           <Grid item xs sx={{ marginLeft: {md:"15%"}}} >
-            <Quizmade Openpopup={handleOpenPopup}/>
+            <Main_quiz Openpopup={handleOpenPopup}/>
             <Quiz_popup Open={open} handleclose={handleClosePopup} clickcheckpoint={handleClick}/>
             {Checkpoint()}
           </Grid>
@@ -112,5 +114,6 @@ function Quiz() {
   )
 }
 
-export default Quiz
+
+export default Quizmade
 

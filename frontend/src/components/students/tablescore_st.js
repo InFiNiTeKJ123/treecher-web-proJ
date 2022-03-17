@@ -12,11 +12,11 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData( "แบบฝึกหัดที่ 1", 10, "08/03/2565", " - " ),
-  createData( "แบบฝึกหัดที่ 2", 8, "08/03/2565", " - " ),
-  createData( "แบบฝึกหัดที่ 3", 10, "08/03/2565", " - " ),
-  createData( "แบบฝึกหัดที่ 4", 9, "08/03/2565", " - " ),
-  createData( "แบบฝึกหัดที่ 5", 10, "08/03/2565", " - " ),
+  createData( "แบบฝึกหัดที่ 1", 10, "08/02/2565", " - " ),
+  createData( "แบบฝึกหัดที่ 2", 8, "22/02/2565", " - " ),
+  createData( "แบบฝึกหัดที่ 3", 10, "04/03/2565", " - " ),
+  createData( "แบบฝึกหัดที่ 4", 9, "10/03/2565", " - " ),
+  createData( "แบบฝึกหัดที่ 5", 10, "17/03/2565", " - " ),
 ];
 
 export default function Table_scorest() {

@@ -1,8 +1,18 @@
 import { makeStyles } from '@mui/styles'
 import { createTheme } from '@mui/material/styles';
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography, Grid } from '@mui/material';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+import Quiz_popup2 from '../quiz_popup2';
+import Quiz_popup1 from '../quiz_popup1';
+import Quiz_popup3 from '../quiz_popup3';
+import Quiz_popup4 from '../quiz_popup4';
+
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
@@ -18,11 +28,161 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
     }
   }));
 
-function Mainfeed(props) {
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+function Main_quiz(props) {
 
     const classes = useStyles();
 
     const theme = createTheme();
+
+    const [open1, setOpen1] = useState(false)
+  
+    const handleOpenPopup1 = () => {
+      setOpen1(true)
+    }
+  
+    const handleClosePopup1 = () => {
+      setOpen1(false)
+    }
+  
+    const [open2, setOpen2] = useState(false)
+    
+    const handleOpenPopup2 = () => {
+      setOpen2(true)
+    }
+  
+    const handleClosePopup2 = () => {
+      setOpen2(false)
+    }
+  
+    const [open3, setOpen3] = useState(false)
+    
+    const handleOpenPopup3 = () => {
+      setOpen3(true)
+    }
+  
+    const handleClosePopup3 = () => {
+      setOpen3(false)
+    }
+  
+    const [open4, setOpen4] = useState(false)
+    
+    const handleOpenPopup4 = () => {
+      setOpen4(true)
+    }
+  
+    const handleClosePopup4 = () => {
+      setOpen4(false)
+    }
+  // popup
+
+  // snackbar1
+
+  const [opensnackbar1, setOpensnackbar1] = useState(false);
+
+  const handleClick1 = () => {
+    setOpensnackbar1(true);
+  };
+
+  const handleClose1 = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpensnackbar1(false);
+  };
+
+  const Checkpoint1 = () => (
+    <Stack spacing={2} sx={{ width: '100%' }}>
+        <Snackbar open={opensnackbar1} autoHideDuration={2000} onClose={handleClose1}>
+          <Alert onClose={handleClose1} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
+            เย้! คุณได้รดน้ำต้นไม้แล้ว
+          </Alert>
+        </Snackbar>
+      </Stack>
+  )
+
+  // snackbar2
+
+  const [opensnackbar2, setOpensnackbar2] = useState(false);
+
+  const handleClick2 = () => {
+    setOpensnackbar2(true);
+  };
+
+  const handleClose2 = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpensnackbar2(false);
+  };
+
+  const Checkpoint2 = () => (
+    <Stack spacing={2} sx={{ width: '100%' }}>
+        <Snackbar open={opensnackbar2} autoHideDuration={2000} onClose={handleClose2}>
+          <Alert onClose={handleClose2} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
+            เย้! คุณคือสุดยอดนักแยกขยะ
+          </Alert>
+        </Snackbar>
+      </Stack>
+  )
+
+    // snackbar3
+
+    const [opensnackbar3, setOpensnackbar3] = useState(false);
+
+    const handleClick3 = () => {
+      setOpensnackbar3(true);
+    };
+  
+    const handleClose3 = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setOpensnackbar3(false);
+    };
+  
+    const Checkpoint3 = () => (
+      <Stack spacing={3} sx={{ width: '100%' }}>
+          <Snackbar open={opensnackbar3} autoHideDuration={2000} onClose={handleClose3}>
+            <Alert onClose={handleClose3} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
+              เย้! คุณคือสุดยอดนักประหยัดพลังงาน
+            </Alert>
+          </Snackbar>
+        </Stack>
+    )
+
+        // snackbar4
+
+        const [opensnackbar4, setOpensnackbar4] = useState(false);
+
+        const handleClick4 = () => {
+          setOpensnackbar4(true);
+        };
+      
+        const handleClose4 = (event, reason) => {
+          if (reason === 'clickaway') {
+            return;
+          }
+      
+          setOpensnackbar4(false);
+        };
+      
+        const Checkpoint4 = () => (
+          <Stack spacing={4} sx={{ width: '100%' }}>
+              <Snackbar open={opensnackbar4} autoHideDuration={2000} onClose={handleClose4}>
+                <Alert onClose={handleClose4} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
+                  เย้! คุณใช้ไฟฟ้าอย่างปลอดภัยแล้ว
+                </Alert>
+              </Snackbar>
+            </Stack>
+        )
+    
 
   return (
       <Container className={classes.container}>
@@ -41,7 +201,7 @@ function Mainfeed(props) {
         
         <Grid container sx={{ alignItems: "center" }}>
                   <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #7ad154 90%)', marginRight: theme.spacing(4) }}  className={classes.card_classroom}>
-                    <CardActionArea onClick={props.Openpopup}>
+                    <CardActionArea onClick={handleOpenPopup1}>
                       <CardMedia
                       component="img"
                       alt="green iguana"
@@ -51,20 +211,22 @@ function Mainfeed(props) {
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>
-                          แบบฝึกหัด
+                          แบบฝึกหัดที่ 1
                         </Typography>
                         <Typography  gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                           มารดน้ำต้นไม้กันเถอะ
                         </Typography>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions CardActions onClick={props.Openpopup}>
+                    <CardActions CardActions onClick={handleOpenPopup1}>
                       <Button sx={{ fontFamily: "Kanit"}} size="small">เข้าทำควิซ</Button>
                     </CardActions>
+                    <Quiz_popup1 Open={open1} handleclose={handleClosePopup1} clickcheckpoint={handleClick1}/>
+                    {Checkpoint1()}
                 </Card>
-  
+
                   <Card sx = {{background: 'linear-gradient(45deg, #f9e6d6 30%, #e1c4ba 60%)', marginRight: theme.spacing(4) }}  className={classes.card_classroom}>
-                    <CardActionArea onClick={props.Openpopup}>
+                    <CardActionArea onClick={handleOpenPopup2}>
                       <CardMedia
                       component="img"
                       alt="green iguana"
@@ -74,20 +236,22 @@ function Mainfeed(props) {
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>
-                          แบบฝึกหัด
+                          แบบฝึกหัดที่ 2
                         </Typography>
                         <Typography  gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                           มาแยกขยะกันเถอะ
                         </Typography>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions CardActions onClick={props.Openpopup}>
+                    <CardActions CardActions onClick={handleOpenPopup2}>
                       <Button sx={{ fontFamily: "Kanit", color:'#593d5e'}} size="small">เข้าทำควิซ</Button>
                     </CardActions>
+                    <Quiz_popup2 Open={open2} handleclose={handleClosePopup2} clickcheckpoint={handleClick2}/>
+                    {Checkpoint2()}
                 </Card>
 
                 <Card sx = {{background: 'linear-gradient(45deg, #ffa73d 30%, #f1ff3a 90%)', marginRight: theme.spacing(4) }}  className={classes.card_classroom}>
-                    <CardActionArea onClick={props.Openpopup}>
+                    <CardActionArea onClick={handleOpenPopup3}>
                       <CardMedia
                       component="img"
                       alt="green iguana"
@@ -97,20 +261,22 @@ function Mainfeed(props) {
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>
-                          แบบฝึกหัด
+                          แบบฝึกหัดที่ 3
                         </Typography>
                         <Typography  gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                           การใช้ไฟฟ้าอย่างประหยัด
                         </Typography>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions CardActions onClick={props.Openpopup}>
+                    <CardActions CardActions onClick={handleOpenPopup3}>
                       <Button sx={{ fontFamily: "Kanit", color: "#461e4f"}} size="small">เข้าทำควิซ</Button>
                     </CardActions>
+                    <Quiz_popup3 Open={open3} handleclose={handleClosePopup3} clickcheckpoint={handleClick3}/>
+                    {Checkpoint3()}
                 </Card>
 
                 <Card sx = {{background: 'linear-gradient(45deg, #c691ff 30%, #829bff 90%)', marginRight: theme.spacing(4) }}  className={classes.card_classroom}>
-                    <CardActionArea onClick={props.Openpopup}>
+                    <CardActionArea onClick={handleOpenPopup4}>
                       <CardMedia
                       component="img"
                       alt="green iguana"
@@ -120,16 +286,18 @@ function Mainfeed(props) {
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>
-                          แบบฝึกหัด
+                          แบบฝึกหัดที่ 4
                         </Typography>
                         <Typography  gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                           การใช้ไฟฟ้าอย่างปลอดภัย
                         </Typography>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions CardActions onClick={props.Openpopup}>
+                    <CardActions CardActions onClick={handleOpenPopup4}>
                       <Button sx={{ fontFamily: "Kanit", color: "#ffff02 "}} size="small">เข้าทำควิซ</Button>
                     </CardActions>
+                    <Quiz_popup4 Open={open4} handleclose={handleClosePopup4} clickcheckpoint={handleClick4}/>
+                    {Checkpoint4()}
                 </Card>
                 
               </Grid>
@@ -137,4 +305,4 @@ function Mainfeed(props) {
   )
 }
 
-export default Mainfeed
+export default Main_quiz

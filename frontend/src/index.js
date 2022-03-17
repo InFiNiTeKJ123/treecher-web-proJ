@@ -15,7 +15,7 @@ import Member_th from './pages/member_th';
 import CardProfile from './pages/test_profile';
 import Score_st from './pages/score_st';
 import Score_th from './pages/score_th';
-import Quizmade from './components/teacher/quizth_made';
+import Quizmade from './pages/quizmade';
 import SignUp_Type from './pages/signup_type';
 import SignUp_TH from './pages/signup_th';
 import SignUp_ST from './pages/signup_st';

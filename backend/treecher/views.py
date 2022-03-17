@@ -1,11 +1,11 @@
 from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework import status, viewsets
+from rest_framework import status, viewsets, generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 
-from .models import NewUser
-from .serializers import CreateStudentSerializer, CreateTeacherSerializer, NewUserSerializer, UserSerializer
+from .models import NewUser, Student
+from .serializers import CreateStudentSerializer, CreateTeacherSerializer, NewUserSerializer, StudentsSerializer, UserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny
 
@@ -40,6 +40,9 @@ class UserViewset(viewsets.ModelViewSet):
     queryset = NewUser.objects.all()
     serializer_class = NewUserSerializer
 
+class StudentViewSet(generics.ListCreateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentsSerializer
 
 @api_view()
 def whoami(request):
@@ -59,3 +62,4 @@ class BlacklistTokenUpdateView(APIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+

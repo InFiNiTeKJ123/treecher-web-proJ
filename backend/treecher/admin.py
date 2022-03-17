@@ -1,5 +1,5 @@
 from django.contrib import admin
-from treecher.models import NewUser, Classroom, Student
+from treecher.models import NewUser, Student, Teacher
 from django.contrib.auth.admin import UserAdmin
 from django.forms import TextInput, Textarea, CharField
 from django import forms
@@ -31,4 +31,4 @@ class UserAdminConfig(UserAdmin):
 
 admin.site.register(NewUser, UserAdminConfig)
 admin.site.register(Student)
-admin.site.register(Classroom)
+admin.site.register(Teacher)

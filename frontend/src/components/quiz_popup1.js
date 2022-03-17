@@ -31,7 +31,6 @@ function Quiz_popup1(props) {
     setClose(!props.clickcheckpoint);
   };
 
-
   const [opensnackbar1, setOpensnackbar1] = useState(false);
 
   const handleClick1 = () => {

@@ -85,6 +85,7 @@ function Main_quiz(props) {
 
   const handleClick1 = () => {
     setOpensnackbar1(true);
+    setOpen1(false)
   };
 
   const handleClose1 = (event, reason) => {
@@ -111,6 +112,7 @@ function Main_quiz(props) {
 
   const handleClick2 = () => {
     setOpensnackbar2(true);
+    setOpen2(false)
   };
 
   const handleClose2 = (event, reason) => {
@@ -137,6 +139,7 @@ function Main_quiz(props) {
 
     const handleClick3 = () => {
       setOpensnackbar3(true);
+      setOpen3(false)
     };
   
     const handleClose3 = (event, reason) => {
@@ -159,29 +162,30 @@ function Main_quiz(props) {
 
         // snackbar4
 
-        const [opensnackbar4, setOpensnackbar4] = useState(false);
+    const [opensnackbar4, setOpensnackbar4] = useState(false);
 
-        const handleClick4 = () => {
-          setOpensnackbar4(true);
-        };
+    const handleClick4 = () => {
+      setOpensnackbar4(true);
+      setOpen4(false)
+    };
       
-        const handleClose4 = (event, reason) => {
-          if (reason === 'clickaway') {
-            return;
-          }
+    const handleClose4 = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
       
-          setOpensnackbar4(false);
-        };
+      setOpensnackbar4(false);
+    };
       
-        const Checkpoint4 = () => (
-          <Stack spacing={4} sx={{ width: '100%' }}>
-              <Snackbar open={opensnackbar4} autoHideDuration={2000} onClose={handleClose4}>
-                <Alert onClose={handleClose4} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
-                  เย้! คุณใช้ไฟฟ้าอย่างปลอดภัยแล้ว
-                </Alert>
-              </Snackbar>
-            </Stack>
-        )
+    const Checkpoint4 = () => (
+      <Stack spacing={4} sx={{ width: '100%' }}>
+          <Snackbar open={opensnackbar4} autoHideDuration={2000} onClose={handleClose4}>
+            <Alert onClose={handleClose4} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
+              เย้! คุณใช้ไฟฟ้าอย่างปลอดภัยแล้ว
+            </Alert>
+          </Snackbar>
+        </Stack>
+    )
     
 
   return (

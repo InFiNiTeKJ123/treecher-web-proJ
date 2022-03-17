@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'treecher.apps.TreecherConfig',
+    'classroom.apps.ClassroomConfig',
 ]
 
 MIDDLEWARE = [

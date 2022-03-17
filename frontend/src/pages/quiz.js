@@ -54,48 +54,9 @@ function Quiz() {
 
   const handleClosePopup = () => {
     setOpen(false)
+    setOpensnackbar(true)
   }
 
-
-  const [open1, setOpen1] = useState(false)
-  
-  const handleOpenPopup1 = () => {
-    setOpen1(true)
-  }
-
-  const handleClosePopup1 = () => {
-    setOpen1(false)
-  }
-
-  const [open2, setOpen2] = useState(false)
-  
-  const handleOpenPopup2 = () => {
-    setOpen2(true)
-  }
-
-  const handleClosePopup2 = () => {
-    setOpen2(false)
-  }
-
-  const [open3, setOpen3] = useState(false)
-  
-  const handleOpenPopup3 = () => {
-    setOpen3(true)
-  }
-
-  const handleClosePopup3 = () => {
-    setOpen3(false)
-  }
-
-  const [open4, setOpen4] = useState(false)
-  
-  const handleOpenPopup4 = () => {
-    setOpen4(true)
-  }
-
-  const handleClosePopup4 = () => {
-    setOpen4(false)
-  }
 // popup
 
 

@@ -25,30 +25,7 @@ import Quiz from './pages/quiz';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App />}>
-            <Route path="profile" element={<Profile/>}/>
-            <Route path="profile_th" element={<Profile_th/>}/>
-            <Route path="home_th" element={<Home_teacher/>}/>
-            <Route path="home_st" element={<Home_student />}/>
-            <Route path="quiz" element={<Quiz />}/>
-            <Route path="quizth" element={<MakeQuiz_th />}/>
-            <Route path="classroom_th" element={<Classroom_Teacher />}/>
-            <Route path="classroom_st" element={<Classroom_Students />}/>
-            <Route path="friends" element={<Friends />}/>
-            <Route path="member_th" element={<Member_th/>}/>
-            <Route path="testprofile" element={<CardProfile />}/>
-            <Route path="score_st" element={<Score_st />}/>
-            <Route path="score_th" element={<Score_th />}/>
-            <Route path="quizmade" element={<Quizmade />}/>
-        </Route>
-        <Route exact path="login" element={<Login/>}/>
-        <Route exact path="signup" element={<SignUp_Type/>}/>
-        <Route exact path="signup/student" element={<SignUp_ST/>}/>
-        <Route exact path="signup/teacher" element={<SignUp_TH/>}/>
-      </Routes>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

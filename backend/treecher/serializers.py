@@ -1,7 +1,7 @@
 from dataclasses import field
 from xml.dom import UserDataHandler
 from rest_framework import serializers
-from treecher.models import NewUser
+from treecher.models import NewUser, Student, Teacher
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -27,8 +27,10 @@ class CreateStudentSerializer(serializers.ModelSerializer):
         # as long as the fields are the same, we can just use this
         instance = self.Meta.model(**validated_data)
         if password is not None:
-            instance.set_password(password)      
+            instance.set_password(password) 
         instance.save()
+        student = Student.objects.create(user=instance)
+        student.save()
         return instance
 
 class CreateTeacherSerializer(serializers.ModelSerializer):
@@ -52,8 +54,10 @@ class CreateTeacherSerializer(serializers.ModelSerializer):
         # as long as the fields are the same, we can just use this
         instance = self.Meta.model(**validated_data)
         if password is not None:
-            instance.set_password(password)      
+            instance.set_password(password) 
         instance.save()
+        teacher = Teacher.objects.create(user=instance)
+        teacher.save()
         return instance
 
 
@@ -66,3 +70,8 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'email', 'first_name', 'last_name', 'is_student', 'is_teacher')
+
+class StudentsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = '__all__'

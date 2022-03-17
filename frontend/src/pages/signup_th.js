@@ -3,21 +3,16 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import ChildCareIcon from "@mui/icons-material/ChildCare";
-import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles"
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../config/axios";
 import axios from "axios";
+import { Slide } from "@mui/material";
 
 const theme = createTheme();
 
@@ -53,7 +48,11 @@ const useStyles = makeStyles({
   ,
 })
 
-function SignUp_TH() {
+function TransitionDown(props) {
+  return <Slide {...props} direction="down" />;
+}
+
+function SignUp_TH(props) {
 
   const classes = useStyles()
 
@@ -75,13 +74,15 @@ function SignUp_TH() {
 			[e.target.name]: e.target.value.trim(),
 		});
 	};
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    props.setcheckpoint(true)
+    props.settransition(() => TransitionDown)
+    // console.log(formData);
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-
+    
     axios.post(`http://127.0.0.1:8000/api/user/create/th`,{
       email: data.get("email"),
       first_name: data.get("firstName"),

@@ -27,10 +27,10 @@ function Friends_list(props) {
                   sx={{ fontFamily: "Kanit", width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                         }} 
                   aria-label="avatar" >
-                  {props.friends.first_name[0]}
+                  {props.friends.user.first_name[0]}
             </Avatar>
             <Typography sx={{ fontFamily: "Kanit", marginLeft: 3, fontSize: "18px" }}>
-                {props.friends.first_name} {props.friends.last_name}
+                {props.friends.user.first_name} {props.friends.user.last_name}
             </Typography>
           </Grid>
         </Card>

@@ -1,8 +1,9 @@
 import { makeStyles } from '@mui/styles'
 import { createTheme } from '@mui/material/styles';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
+import axiosInstance from '../../config/axios';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
@@ -20,6 +21,14 @@ function Classroom_list_th() {
     const classes = useStyles();
 
     const theme = createTheme();
+
+    const [classroom, setClassroom] = useState([])
+
+    useEffect( async () => {
+      let classroom_data = await axiosInstance.get('classrooms/classroom')
+      console.log(classroom_data.data[0].Students[0].user.email)
+      setClassroom(classroom_data.data[0])
+    }, [])
 
   return (
       <Container className={classes.container}>
@@ -47,10 +56,11 @@ function Classroom_list_th() {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500  }}>
-                  240-124
+                  {classroom.name}
                 </Typography>
                 <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
-                  ห้องเรียนสำหรับคนรักโลก
+                  {classroom.about}
+                  {/* {classroom.Students.user.id} */}
                 </Typography>
               </CardContent>
             </CardActionArea>

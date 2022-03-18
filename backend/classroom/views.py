@@ -2,9 +2,13 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from classroom.models import Classroom
 from classroom.serializers import ClassroomSerializers
+from classroom.models import random_code
+from classroom.models import Post
+from classroom.serializers import PostSerializer
 from treecher.models import Student
 
 # Create your views here.
@@ -38,7 +42,7 @@ def createclassroom(request):
     about = request.POST.get("about")
     Teacher = request.user
     Students = get_object_or_404(Student, user_id=4)
-    join_code = random_digit()
+    join_code = random_code()
 
     Classroom.objects.create(
         name=name, 
@@ -49,3 +53,10 @@ def createclassroom(request):
     )
 
     return Response(name, about, Teacher, Student, join_code)
+
+class PostViewSets(viewsets.ModelViewSet):
+    serializer_class = PostSerializer
+
+    def get_queryset(self):
+        return Post.objects.all()
+    

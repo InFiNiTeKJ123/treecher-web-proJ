@@ -59,4 +59,18 @@ class PostViewSets(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Post.objects.all()
-    
+
+    def create(self, request, *args, **kwargs):
+        data = request.data
+
+        new_post = Post.objects.create(
+            title = data['title'],
+            content = data['content'],
+            author = request.user
+        )    
+        new_post.save()
+
+        serializer = PostSerializer(new_post)
+
+        return Response(serializer.data)
+

@@ -155,7 +155,6 @@ function SignUp_TH(props) {
           </Container>
           <Box
             component="form"
-            noValidate
             onSubmit={handleSubmit}
             sx={{ mt: 3 }}
           >

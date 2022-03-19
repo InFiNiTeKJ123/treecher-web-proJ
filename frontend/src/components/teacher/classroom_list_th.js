@@ -26,7 +26,7 @@ function Classroom_list_th() {
 
     useEffect( async () => {
       let classroom_data = await axiosInstance.get('classrooms/classroom')
-      console.log(classroom_data.data[0].Students[0].user.email)
+      console.log(classroom_data.data[0])
       setClassroom(classroom_data.data[0])
     }, [])
 

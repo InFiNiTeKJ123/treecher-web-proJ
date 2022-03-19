@@ -64,7 +64,6 @@ class PostViewSets(viewsets.ModelViewSet):
         data = request.data
 
         new_post = Post.objects.create(
-            title = data['title'],
             content = data['content'],
             author = request.user
         )    

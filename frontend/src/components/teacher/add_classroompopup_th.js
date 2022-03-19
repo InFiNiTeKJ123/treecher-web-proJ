@@ -17,7 +17,7 @@ function Add_classroomPopup_th(props) {
         <DialogTitle sx={{ textAlign : 'center', fontFamily: "Kanit"  }}>
             สร้างห้องเรียน
         </DialogTitle>
-        <DialogContent sx={{ display: 'flex', fontFamily: "Kanit"}}>
+        <DialogContent sx={{ fontFamily: "Kanit"}}>
           <TextField
             inputProps={{style: {fontFamily: "Kanit"}}} 
             InputLabelProps={{style: {fontFamily: "Kanit"}}}
@@ -27,6 +27,19 @@ function Add_classroomPopup_th(props) {
             label="ชื่อห้องเรียน"
             fullWidth
             variant="standard"
+            color="success"
+          />
+          <TextField
+            inputProps={{style: {fontFamily: "Kanit"}}} 
+            InputLabelProps={{style: {fontFamily: "Kanit"}}}
+            autoFocus
+            margin="dense"
+            id="about"
+            label="รายละเอียดห้องเรียน"
+            fullWidth
+            variant="standard"
+            multiline
+            color="success"
           />
             
         </DialogContent>

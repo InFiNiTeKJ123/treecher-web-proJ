@@ -2,7 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.conf import settings
 from treecher.models import NewUser
-from treecher.models import Teacher, Student
+from treecher.models import Student
+from datetime import datetime
 # Create your models here.
 
 from string import ascii_lowercase
@@ -34,9 +35,8 @@ class Post(models.Model):
     )
         
     classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE, default=1)
-    title = models.CharField(max_length=250)
     content = models.TextField()
-    published = models.DateTimeField(default=timezone.now)
+    published = models.DateTimeField(default=datetime.now())
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='classroom_posts')
     status = models.CharField(max_length=10, choices=option, default='published')
     objects = models.Manager()  # default manager
@@ -46,4 +46,4 @@ class Post(models.Model):
         ordering = ('-published',)
 
     def __str__(self):
-        return self.title
+        return self.content

@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Slide } from "@mui/material";
 import Tree from "../assets/logo.png";
+import axiosInstance from "../config/axios";
 
 
 const useStyles = makeStyles({
@@ -75,14 +76,14 @@ function SignUp_ST(props) {
     props.setcheckpoint(true)
     props.settransition(() => TransitionDown)
     // console.log(formData);
-    navigate('/login')
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-    axios.post(`http://127.0.0.1:8000/api/user/create/st`,{
+    axiosInstance.post(`user/create/st`,{
       email: data.get("email"),
       first_name: data.get("firstName"),
       last_name: data.get("lastName"),
       password: data.get("password"),
+      confirm_password: data.get("confirm_password")
     }).then((res) => {
       console.log(res.data)
       navigate('/login')
@@ -154,6 +155,7 @@ function SignUp_ST(props) {
                   id="firstName"
                   label="ชื่อ"
                   autoFocus
+                  color="success"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -166,6 +168,7 @@ function SignUp_ST(props) {
                   label="นามสกุล"
                   name="lastName"
                   autoComplete="family-name"
+                  color="success"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -178,6 +181,7 @@ function SignUp_ST(props) {
                   label="อีเมล"
                   name="email"
                   autoComplete="email"
+                  color="success"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -191,6 +195,7 @@ function SignUp_ST(props) {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  color="success"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -199,11 +204,12 @@ function SignUp_ST(props) {
                   InputLabelProps={{style: {fontFamily: "Kanit"}}}
                   required
                   fullWidth
-                  name="password"
+                  name="confirm_password"
                   label="ยืนยันรหัสผ่าน"
                   type="password"
-                  id="password"
+                  id="confirm_password"
                   autoComplete="new-password"
+                  color="success"
                 />
               </Grid>
             </Grid>

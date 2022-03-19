@@ -69,9 +69,9 @@ function Member_th() {
     }
 
     useEffect( async () => {
-      let result = await axiosInstance.get('user/')
-          console.log(result.data, result.status)
-          setmembersList(result.data)
+      let result = await axiosInstance.get('classrooms/classroom')
+          console.log(result.data[0].Students)
+          setmembersList(result.data[0].Students)
           
     }, [])
 

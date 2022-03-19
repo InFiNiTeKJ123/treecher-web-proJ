@@ -13,7 +13,7 @@ import { makeStyles } from "@mui/styles"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Slide } from "@mui/material";
-import Tree from "../assets/logo.png";
+import Tree from "../assets/TCH1.png";
 import axiosInstance from "../config/axios";
 
 const useStyles = makeStyles({

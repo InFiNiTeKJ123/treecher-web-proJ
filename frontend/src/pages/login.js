@@ -6,7 +6,7 @@ import MuiAlert from '@mui/material/Alert';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Navigate, useNavigate } from "react-router-dom";
 import axiosInstance from "../config/axios";
-import Tree from "../assets/logo.png";
+import Tree from "../assets/TCH1.png";
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {

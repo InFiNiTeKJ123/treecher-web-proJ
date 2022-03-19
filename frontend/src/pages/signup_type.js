@@ -15,7 +15,7 @@ import ChildCareIcon from "@mui/icons-material/ChildCare";
 import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles"
-import Tree from "../assets/logo.png";
+import Tree from "../assets/TCH1.png";
 
 
 const useStyles = makeStyles({

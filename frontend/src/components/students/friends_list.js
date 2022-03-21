@@ -24,7 +24,7 @@ function Friends_list(props) {
             sx={{ background: "#E4E4E5", padding: 3 }}
           >
             <Avatar 
-                  sx={{ fontFamily: "Kanit", width: {xs:"18%", md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
+                  sx={{ fontFamily: "Kanit", width: {xs:"18%", sm: "8%",md:"5%"}, height: 46,fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                         }} 
                   aria-label="avatar" >
                   {props.friends.user.first_name[0]}

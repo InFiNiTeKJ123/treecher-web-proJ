@@ -176,11 +176,11 @@ function Profile() {
   return (
     <ThemeProvider theme={theme}>
     <Box > 
-      <Box component='div' sx={{ display: {sm: 'none'}}}>
+      <Box component='div' sx={{ display: {md: 'none'}, position: 'sticky', top: 0}}>
         <Navbar_moblie toggleslider={toggleslider} />
       </Box>
       <Grid container >
-        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' } , position: 'fixed' }}>
+        <Grid item sm={1.8} sx={{display: { xs: 'none', md: 'flex' } , position: 'fixed' }}>
           {/* <Left_Menu_st openpopup={handleOpenPopup} /> */}
           {left_menust_profile()}
         </Grid>

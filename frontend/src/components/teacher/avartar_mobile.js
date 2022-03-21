@@ -5,14 +5,15 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { Avatar , Container } from '@mui/material';
+import Whoami from '../../config/whoami';
 
 const useStyles = makeStyles(({theme = useTheme()}) => ({
     container: {
         paddingTop: theme.spacing(5),
-        paddingLeft: theme.spacing(10),
+        // paddingLeft: theme.spacing(10),
     },
     paper: {
-        borderRadius: 25,
+        borderRadius: 20,
         p: 2,
         width: '100%',
         maxWidth: 'lg',
@@ -41,6 +42,8 @@ function Avartar_mobile() {
 
     const classes = useStyles()
 
+    const user = Whoami()
+
   return (
     <Container className={classes.container}>
         <Paper className={classes.paper} sx={{ bgcolor: '#008037'}}>
@@ -52,13 +55,13 @@ function Avartar_mobile() {
                                 คุณครู
                             </Typography>
                             <Typography sx={{ fontFamily: "Kanit" }} variant="body2" gutterBottom className={classes.text} >
-                                เพ็ชรัตน์ สุริยะไชย
+                            {user.first_name} {user.last_name}
                             </Typography>
                         </Grid>
                     </Grid>
                     <Grid item className={classes.gridavatar}>
                         <Avatar sx={{fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', display: { xs: 'flex', sm: 'none' }}} size="small" aria-label="avatar">
-                                พ
+                            {user.first_name}
                         </Avatar>
                     </Grid>
                 </Grid>
@@ -70,33 +73,3 @@ function Avartar_mobile() {
 
 export default Avartar_mobile;
 
-
-// import React from 'react'
-// import { makeStyles } from '@mui/styles'
-// import { useTheme } from '@mui/material/styles';
-// import { Box } from '@mui/system';
-// import { Container } from '@mui/material';
-
-// const useStyles = makeStyles(({ theme = useTheme() }) => ({
-//     container: {
-//         height: "10%",
-//         paddingTop: theme.spacing(3),
-//         paddingLeft: theme.spacing(3)
-//     },
-//   }));
-
-
-// function Avartar_mobile() {
-
-//     const classes = useStyles()
-
-//   return (
-//     <Container className={classes.container} sx={{alignItems: 'right'}} >
-//         <Box>
-//             avartar_mobile
-//         </Box>
-//     </Container>
-//   )
-// }
-
-// export default Avartar_mobile

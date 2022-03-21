@@ -49,7 +49,7 @@ function Score_result(props) {
       <Box
         component="div"
         sx={{
-          width: { xs: "60%", md: "20%" },
+          width: {xs: "50%", sm:"25%", md:"15%"},
           height: "auto",
           alignItems: "center",
           bgcolor: "#008037",
@@ -57,7 +57,7 @@ function Score_result(props) {
           display: "flex",
           paddingleft: theme.spacing(3),
           marginBottom: theme.spacing(3),
-          marginLeft: { xs: theme.spacing(2), md: theme.spacing(8) },
+          marginLeft: { xs: theme.spacing(2), sm: theme.spacing(4) , md: theme.spacing(8) },
           marginTop: { xs: theme.spacing(2) },
           borderRadius: 3,
         }}

@@ -61,19 +61,19 @@ function Left_slidebar_class_th() {
                 </ListItemIcon>
                 <ListItemText primary='โปรไฟล์' sx={{fontFamily: "Kanit", color: 'white'}}/>
             </ListItem>
-            <ListItem button href='/member_th' >
+            <ListItem button component="a" href='/member_th' >
                 <ListItemIcon sx={{ color: 'white'}}>
                     <PeopleAltIcon />
                 </ListItemIcon>
                 <ListItemText primary='นักเรียน' sx={{ fontFamily: "Kanit",color: 'white'}}/>
             </ListItem>
-            <ListItem button href="/quiz">
+            <ListItem button component="a" href="/quizth">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <AddTaskIcon />
                 </ListItemIcon>
                 <ListItemText primary='สร้างแบบฝึกหัด' sx={{ fontFamily: "Kanit",color: 'white'}}/>
             </ListItem>
-            <ListItem button  >
+            <ListItem button  component="a" href="/score_th">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <FilterVintageIcon />
                 </ListItemIcon>

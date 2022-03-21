@@ -26,6 +26,7 @@ function Add_classroomPopup_st(props) {
             label="รหัสห้องเรียน"
             fullWidth
             variant="standard"
+            color="success"
           />
         </DialogContent>
         <DialogActions >

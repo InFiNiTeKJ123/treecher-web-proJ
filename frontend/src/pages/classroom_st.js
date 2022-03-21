@@ -52,7 +52,7 @@ function Classroom_Students() {
 
   return (
     <Box position='flex'>
-      <Box component='div' sx={{ display: {sm: 'none'}}}>
+      <Box component='div' sx={{ display: {md: 'none'}, position: 'sticky', top: 0}}>
         <Navbar_moblie toggleslider={toggleslider} />
       </Box>
       <Grid container item spacing={0.5}>

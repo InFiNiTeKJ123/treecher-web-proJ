@@ -8,7 +8,11 @@ import axiosInstance from '../../config/axios';
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
       width: 'auto', 
-      marginTop: 5
+      marginTop: theme.spacing(3),
+      [theme.breakpoints.down("sm")]: {
+        // paddingTop: theme.spacing(3),
+        alignItems: "center"
+      }
     },
     card_classroom: {
       maxWidth: 345 ,
@@ -39,12 +43,12 @@ function Classroom_list_th() {
                 borderRadius: 3, }}>
           <SchoolIcon sx={{ paddingLeft: theme.spacing(2) }}/>
           <Typography 
-            sx={{ display:'flex' , fontWeight: 500 , fontFamily: "Kanit" ,
+            sx={{ fontFamily: "Kanit", display:'flex' , fontWeight: 500 ,
                   padding: theme.spacing(2) , paddingLeft: theme.spacing(2.5)}}>
             ห้องเรียน
           </Typography>
         </Box>
-        <Grid container sx={{ alignItems: "center" }}>
+        <Grid container sx={{ alignItems: "center", pl:{ xs: 5 , md: 2} }}>
           <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #77bb4c  90%)', flexDirection: 'column', marginRight: theme.spacing(4) }} className={classes.card_classroom}>
             <CardActionArea href='/classroom_th'>
               <CardMedia

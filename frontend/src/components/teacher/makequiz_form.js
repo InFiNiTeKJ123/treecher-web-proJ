@@ -123,7 +123,7 @@ function Makequiz_form(props) {
       <Box
         component="div"
         sx={{
-          width: { xs: "60%", md: "20%" },
+          width: {xs: "75%", sm:"30%", md:"15%"},
           height: "auto",
           alignItems: "center",
           bgcolor: "#008037",
@@ -131,7 +131,7 @@ function Makequiz_form(props) {
           display: "flex",
           paddingleft: theme.spacing(3),
           marginBottom: theme.spacing(3),
-          marginLeft: { xs: theme.spacing(2), md: theme.spacing(8) },
+          marginLeft: { xs: theme.spacing(2), md: theme.spacing(5) },
           marginTop: { xs: theme.spacing(2) },
           borderRadius: 3,
         }}
@@ -194,42 +194,42 @@ function Makequiz_form(props) {
             <Addproblem/>
         </Box>
         <Grid item sx={{ textAlign: "center" }}>
-        <Button startIcon = {<AssignmentIcon />}
-                  variant="outlined"
-                  href="/quizmade"
-                  sx={{
-                    fontFamily: "Kanit",
-                    fontSize: 20,
-                    width: '25%',
-                    height: 'auto',
-                    borderRadius: 3,
-                    bgcolor: "#212121",
-                    color: "#000000",
-                    marginRight: theme.spacing(30),
-                    marginBottom: theme.spacing(5),
-                    marginTop: theme.spacing(3),
-                    background: '#fff200',
-                  }}
-                >
-                แบบฝึกหัด
-        </Button>
-        <Button startIcon = {<NoteAddIcon />} variant="outlined" onClick={handleClick}
-                  sx={{
-                    fontFamily: "Kanit",
-                    fontSize: 20,
-                    width: '25%',
-                    height: 'auto',
-                    borderRadius: 3,
-                    bgcolor: "#212121",
-                    color: "#000000",
-                    marginLeft: theme.spacing(30),
-                    marginBottom: theme.spacing(5),
-                    marginTop: theme.spacing(3),
-                    background: '#fff200',
-                  }}
-                >
-                สร้างแบบฝึกหัด
-          </Button>
+          <Button Button startIcon = {<AssignmentIcon />}
+                    variant="outlined"
+                    href="/quizmade"
+                    sx={{
+                      fontFamily: "Kanit",
+                      fontSize: 20,
+                      width: '25%',
+                      height: 'auto',
+                      borderRadius: 3,
+                      bgcolor: "#212121",
+                      color: "#000000",
+                      marginRight: {xs: theme.spacing(3), sm:theme.spacing(10), md: theme.spacing(30)},
+                      marginBottom: theme.spacing(5),
+                      marginTop: theme.spacing(3),
+                      background: '#fff200',
+                    }}
+                  >
+                  แบบฝึกหัด
+            </Button>
+            <Button startIcon = {<NoteAddIcon />} variant="outlined" onClick={handleClick}
+                      sx={{
+                        fontFamily: "Kanit",
+                        fontSize: 20,
+                        width: '25%',
+                        height: 'auto',
+                        borderRadius: 3,
+                        bgcolor: "#212121",
+                        color: "#000000",
+                        marginLeft: {xs: theme.spacing(3), sm:theme.spacing(10), md: theme.spacing(30)},
+                        marginBottom: theme.spacing(5),
+                        marginTop: theme.spacing(3),
+                        background: '#fff200',
+                      }}
+                    >
+                    สร้างแบบฝึกหัด
+              </Button>
               <Snackbar 
                 open={opensnackbar} 
                 autoHideDuration={2000} 

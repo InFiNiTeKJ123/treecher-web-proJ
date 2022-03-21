@@ -107,7 +107,7 @@ function Left_Menu_class_th() {
         sx={{
           width: "95%",
           height: 50,
-          fontSize: 16,
+          fontSize: "14px",
           marginBottom: theme.spacing(3),
           fontFamily: "Kanit",
         }}
@@ -122,7 +122,7 @@ function Left_Menu_class_th() {
         sx={{
           width: "95%",
           height: 50,
-          fontSize: 16,
+          fontSize: "12px",
           marginBottom: theme.spacing(3),
           fontFamily: "Kanit",
         }}

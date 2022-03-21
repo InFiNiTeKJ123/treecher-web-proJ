@@ -10,7 +10,7 @@ function Appbar() {
 
   return (
     <div>
-      <Box component='div' sx={{ display: {xs: 'none', sm: 'flex'}, position: 'sticky', top: 0}}>
+      <Box component='div' sx={{ display: {xs: 'none', md: 'flex'}, position: 'sticky', top: 0}}>
         <Navbar user={user}/>
       </Box>
       <Outlet />

@@ -11,7 +11,8 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
       width: 'auto', 
       marginTop: theme.spacing(3),
       [theme.breakpoints.down("sm")]: {
-        paddingTop: theme.spacing(3),
+        // paddingTop: theme.spacing(3),
+        alignItems: "center"
       }
     },
     card_classroom: {
@@ -48,7 +49,7 @@ function Classroom_list_st() {
             ห้องเรียน
           </Typography>
         </Box>
-        <Grid container sx={{ alignItems: "center" }}>
+        <Grid container sx={{ alignItems: "center", pl:{ xs: 5 , md: 2} }}>
           <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #77bb4c  90%)', flexDirection: 'column', marginRight: theme.spacing(4) }} className={classes.card_classroom}>
             <CardActionArea href='/classroom_st'>
               <CardMedia

@@ -203,7 +203,7 @@ function Main_quiz(props) {
           </Typography>
         </Box>
         
-        <Grid container sx={{ alignItems: "center" }}>
+        <Grid container sx={{ alignItems: "center", pl:{ xs: 5 , md: 2} }}>
                   <Card sx = {{background: 'linear-gradient(45deg, #a1e7db 30%, #7ad154 90%)', marginRight: theme.spacing(4) }}  className={classes.card_classroom}>
                     <CardActionArea onClick={handleOpenPopup1}>
                       <CardMedia

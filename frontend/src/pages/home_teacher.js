@@ -19,7 +19,7 @@ const useStyles = makeStyles(({ theme = useTheme() }) => ({
     alignItems: 'right', 
     justifyContent: 'flex-end',
     paddingTop: theme.spacing(5),
-    paddingLeft: theme.spacing(12),
+    paddingLeft: theme.spacing(1),
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
@@ -27,7 +27,7 @@ const useStyles = makeStyles(({ theme = useTheme() }) => ({
   gridavartar :{
     paddingTop: theme.spacing(10),
     border: "1px solid black", 
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       display: "none",
     },
   },
@@ -58,11 +58,11 @@ function Home_teacher() {
 
   return (
     <Box > 
-      <Box component='div' sx={{ display: {sm: 'none'} }}>
+      <Box component='div' sx={{ display: {md: 'none'}, position: 'sticky', top: 0 }}>
         <Navbar_moblie toggleslider={toggleslider} />
       </Box>
       <Grid container>
-        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
+        <Grid item sm={1.8} sx={{display: { xs: 'none', md: 'flex' }, position: 'fixed'}}>
           <Left_Menu_th openpopup={handleOpenPopup}/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>

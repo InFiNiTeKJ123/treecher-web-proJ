@@ -118,7 +118,7 @@ const left_menu_class_st_friend = () => (
   return (
     <ThemeProvider theme={theme}>
     <Box position='flex'>
-      <Box component='div' sx={{ display: {sm: 'none'}}}>
+      <Box component='div' sx={{ display: {md: 'none'}}}>
         <Navbar_moblie toggleslider={toggleslider} />
       </Box>
       <Grid container item spacing={0.5}>
@@ -135,9 +135,9 @@ const left_menu_class_st_friend = () => (
           </Grid>
           <Grid item xs >
             <Box component='div'
-            sx={{ width: {xs: "50%", md:"15%"} , height: 'auto', alignItems: 'center',
+            sx={{ width: {xs: "50%", sm:"25%", md:"15%"} , height: 'auto', alignItems: 'center',
                   bgcolor: '#008037', color: 'white', display: 'flex',
-                  paddingleft: theme.spacing(3), marginLeft: theme.spacing(5), marginTop: theme.spacing(3),
+                  paddingleft: theme.spacing(3), marginLeft: { xs: theme.spacing(2),md: theme.spacing(5)}, marginTop: theme.spacing(3),
                   borderRadius: 3, }}>
               <AccountCircleIcon sx={{ paddingLeft: theme.spacing(2), fontSize: 35  }}/>
               <Typography

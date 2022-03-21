@@ -8,6 +8,7 @@ import Avartarst_mobile from '../components/students/avartarst_mobile'
 import CardProfile from './test_profile_th';
 import Navbar from '../components/navbar';
 import Navbar_moblie from '../components/navbar_mobile';
+import Avartar_mobile from '../components/teacher/avartar_mobile';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -175,11 +176,11 @@ function Profile_th() {
   return (
     <ThemeProvider theme={theme}>
     <Box > 
-      <Box component='div' sx={{ display: {sm: 'none'} }}>
+      <Box component='div' sx={{ display: {md: 'none'}, position: 'sticky', top: 0 }}>
         <Navbar_moblie toggleslider={toggleslider} />
       </Box>
       <Grid container >
-        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' } , position: 'fixed' }}>
+        <Grid item sm={1.8} sx={{display: { xs: 'none', md: 'flex' } , position: 'fixed' }}>
           {/* <Left_Menu_st openpopup={handleOpenPopup} /> */}
           {left_menuth_profile()}
         </Grid>
@@ -189,7 +190,7 @@ function Profile_th() {
           </Drawer>
         <Grid item xs> 
           <Grid item classname={classes.gridavartar}>
-            <Avartarst_mobile className={classes.avartar_mobile}/>
+            <Avartar_mobile className={classes.avartar_mobile}/>
           </Grid>
           <Grid item xs sx={{ marginLeft: {md:"15%"}}}>
             {profile_info()}

@@ -6,8 +6,6 @@ import React, { useState } from "react";
 import Avartar_mobile from "../components/teacher/avartar_mobile";
 
 import Left_Menu_class_th from "../components/teacher/left_menu_class_th";
-import Navbar from "../components/navbar";
-import Classroom_feed from "../components/classroom_feed";
 import Makequiz_form from "../components/teacher/makequiz_form";
 import Navbar_moblie from "../components/navbar_mobile";
 import Left_slidebar_class_th from "../components/teacher/left_slidebar_class_th";
@@ -45,11 +43,11 @@ function MakeQuiz_th() {
 
   return (
     <Box position="flex">
-      <Box component='div' sx={{ display: {sm: 'none'} }}>
+      <Box component='div' sx={{ display: {md: 'none'}, position: 'sticky', top: 0 }}>
         <Navbar_moblie toggleslider={toggleslider} />
       </Box>
       <Grid container>
-        <Grid item sm={1.8} sx={{ display: { xs: "none", sm: "flex" }, position: 'fixed' }}>
+        <Grid item sm={1.8} sx={{ display: { xs: "none", md: "flex" }, position: 'fixed' }}>
           <Left_Menu_class_th />
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>

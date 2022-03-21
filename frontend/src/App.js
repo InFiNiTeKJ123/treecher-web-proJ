@@ -11,7 +11,7 @@ import Member_th from './pages/member_th';
 import CardProfile from './pages/test_profile';
 import Score_st from './pages/score_st';
 import Score_th from './pages/score_th';
-import Quizmade from './components/teacher/quizth_made';
+import Quizmade from './pages/quizmade';
 import SignUp_Type from './pages/signup_type';
 import SignUp_TH from './pages/signup_th';
 import SignUp_ST from './pages/signup_st';
@@ -44,6 +44,7 @@ function App() {
             <Route path="home_st" element={<Home_student />}/>
             <Route path="quiz" element={<Quiz />}/>
             <Route path="quizth" element={<MakeQuiz_th />}/>
+            <Route path="quizmade" element={<Quizmade />}/>
             <Route path="classroom_th" element={<Classroom_Teacher />}/>
             <Route path="classroom_st" element={<Classroom_Students />}/>
             <Route path="friends" element={<Friends />}/>
@@ -51,7 +52,6 @@ function App() {
             <Route path="testprofile" element={<CardProfile />}/>
             <Route path="score_st" element={<Score_st />}/>
             <Route path="score_th" element={<Score_th />}/>
-            <Route path="quizmade" element={<Quizmade />}/>
         </Route>
         <Route exact path="/login" 
           element={<Login open={openCheckpoint} close={handleClose} transition={transition}/>}/>

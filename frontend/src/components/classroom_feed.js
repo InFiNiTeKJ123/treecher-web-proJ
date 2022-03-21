@@ -50,7 +50,7 @@ function Classroom_feed(props) {
       <Box
         component="div"
         sx={{
-          width: { xs: "60%", md: "15%" },
+          width: { xs: "60%", sm: "28%" ,md: "15%" },
           height: "auto",
           alignItems: "center",
           bgcolor: "#008037",
@@ -58,7 +58,7 @@ function Classroom_feed(props) {
           display: "flex",
           paddingleft: theme.spacing(3),
           marginBottom: theme.spacing(3),
-          marginLeft: { xs: theme.spacing(2), md: theme.spacing(8) },
+          marginLeft: { xs: theme.spacing(2), sm: theme.spacing(5), md: theme.spacing(8) },
           marginTop: { xs: theme.spacing(2) },
           borderRadius: 3,
         }}
@@ -100,7 +100,7 @@ function Classroom_feed(props) {
             component="h2"
             sx={{
               fontFamily: "Kanit",
-              paddingLeft: { xs: theme.spacing(2), md: theme.spacing(10) },
+              paddingLeft: { xs: theme.spacing(2), sm:theme.spacing(5),md: theme.spacing(10) },
             }}
           >
             ประกาศข้อความของคุณ
@@ -122,8 +122,7 @@ function Classroom_feed(props) {
             <Grid item container spacing={3}>
               <Grid
                 item
-                xs={7}
-                md={12}
+                xs={12}
                 justifyContent="right"
                 sx={{
                   display: "flex",
@@ -136,7 +135,7 @@ function Classroom_feed(props) {
                   variant="contained"
                   type="submit"
                   sx={{
-                    width: { xs: "100%", md: "20%" },
+                    width: { xs: "50%", sm: "20%" },
                     height: 50,
                     borderRadius: 4,
                     bgcolor: "#212121",

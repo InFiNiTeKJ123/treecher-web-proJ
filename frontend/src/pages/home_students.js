@@ -7,7 +7,7 @@ import Avartarst_mobile from '../components/students/avartarst_mobile'
 import Add_classroomPopup_st from '../components/students/add_classroompopup_st';
 import Left_Menu_st from '../components/students/left_menust';
 import Left_slidebar_st from '../components/students/left_slidebar_st';
-import Mainfeed_st from '../components/students/classroom_list_st';
+import Classroom_list_st from '../components/students/classroom_list_st';
 import Navbar_moblie from '../components/navbar_mobile';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -63,11 +63,11 @@ function Home_student() {
 
   return (
     <Box > 
-      <Box component='div' sx={{ display: {sm: 'none'} }}>
+      <Box component='div' sx={{ display: { md : 'none'} , position: 'sticky', top: 0}}>
         <Navbar_moblie toggleslider={toggleslider} />
       </Box>
       <Grid container>
-        <Grid item sm={1.8} sx={{display: { xs: 'none', sm: 'flex' }, position: 'fixed'}}>
+        <Grid item sm={1.8} sx={{display: { xs: 'none', md: 'flex' }, position: 'fixed'}}>
           <Left_Menu_st openpopup={handleOpenPopup} changecolor={color} clickcolor={handleClick}/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider} >
@@ -78,7 +78,7 @@ function Home_student() {
             <Avartarst_mobile className={classes.avartar_mobile}/>
           </Grid>
           <Grid item xs sx={{ marginLeft: {md:"15%"}}}>
-            <Mainfeed_st/>
+            <Classroom_list_st/>
             <Add_classroomPopup_st Open={open} handleClose={handleClosePopup}/>
           </Grid>
         </Grid>

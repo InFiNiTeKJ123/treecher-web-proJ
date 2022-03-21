@@ -26,10 +26,10 @@ if(props.posts.author.is_student) {
       >
         <Paper elevation={5} variant="contained" sx={{ bgcolor: "#33995F", height: "100vh" }}>
           <Grid container >
-            <Grid item xs={6} sx={{ display: 'flex'}}>
+            <Grid item xs={7} md={6} sx={{ display: 'flex'}}>
               <Avatar 
                   sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', fontFamily: "Kanit",
-                        display: { xs: 'none', sm: 'flex' }, marginLeft: theme.spacing(4), marginTop: theme.spacing(2)}} 
+                        display: { xs: 'flex' }, marginLeft: { xs: theme.spacing(2) ,md: theme.spacing(4) }, marginTop: theme.spacing(2)}} 
                   size="small" aria-label="avatar" >
                   {props.posts.author.first_name[0]}
                 </Avatar>
@@ -42,7 +42,7 @@ if(props.posts.author.is_student) {
                   </Typography>
                 </Typography>
             </Grid>
-            <Grid item xs={6} sx={{ justifyContent: 'right' }}>
+            <Grid item xs={5} md={6} sx={{ justifyContent: 'right' }}>
               <IconButton
                   aria-label="Editicon"
                   sx={{
@@ -58,8 +58,8 @@ if(props.posts.author.is_student) {
             <Grid item xs={12} >
               <Box
                   component="h4" variant="contained"
-                    sx={{ borderRadius: 5 ,marginLeft: {xs: theme.spacing(2), md: theme.spacing(12),},
-                      paddingLeft: "1%", paddingRight: "3%", width: "80%", bgcolor: "#C9E265",  
+                    sx={{ borderRadius: 5 ,marginLeft: {xs: theme.spacing(2), sm: theme.spacing(8), md: theme.spacing(10),},
+                      paddingLeft: "1%", paddingRight: "3%", width: "80%", bgcolor: "#C9E265",  p: {xs:1, md:2}
                     }}
               >
                 <Typography sx={{ fontFamily: "Kanit" }}>
@@ -99,23 +99,23 @@ if(props.posts.author.is_student) {
               >
                 <Paper elevation={5} variant="contained" sx={{ bgcolor: "#33995F", height: "100vh" }}>
                   <Grid container >
-                    <Grid item xs={6} sx={{ display: 'flex'}}>
+                    <Grid item xs={7} md={6}sx={{ display: 'flex'}}>
                       <Avatar 
                           sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', fontFamily: "Kanit",
-                                display: { xs: 'none', sm: 'flex' }, marginLeft: theme.spacing(4), marginTop: theme.spacing(2)}} 
+                          display: { xs: 'flex' }, marginLeft: { xs: theme.spacing(2) ,md: theme.spacing(4) }, marginTop: theme.spacing(2)}} 
                           size="small" aria-label="avatar" >
                           {props.posts.author.first_name[0]}
                         </Avatar>
                         <Typography variant="h6" 
                         sx={{ fontFamily: "Kanit", marginTop: theme.spacing(2), marginLeft: theme.spacing(2), color: "white", fontFamily: "Kanit"}}>
                           {props.posts.author.first_name} {props.posts.author.last_name}
-                          <Typography
+                          <Typography 
                             sx={{ color: "white", fontFamily: "Kanit" }}>
                             {props.posts.published}
                           </Typography>
                         </Typography>
                     </Grid>
-                    <Grid item xs={6} sx={{ justifyContent: 'right' }}>
+                    <Grid item xs={5} md={6}sx={{ justifyContent: 'right' }}>
                       <IconButton
                           aria-label="Editicon"
                           sx={{
@@ -131,8 +131,8 @@ if(props.posts.author.is_student) {
                     <Grid item xs={12} >
                       <Box
                           component="h4" variant="contained"
-                            sx={{ borderRadius: 5 ,marginLeft: {xs: theme.spacing(2), md: theme.spacing(12),},
-                              paddingLeft: "1%", paddingRight: "3%", width: "80%", bgcolor: "#C9E265",  
+                            sx={{ borderRadius: 5 ,marginLeft: {xs: theme.spacing(2), sm: theme.spacing(8),md: theme.spacing(10),},
+                              paddingLeft: "1%", paddingRight: "3%", width: "80%", bgcolor: "#C9E265", p: {xs:1, md:2}
                             }}
                       >
                         <Typography sx={{ fontFamily: "Kanit" }}>

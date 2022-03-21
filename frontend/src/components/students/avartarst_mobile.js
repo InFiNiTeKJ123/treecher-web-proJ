@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { Avatar , Container } from '@mui/material';
+import Whoami from '../../config/whoami'
 
 
 const useStyles = makeStyles(({theme = createTheme()}) => ({
@@ -16,7 +17,7 @@ const useStyles = makeStyles(({theme = createTheme()}) => ({
           },
     },
     paper: {
-        borderRadius: 25,
+        borderRadius: 20,
         p: 2,
         width: '100%',
         maxWidth: 'lg',
@@ -45,6 +46,8 @@ function Avartarst_mobile() {
 
     const classes = useStyles()
 
+    const user = Whoami()
+
   return (
     <Container className={classes.container}>
         <Paper className={classes.paper} sx={{ bgcolor: '#008037'}}>
@@ -52,18 +55,18 @@ function Avartarst_mobile() {
                 <Grid item xs={12} sm container>
                     <Grid item xs container direction="column" spacing={2}>
                         <Grid item xs>
-                            <Typography gutterBottom variant="h4" sx={{ fontFamily: "Kanit" }} component="div" className={classes.text_teacher}>
+                            <Typography gutterBottom variant="h4" sx={{ fontFamily: "Kanit" }} className={classes.text_teacher}>
                                 นักเรียน
                             </Typography>
                             <Typography variant="body2" gutterBottom sx={{ fontFamily: "Kanit" }} className={classes.text} >
-                                ฉัตรชัย จันทร์แก้ว
+                                {user.first_name} {user.last_name}
                             </Typography>
                         </Grid>
                     </Grid>
                     
                     <Grid item className={classes.gridavatar}>
                         <Avatar sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', display: { xs: 'flex', sm: 'none' }}} size="small" aria-label="avatar">
-                            ฉ
+                            {user.first_name}
                         </Avatar>
                     </Grid>
                 </Grid>

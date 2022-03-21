@@ -224,7 +224,7 @@ function Login(props) {
                 variant="contained"
                 color="secondary"
                 href="/signup"
-                sx={{ mt: 3, mb: 2, fontWeight: "bold", background: 'linear-gradient(45deg, #af4fff 30%,#5396fc  60%)' }}
+                sx={{ mb: 2, fontWeight: "bold", background: 'linear-gradient(45deg, #af4fff 30%,#5396fc  60%)' }}
               >
                 ลงทะเบียน
               </Button>

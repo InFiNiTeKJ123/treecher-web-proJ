@@ -1,14 +1,11 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from rest_framework.decorators import api_view
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from classroom.models import Classroom
-from classroom.serializers import ClassroomSerializers
-from classroom.models import random_code
-from classroom.models import Post
-from classroom.serializers import PostSerializer
+from classroom.models import Classroom, random_code, Post, Question, Answer
+from classroom.serializers import ClassroomSerializers, PostSerializer, QuestionSerializer
 from treecher.models import Student
 
 # Create your views here.
@@ -72,4 +69,10 @@ class PostViewSets(viewsets.ModelViewSet):
         serializer = PostSerializer(new_post)
 
         return Response(serializer.data)
+
+
+class QuestionViewSets(generics.ListAPIView):
+
+    serializer_class = QuestionSerializer
+    queryset = Question.objects.all()
 

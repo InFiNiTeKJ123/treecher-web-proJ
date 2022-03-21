@@ -5,6 +5,7 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import axiosInstance from "../config/axios";
 import Tree from "../assets/TCH1.png";
 
@@ -30,29 +31,18 @@ function Login(props) {
 
   const navigate = useNavigate();
 
-  const initialFormData = Object.freeze({
-		email: '',
-		password: '',
-	});
+  const { register, handleSubmit , formState: { errors } } = useForm();
 
-	const [formData, updateFormData] = useState(initialFormData);
-
-	const handleChange = (e) => {
-		updateFormData({
-			...formData,
-			[e.target.name]: e.target.value.trim(),
-		});
-	};
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(formData);
-
-    const data = new FormData(event.currentTarget);
+  const Submit_form = (event) => {
+    // event.preventDefault();
+    console.log(event)
+    // console.log(formData);
+    // const data = new FormData(event.currentTarget);
+    // console.log(data)
     
     axiosInstance.post(`token/`, {
-      email: data.get('email'),
-      password: data.get('password'),
+      email: event.email,
+      password: event.password,
     }).then((res) => {
       console.log(res.data.access)
       localStorage.setItem('access_token', res.data.access);
@@ -133,7 +123,7 @@ function Login(props) {
                 TREECHER
               </Typography>
             </Container>
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" noValidate onSubmit={handleSubmit(Submit_form)} sx={{ mt: 1 }}>
               <TextField
                   inputProps={{style: {fontFamily: "Kanit"}}} 
                   InputLabelProps={{style: {fontFamily: "Kanit"}}}
@@ -146,6 +136,15 @@ function Login(props) {
                   autoComplete="email"
                   color="success"
                   autoFocus
+                  {...register("email", {
+                    required: "โปรดใส่อีเมล",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "อีเมลไม่ถูกต้อง",
+                    },
+                  })}
+                  error={!!errors?.email}
+                  helperText={errors?.email ? errors.email.message : null}
               />
               <TextField
                   inputProps={{style: {fontFamily: "Kanit"}}} 
@@ -159,6 +158,13 @@ function Login(props) {
                   id="password"
                   autoComplete="current-password"
                   color="success"
+                  {...register("password", { required: "โปรดใส่รหัสผ่าน",
+                    minLength: {
+                      value: 8,
+                      message: "รหัสผ่านอย่างน้อยต้องมี 8 ตัว"
+                   }, })}
+                  error={!!errors?.password}
+                  helperText={errors?.password ? errors.password.message : null}
               />
               <FormControlLabel 
                 control={<Checkbox value="remember" color="primary" />}

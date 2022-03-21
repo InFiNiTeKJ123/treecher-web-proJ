@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -14,7 +14,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Slide } from "@mui/material";
 import Tree from "../assets/TCH1.png";
-import axiosInstance from "../config/axios";
+import { useForm } from "react-hook-form";
+
 
 const useStyles = makeStyles({
   icon: {
@@ -71,37 +72,26 @@ function SignUp_TH(props) {
 
   const navigate = useNavigate()
 
-  const initialFormData = Object.freeze({
-		email: '',
-		firstname: '',
-    lastname: '',
-		password: '',
-	});
+  const { register, handleSubmit , formState: { errors }, watch } = useForm();
 
-	const [formData, updateFormData] = useState(initialFormData);
+  const password = useRef();
+  password.current = watch("password", "");
 
-  const handleChange = (e) => {
-		updateFormData({
-			...formData,
-			// Trimming any whitespace
-			[e.target.name]: e.target.value.trim(),
-		});
-	};
-  
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const Submit_form = (event) => {
+    // event.preventDefault();
+    console.log(event)
     props.setcheckpoint(true)
     props.settransition(() => TransitionDown)
     // console.log(formData);
-    const data = new FormData(event.currentTarget);
+    // const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     
-    axiosInstance.post(`user/create/th`,{
-      email: data.get("email"),
-      first_name: data.get("firstName"),
-      last_name: data.get("lastName"),
-      password: data.get("password"),
-      confirm_password: data.get("confirm_password")
+    axios.post(`http://127.0.0.1:8000/api/user/create/th`,{
+      email: event.email,
+      first_name: event.firstName,
+      last_name: event.lastName,
+      password: event.password,
+      confirm_password: event.confirm_password
     }).then((res) => {
       console.log(res.data)
       navigate('/login')
@@ -157,7 +147,8 @@ function SignUp_TH(props) {
           </Container>
           <Box
             component="form"
-            onSubmit={handleSubmit}
+            noValidate
+            onSubmit={handleSubmit(Submit_form)}
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
@@ -173,6 +164,9 @@ function SignUp_TH(props) {
                   label="ชื่อ"
                   autoFocus
                   color="success"
+                  {...register("firstName", {required: "โปรดใส่ชื่อ"})}
+                  error={!!errors?.firstName}
+                  helperText={errors?.firstName ? errors.firstName.message : null}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -186,6 +180,9 @@ function SignUp_TH(props) {
                   name="lastName"
                   autoComplete="family-name"
                   color="success"
+                  {...register("lastName", {required: "โปรดใส่นามสกุล"})}
+                  error={!!errors?.lastName}
+                  helperText={errors?.lastName ? errors.lastName.message : null}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -199,6 +196,15 @@ function SignUp_TH(props) {
                   name="email"
                   autoComplete="email"
                   color="success"
+                  {...register("email", {
+                    required: "โปรดใส่อีเมล",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "อีเมลไม่ถูกต้อง",
+                    },
+                  })}
+                  error={!!errors?.email}
+                  helperText={errors?.email ? errors.email.message : null}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -213,6 +219,13 @@ function SignUp_TH(props) {
                   id="password"
                   autoComplete="new-password"
                   color="success"
+                  {...register("password", { required: "โปรดใส่รหัสผ่าน",
+                    minLength: {
+                      value: 8,
+                      message: "รหัสผ่านอย่างน้อยต้องมี 8 ตัว"
+                   }, })}
+                  error={!!errors?.password}
+                  helperText={errors?.password ? errors.password.message : null}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -227,6 +240,16 @@ function SignUp_TH(props) {
                   id="confirm_password"
                   autoComplete="new-password"
                   color="success"
+                  {...register("confirm_password", { required: "โปรดยืนยันรหัสผ่าน",
+                  minLength: {
+                    value: 8,
+                    message: "รหัสผ่านอย่างน้อยต้องมี 8 ตัว",
+                  }, 
+                  validate: value =>
+                  value === password.current || "รหัสผ่านไม่ตรงกัน"}
+                  )}
+                  error={!!errors?.confirm_password}
+                  helperText={errors?.confirm_password ? errors.confirm_password.message : null}
                 />
               </Grid>
             </Grid>

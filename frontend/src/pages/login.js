@@ -214,7 +214,7 @@ function Login(props) {
                 fullWidth
                 variant="contained"
                 color="success"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2, fontWeight: "bold" ,background: 'linear-gradient(45deg, #3bc206 30%, #ebeb3b 95%)', }}
               >
                   เข้าสู่ระบบ
               </Button>
@@ -224,7 +224,7 @@ function Login(props) {
                 variant="contained"
                 color="secondary"
                 href="/signup"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2, fontWeight: "bold", background: 'linear-gradient(45deg, #af4fff 30%,#5396fc  60%)' }}
               >
                 ลงทะเบียน
               </Button>

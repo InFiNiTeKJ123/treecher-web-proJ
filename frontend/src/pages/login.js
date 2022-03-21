@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Box, Typography, Container, Grid,} from "@mui/material";
+import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Box, Typography, Container, Grid, Slide,} from "@mui/material";
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
@@ -27,9 +27,25 @@ const theme = createTheme({
   }
 });
 
+function TransitionDown(props) {
+  return <Slide {...props} direction="down" />;
+}
+
 function Login(props) {
 
   const navigate = useNavigate();
+
+  const [alert_wrongpassword, setalert_wrongpassword] = useState(false)
+
+  const [transition, setTransition] = useState(undefined);
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setalert_wrongpassword(false);
+  };
 
   const { register, handleSubmit , formState: { errors } } = useForm();
 
@@ -62,6 +78,10 @@ function Login(props) {
           }
         }
       })
+    }).catch(() => {
+      console.log("รหัสผ่านไม่ถูกต้อง")
+      setalert_wrongpassword(true)
+      setTransition(() => TransitionDown)
     })
   };
 
@@ -75,6 +95,21 @@ function Login(props) {
           anchorOrigin={{ vertical: 'top', horizontal: 'center',}}>
           <Alert  onClose={props.close} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
             ยินดีด้วย! คุณได้ลงทะเบียนสำเร็จแล้ว 
+          </Alert>
+        </Snackbar>
+      </Stack>
+  )
+
+  const Wrong_password = () => (
+    <Stack spacing={2} sx={{ width: '100%' }}>
+        <Snackbar 
+          open={alert_wrongpassword} 
+          autoHideDuration={2500} 
+          onClose={handleClose} 
+          TransitionComponent={transition}
+          anchorOrigin={{ vertical: 'top', horizontal: 'center',}}>
+          <Alert  onClose={handleClose} severity="error" sx={{ fontFamily: "Kanit", width: '100%' }}>
+            รหัสผ่านไม่ถูกต้อง
           </Alert>
         </Snackbar>
       </Stack>
@@ -196,6 +231,7 @@ function Login(props) {
             </Box>
           </Box>
           {Checkpoint()}
+          {Wrong_password()}
         </Container>
       </ThemeProvider>
 

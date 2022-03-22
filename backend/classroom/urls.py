@@ -1,16 +1,17 @@
 from posixpath import basename
 from django.urls import path, include
 from rest_framework import routers
-from classroom.views import ClassroomViewSets, createclassroom, PostViewSets, QuestionViewSets
+from classroom.views import ClassroomViewSets, PostViewSets, QuestionViewSets, JoinClassroom
 
 app_name = 'classroom'
 
 router = routers.DefaultRouter()
 router.register(r'classroom', ClassroomViewSets, basename="Classroom")
+router.register(r'join', JoinClassroom, basename="Post")
 router.register(r'posts', PostViewSets, basename="Post")
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('create', createclassroom),
+    # path('join', JoinClassroom.as_view()),
     path('quiz', QuestionViewSets.as_view())
 ]

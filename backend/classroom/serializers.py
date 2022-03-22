@@ -10,6 +10,12 @@ class ClassroomSerializers(serializers.ModelSerializer):
         model = Classroom
         fields = '__all__'
 
+class CreateClassroomSerializers(serializers.ModelSerializer):
+    # Teacher = NewUserSerializer(read_only=True)
+    class Meta:
+        model = Classroom
+        fields = ('name', 'about')
+
 class PostSerializer(serializers.ModelSerializer):
     classroom = serializers.SlugRelatedField(
         slug_field='name',

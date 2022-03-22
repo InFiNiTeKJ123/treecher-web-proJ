@@ -15,8 +15,8 @@ def random_code(digit=7):
     return "".join([random.choice(ascii_lowercase) for _ in range(digit-1)])
 
 class Classroom(models.Model):
-    name = models.CharField(max_length=30, default='Classroom', null=False)
-    about = models.TextField()
+    name = models.CharField(max_length=30,null=False)
+    about = models.TextField(null=False)
     Teacher = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="Teacher")
     Students = models.ManyToManyField(Student, related_name="Students", blank=True)
     join_code = models.CharField(max_length=7, default=random_code())

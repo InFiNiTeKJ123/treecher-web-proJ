@@ -53,12 +53,12 @@ function Addchoice() {
                 // paddingTop: theme.spacing(3),
                 // paddingLeft: theme.spacing(4),
                 marginBottom: theme.spacing(2),
-                width: "80%" }}
+                width: "70%" }}
               value={inputField.choice}
               onChange={event => handleChangeIput(index,event)}
               
             />
-            <IconButton sx={{ marginTop: theme.spacing(1), marginLeft: theme.spacing(2)}}
+            <IconButton sx={{ marginTop: theme.spacing(1)}}
                   onClick={() => handleRemoveFields(index)}>
                   <RemoveIcon/>
               </IconButton>

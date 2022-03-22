@@ -142,9 +142,9 @@ function Makequiz_form(props) {
             fontFamily: "Kanit",
             display: "flex",
             fontWeight: 500,
-            fontSize: 20,
+            fontSize: 18,
             padding: theme.spacing(2),
-            paddingLeft: theme.spacing(2.5),
+            paddingLeft: theme.spacing(1),
           }}
         >
           สร้างแบบฝึกหัด
@@ -199,13 +199,13 @@ function Makequiz_form(props) {
                     href="/quizmade"
                     sx={{
                       fontFamily: "Kanit",
-                      fontSize: 20,
-                      width: '25%',
+                      fontSize: 18,
+                      width: '40%',
                       height: 'auto',
                       borderRadius: 3,
                       bgcolor: "#212121",
                       color: "#000000",
-                      marginRight: {xs: theme.spacing(3), sm:theme.spacing(10), md: theme.spacing(30)},
+                      marginRight: theme.spacing(2),
                       marginBottom: theme.spacing(5),
                       marginTop: theme.spacing(3),
                       background: '#fff200',
@@ -216,13 +216,12 @@ function Makequiz_form(props) {
             <Button startIcon = {<NoteAddIcon />} variant="outlined" onClick={handleClick}
                       sx={{
                         fontFamily: "Kanit",
-                        fontSize: 20,
-                        width: '25%',
+                        fontSize: 18,
+                        width: '40%',
                         height: 'auto',
                         borderRadius: 3,
                         bgcolor: "#212121",
                         color: "#000000",
-                        marginLeft: {xs: theme.spacing(3), sm:theme.spacing(10), md: theme.spacing(30)},
                         marginBottom: theme.spacing(5),
                         marginTop: theme.spacing(3),
                         background: '#fff200',

@@ -1,11 +1,18 @@
-import { Drawer, Grid } from "@mui/material";
-import { Box } from "@mui/system";
-import { createTheme } from "@mui/material/styles";
+import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography, Grid, Drawer} from '@mui/material';
 import { makeStyles } from "@mui/styles";
 import React, { useState } from "react";
 import Avartar_mobile from "../components/teacher/avartar_mobile";
 
-import Left_Menu_class_th from "../components/teacher/left_menu_class_th";
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import { ExitToApp, Person } from '@mui/icons-material';
+import SchoolIcon from '@mui/icons-material/School';
+import AddTaskIcon from "@mui/icons-material/AddTask";
+import FilterVintageIcon from "@mui/icons-material/FilterVintage";
+
+
+
+import { createTheme,ThemeProvider } from '@mui/material/styles';
+
 import Makequiz_form from "../components/teacher/makequiz_form";
 import Navbar_moblie from "../components/navbar_mobile";
 import Left_slidebar_class_th from "../components/teacher/left_slidebar_class_th";
@@ -32,7 +39,50 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
   },
 }));
 
+const { palette } = createTheme();
+const { augmentColor } = palette;
+const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
+const theme = createTheme({
+  palette: {
+    check: createColor('#70ff68'),
+  },
+});
+
+
 function MakeQuiz_th() {
+
+  const left_menu_class_th_quizmade = () => (
+    <ThemeProvider theme={theme}>
+        <Container className={classes.container} >
+            <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_th"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                หน้าหลัก
+            </Button>
+            <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile_th"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                โปรไฟล์
+            </Button>
+            <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="success" 
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}  href='/member_th'>
+                นักเรียน
+            </Button>
+            <Button startIcon = {<AddTaskIcon className={classes.icon} />} variant="contained" color="check" 
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
+                 href='/quizmade' >
+                สร้างแบบฝึกหัด
+            </Button>
+            <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success"  
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) , color: 'white'}} href='/score_th'>
+                คะแนน
+            </Button>
+            <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                ออกจากระบบ
+            </Button>
+        </Container>
+    </ThemeProvider>
+)
+
   const classes = useStyles();
 
   const [openslide, setOpenslide] = useState(false)
@@ -48,7 +98,7 @@ function MakeQuiz_th() {
       </Box>
       <Grid container>
         <Grid item sm={1.8} sx={{ display: { xs: "none", md: "flex" }, position: 'fixed' }}>
-          <Left_Menu_class_th />
+          {left_menu_class_th_quizmade()}
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
             <Left_slidebar_class_th />

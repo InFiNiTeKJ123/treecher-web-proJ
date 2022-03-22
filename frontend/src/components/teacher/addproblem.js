@@ -96,14 +96,13 @@ function Addproblem() {
             variant="contained"
             sx={{
               fontFamily: "Kanit",
-              fontSize: 16,
-              width: "30%",
+              fontSize: 18,
+              width: "80%",
               height: "85",
               borderRadius: 4,
               bgcolor: "#008037",
-              marginLeft: theme.spacing(10),
-              marginBottom: theme.spacing(5),
-              marginTop: theme.spacing(5),
+              marginBottom: theme.spacing(3),
+              marginTop: theme.spacing(3),
               }}
             onClick={() => handleAddFields()}
             >
@@ -114,14 +113,13 @@ function Addproblem() {
             variant="contained"
             sx={{
               fontFamily: "Kanit",
-              fontSize: 16,
-              width: "30%",
+              fontSize: 18,
+              width: "80%",
               height: "85",
               borderRadius: 4,
               bgcolor: "#008037",
-              marginLeft: theme.spacing(10),
+              marginLeft: theme.spacing(1),
               marginBottom: theme.spacing(5),
-              marginTop: theme.spacing(5),
               }}
               onClick={() => handleRemoveFields(index)}
             >

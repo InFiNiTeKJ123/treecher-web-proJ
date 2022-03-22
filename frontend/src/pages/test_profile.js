@@ -178,9 +178,9 @@ const Last_Name =({
             <Profile 
             onSubmit={this.handleSubmit} 
             src={imagePreviewUrl} 
-            name="ฉัตรชัย"
-            lastname="จันทร์แก้ว"
-            email="6410110644@psu.ac.th"/>)}
+            name="กมลชนก"
+            lastname="ชูชื่น"
+            email="6410110005@psu.ac.th"/>)}
 
           
         </div>

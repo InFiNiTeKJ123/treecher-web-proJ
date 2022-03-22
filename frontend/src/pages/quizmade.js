@@ -14,12 +14,6 @@ import Avartar_mobile from '../components/teacher/avartar_mobile'
 import Main_quiz from '../components/students/main_quiz'
 import Quiz_popup from '../components/quiz_popup1';
 import Quizth_made from '../components/teacher/quizth_made';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import { ExitToApp, Person } from '@mui/icons-material';
-import SchoolIcon from '@mui/icons-material/School';
-import AddTaskIcon from "@mui/icons-material/AddTask";
-import FilterVintageIcon from "@mui/icons-material/FilterVintage";
-import { Button } from "@mui/material";
 
 const { palette } = createTheme();
 const { augmentColor } = palette;
@@ -58,37 +52,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 
 function Quizmade() {
-  const left_menu_class_th_quizmade = () => (
-    <ThemeProvider theme={theme}>
-        <Container className={classes.container} >
-            <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_th"
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-                หน้าหลัก
-            </Button>
-            <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile_th"
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-                โปรไฟล์
-            </Button>
-            <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="success" 
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}  href='/member_th'>
-                นักเรียน
-            </Button>
-            <Button startIcon = {<AddTaskIcon className={classes.icon} />} variant="contained" color="check" 
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
-                 href='/quizmade' >
-                สร้างแบบฝึกหัด
-            </Button>
-            <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color="success"  
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) , color: 'white'}} href='/score_th'>
-                คะแนน
-            </Button>
-            <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
-                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
-                ออกจากระบบ
-            </Button>
-        </Container>
-    </ThemeProvider>
-)
+
 
   const classes = useStyles()
 
@@ -141,7 +105,7 @@ function Quizmade() {
       </Box>
       <Grid container>
         <Grid item sm={1.8} sx={{display: { xs: 'none', md: 'flex' }, position: 'fixed'}}>
-          {left_menu_class_th_quizmade()}
+          <Left_Menu_class_th/>
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
             <Left_slidebar_class_th />

@@ -9,6 +9,7 @@ import axiosInstance from "../config/axios";
 import { useForm } from "react-hook-form";
 import Whoami from "../config/whoami"
 import Classroom_code_popup from "./classroom_code_popup";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -28,6 +29,8 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
 function Classroom_feed(props) {
 
   const theme = createTheme();
+
+  const navigate = useNavigate()
 
   const [posts, setPosts] = useState([]) 
 
@@ -52,6 +55,12 @@ function Classroom_feed(props) {
       content: event.content
     }).then((res) => {
       console.log(res.data)
+      if(user.is_student){
+        navigate('/classroom_st', {replace: true})
+      }
+      else{
+        navigate('/classroom_th', {replace: true})
+      }
     })
   }
 

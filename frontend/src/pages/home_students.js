@@ -4,7 +4,7 @@ import { createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
 import Avartarst_mobile from '../components/students/avartarst_mobile'
-import Add_classroomPopup_st from '../components/students/add_classroompopup_st';
+import Join_classroomPopup_st from '../components/students/join_classroompopup_st';
 import Left_Menu_st from '../components/students/left_menust';
 import Left_slidebar_st from '../components/students/left_slidebar_st';
 import Classroom_list_st from '../components/students/classroom_list_st';
@@ -79,7 +79,7 @@ function Home_student() {
           </Grid>
           <Grid item xs sx={{ marginLeft: {md:"15%"}}}>
             <Classroom_list_st/>
-            <Add_classroomPopup_st Open={open} handleClose={handleClosePopup}/>
+            <Join_classroomPopup_st Open={open} setopen={setOpen} handleClose={handleClosePopup}/>
           </Grid>
         </Grid>
       </Grid>

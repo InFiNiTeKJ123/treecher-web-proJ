@@ -219,7 +219,6 @@ function Login(props) {
                   เข้าสู่ระบบ
               </Button>
               <Button
-                type="submit"
                 fullWidth
                 variant="contained"
                 color="secondary"

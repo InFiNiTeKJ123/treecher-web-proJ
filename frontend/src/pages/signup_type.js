@@ -131,7 +131,7 @@ function SignUp_Type() {
           </Container>
           <Box>
               <Box component="h3" sx={{ textAlign: "center", fontFamily: "Kanit"}}>
-                เลือกบทบาท
+                กรุณาเลือกบทบาท
               </Box>
               <Grid container justifyContent="center" spacing={2} sx={{ marginTop: 1, }}>                            
                 <Grid item>
@@ -154,117 +154,6 @@ function SignUp_Type() {
                 </Grid>
               </Grid>
           </Box>
-          {/* <Box
-            component="form"
-            noValidate
-            onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  inputProps={{style: {fontFamily: "Kanit"}}} 
-                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="ชื่อ"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  inputProps={{style: {fontFamily: "Kanit"}}} 
-                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="นามสกุล"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  inputProps={{style: {fontFamily: "Kanit"}}} 
-                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                  required
-                  fullWidth
-                  id="email"
-                  label="อีเมล"
-                  name="email"
-                  autoComplete="email"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  inputProps={{style: {fontFamily: "Kanit"}}} 
-                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                  required
-                  fullWidth
-                  name="password"
-                  label="รหัสผ่าน"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  inputProps={{style: {fontFamily: "Kanit"}}} 
-                  InputLabelProps={{style: {fontFamily: "Kanit"}}}
-                  required
-                  fullWidth
-                  name="password"
-                  label="ยืนยันรหัสผ่าน"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
-              </Grid>
-            </Grid>
-            <Grid
-              container
-              justifyContent="center"
-              spacing={2}
-              sx={{ marginTop: 1.5 }}
-            >
-              <Grid item>
-                <Button variant="contained" color="success" size="large"
-                        startIcon={<FaceRetouchingNaturalIcon />}
-                        className={classes.teacher_button}
-                        sx={{ fontFamily: "Kanit", fontSize: 18, fontWeight: "bold" , width: { xs: 130, md:180 },}}>
-                  คุณครู
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color="success" size="large"
-                        startIcon={<ChildCareIcon />}
-                        className={classes.student_button} 
-                        sx={{ fontFamily: "Kanit", fontSize: 18, fontWeight: "bold", width: { xs: 130, md:180 },}}>
-                  นักเรียน
-                </Button>
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              className={classes.signup_button}
-              sx={{ fontFamily: "Kanit", marginTop: 5, fontSize: 20, fontWeight: "bold" }}
-            >
-              ลงทะเบียน
-            </Button>
-            <Grid container justifyContent="flex-end" sx={{ marginTop: 2, marginBottom: 5 }}>
-              <Grid item>
-                <Link href="/login" variant="body2" sx={{ fontFamily: "Kanit" }}>
-                  มีบัญชีอยู่แล้วใช่ไหม? ไปที่ล็อกอิน
-                </Link>
-              </Grid>
-            </Grid>
-          </Box> */}
         </Box>
       </Container>
     </ThemeProvider>

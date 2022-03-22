@@ -5,7 +5,7 @@ import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
 import Left_Menu from '../components/teacher/left_menuth'
 import Avartar_mobile from '../components/teacher/avartar_mobile'
-import Add_classroomPopup_th from '../components/teacher/add_classroompopup_th';
+import Create_classroomPopup_th from '../components/teacher/create_classroompopup_th';
 import Left_slidebar_th from '../components/teacher/left_slidebar_th';
 import Classroom_list_th from '../components/teacher/classroom_list_th';
 import Navbar_moblie from '../components/navbar_mobile';
@@ -74,7 +74,7 @@ function Home_teacher() {
           </Grid>
           <Grid item xs sx={{ marginLeft: {md:"15%"} }}>
             <Classroom_list_th />
-            <Add_classroomPopup_th Open={open} handleClose={handleClosePopup}/>
+            <Create_classroomPopup_th Open={open} setopen={setOpen} handleClose={handleClosePopup}/>
           </Grid>
         </Grid>
       </Grid>

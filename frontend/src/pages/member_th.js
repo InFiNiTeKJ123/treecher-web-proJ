@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Avatar, Button, Card, Container, Drawer, Grid, Paper, Typography } from '@mui/material'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {useTheme , createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import { Box } from '@mui/system'
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -10,7 +10,21 @@ import Left_slidebar_class_th from '../components/teacher/left_slidebar_class_th
 import axiosInstance from '../config/axios';
 import Friends_list from '../components/students/friends_list';
 import Navbar_moblie from '../components/navbar_mobile';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import { ExitToApp, Person } from '@mui/icons-material';
+import SchoolIcon from '@mui/icons-material/School';
+import AddTaskIcon from "@mui/icons-material/AddTask";
+import FilterVintageIcon from "@mui/icons-material/FilterVintage";
+import MuiAlert from '@mui/material/Alert';
 
+const { palette } = createTheme();
+const { augmentColor } = palette;
+const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
+const theme = createTheme({
+  palette: {
+    check: createColor('#70ff68'),
+  },
+}); 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
@@ -41,16 +55,39 @@ const useStyles = makeStyles(({ theme = createTheme() }) => ({
     
   }));
 
-const { palette } = createTheme();
-const { augmentColor } = palette;
-const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
-const theme = createTheme({
-  palette: {
-    check: createColor('#70ff68'),
-  },
-});
 
 function Member_th() {
+  const left_menu_class_th_member = () => (
+    <ThemeProvider theme={theme}>
+        <Container className={classes.container} >
+            <Button startIcon = {<SchoolIcon className={classes.icon} />} variant="contained" color="success" href="/home_th"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                หน้าหลัก
+            </Button>
+            <Button startIcon = {<Person className={classes.icon} />} variant="contained" color="success" href="/profile_th"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                โปรไฟล์
+            </Button>
+            <Button startIcon = {<PeopleAltIcon className={classes.icon} />} variant="contained" color="check"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: "white" }}  href='/member_th'>
+                นักเรียน
+            </Button>
+            <Button startIcon = {<AddTaskIcon className={classes.icon} />} variant="contained" color='success'
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
+                 href='/quizmade' >
+                สร้างแบบฝึกหัด
+            </Button>
+            <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color='success'
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) , color: 'white'}} href='/score_th'>
+                คะแนน
+            </Button>
+            <Button startIcon = {<ExitToApp className={classes.icon} />} variant="contained" color="error" href="/login"
+                sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3) }}>
+                ออกจากระบบ
+            </Button>
+        </Container>
+    </ThemeProvider>
+)
 
     const classes = useStyles()
 
@@ -83,7 +120,7 @@ function Member_th() {
       </Box>
       <Grid container item spacing={0.5}>
         <Grid item xs={1.8} sx={{ display: { xs: 'none', md: 'flex', position: 'fixed' }}}>
-            <Left_Menu_class_th changecolor={color} handleClick={handleClick}/>
+        {left_menu_class_th_member()}
         </Grid>
         <Drawer open={openslide} anchor="left" onClose={toggleslider}>
             <Left_slidebar_class_th />

@@ -9,6 +9,8 @@ import Avartarst_mobile from '../components/students/avartarst_mobile'
 import Left_Menu_st from '../components/students/left_menust'
 import CardProfile from './test_profile';
 import Navbar_moblie from '../components/navbar_mobile';
+import Profile_card from '../components/profile_card';
+import Whoami from '../config/whoami';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
@@ -70,15 +72,7 @@ function Profile() {
 
   const classes = useStyles()
 
-  const [open, setOpen] = useState(false)
-  
-  const handleOpenPopup = () => {
-    setOpen(true)
-  }
-
-  const handleClosePopup = () => {
-    setOpen(false)
-  }
+  const user = Whoami()
 
   const [openslide, setOpenslide] = useState(false)
 
@@ -168,7 +162,8 @@ function Profile() {
         },
       }}
     >
-      <CardProfile />
+      {/* <CardProfile /> */}
+      <Profile_card user={user}/>
     </Box>
   </Box>
   )

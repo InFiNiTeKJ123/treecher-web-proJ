@@ -69,6 +69,10 @@ class PostViewSets(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
+class QuizViewSets(generics.ListAPIView):
+    serializer_class = QuizSerializer
+    queryset = Quiz.objects.all()
+
 class QuestionViewSets(generics.ListAPIView):
 
     serializer_class = QuestionSerializer

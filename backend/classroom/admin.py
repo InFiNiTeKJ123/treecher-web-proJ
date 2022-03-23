@@ -1,14 +1,28 @@
 from django.contrib import admin
 
-from classroom.models import Classroom, Post, Question, Answer, TakenQuiz
+from classroom.models import Classroom, Post, Question, Answer, TakenQuiz, Quiz
 
 # Register your models here.
+class ClassroomAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'about',
+        'Teacher',
+        'join_code'
+    ]
 
 
+class PostAdmin(admin.ModelAdmin):
+    list_display = [
+        'author',
+        'content',
+        'classroom'
+    ]
 class QuizAdmin(admin.ModelAdmin):
 	list_display = [
-        'id', 
+        'classroom',
         'title',
+        'content',
         ]
         
 class AnswerInlineModel(admin.TabularInline):
@@ -22,9 +36,10 @@ class QuestionAdmin(admin.ModelAdmin):
     fields = (
         'quiz',
         'question',
+        'content'
     )
     list_display = (
-        'classroom', 
+        'quiz', 
         'question',
         'date_created'
     )
@@ -39,7 +54,8 @@ class AnswerAdmin(admin.ModelAdmin):
         'question'
     )
 
-admin.site.register(Classroom)
-admin.site.register(Post)
+admin.site.register(Classroom, ClassroomAdmin)
+admin.site.register(Post, PostAdmin)
+admin.site.register(Quiz, QuizAdmin)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)

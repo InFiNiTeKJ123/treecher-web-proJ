@@ -1,3 +1,4 @@
+from importlib.resources import contents
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
@@ -49,10 +50,27 @@ class Post(models.Model):
     def __str__(self):
         return self.content
 
+class Quiz(models.Model):
+
+    class Meta:
+        verbose_name = _("Quiz")
+        verbose_name_plural = _("Quizzes")
+        ordering = ['id']
+
+    classroom = models.ForeignKey(Classroom, default=1, on_delete=models.DO_NOTHING)
+    title = models.CharField(max_length=255, default=_(
+        "New Quiz"), verbose_name=_("Quiz Title"))
+    content = models.TextField(blank=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
 
 class Question(models.Model):
-    classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE, default=1)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, default=1)
     question = models.CharField('Question', max_length=255)
+    content = models.TextField(blank=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

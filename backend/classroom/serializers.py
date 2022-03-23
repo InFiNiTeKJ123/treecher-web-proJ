@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from classroom.models import Classroom, Post, Question, Answer, TakenQuiz
+from classroom.models import Classroom, Post, Question, Answer, TakenQuiz, Quiz
 from treecher.serializers import NewUserSerializer, StudentsSerializer
 
 
@@ -27,10 +27,19 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = ('id', 'classroom', 'published', 'author', 'content', 'status')
 
-class QuestionSerializer(serializers.ModelSerializer):
+class QuizSerializer(serializers.ModelSerializer):
     classroom = serializers.SlugRelatedField(
         slug_field='name',
         queryset= Classroom.objects.all()
+    )
+    class Meta:
+        model = Quiz
+        fields = '__all__'
+
+class QuestionSerializer(serializers.ModelSerializer):
+    quiz = serializers.SlugRelatedField(
+        slug_field='title',
+        queryset= Quiz.objects.all()
     )
     class Meta:
         model = Question

@@ -47,8 +47,8 @@ function Join_classroomPopup_st(props) {
               color="success"
               {...register("classroom_code", {required: "กรุณาใส่รหัสห้องเรียน", 
               minLength: {
-                value: 7,
-                message: "รหัสเข้าห้องเรียนต้องไม่น้อนกว่า 7 ตัวอักษร"
+                value: 6,
+                message: "รหัสเข้าห้องเรียนต้องไม่น้อยกว่า 6 ตัวอักษร"
              }})}
                 error={!!errors?.classroom_code}
                 helperText={errors?.classroom_code ? errors.classroom_code.message : null}

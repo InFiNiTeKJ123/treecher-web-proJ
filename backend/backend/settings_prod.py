@@ -15,6 +15,7 @@ DATABASES = {
 
 ALLOWED_HOSTS = [
     "wd0301.coe.psu.ac.th"
+    "18.139.161.15"
 ]
 
 DEBUG = False

@@ -7,7 +7,7 @@ const ImgUpload =({
     onChange,
     src
   })=>
-    <label htmlFor="photo-upload" className="custom-file-upload fas">
+    <label htmlFor="photo-upload" className="custom-file-upload">
       <div className="img-wrap img-upload" >
         <img className="profile_img" for="photo-upload" src={src} />
       </div>
@@ -112,7 +112,7 @@ const Last_Name =({
     state = {
       file: '',
       imagePreviewUrl: 'https://github.com/OlgaKoplik/CodePen/blob/master/profile.jpg?raw=true',
-      name:'',
+      name: '',
       status:'',
       active: 'edit'
     }

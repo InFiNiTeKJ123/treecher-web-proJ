@@ -2,11 +2,9 @@ import { Avatar, Box, Button, Container, Drawer, Grid, List, ListItem, ListItemI
 import React, { useState } from 'react'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
-import { ExitToApp, Person, Settings, } from "@mui/icons-material";
+import { ExitToApp, Person, } from "@mui/icons-material";
 import SchoolIcon from '@mui/icons-material/School';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
 import Avartarst_mobile from '../components/students/avartarst_mobile'
-import Left_Menu_st from '../components/students/left_menust'
 import CardProfile from './test_profile';
 import Navbar_moblie from '../components/navbar_mobile';
 import Profile_card from '../components/profile_card';

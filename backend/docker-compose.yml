@@ -1,7 +1,7 @@
 version: '3'
 services:
-  djtreecher_mysql:
-    container_name: djtreecher_mysql
+  dj_mysql:
+    container_name: dj-mysql
     image: mysql/mysql-server:8.0.27
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     environment: 
@@ -21,7 +21,7 @@ services:
   dj_treecher_web:
     container_name: djtreecher-web
     build: .
-    command: gunicorn backend.wsgi:application --bind  0.0.0.0:8000 --workers 3 --timeout 120 --log-level=debug
+    command: gunicorn backend.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120 --log-level=debug
     volumes:
       - /opt/docker-volumes/dj-static:/code/static
       - /etc/timezone:/etc/timezone:ro
@@ -29,7 +29,7 @@ services:
     ports:
       - 127.0.0.1:8000:8000
     depends_on:
-      - djtreecher_mysql
+      - dj_mysql
 
 
 networks:

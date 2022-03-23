@@ -8,8 +8,8 @@ DATABASES = {
         'NAME': 'dj_treecher',
         'USER': 'root',
         'PASSWORD': 'myP@assw0rd',
-        'HOST': 'djtreecher_mysql',
-        'PORT': '3306'
+        'HOST': 'dj_mysql',
+        'PORT': '3306',
     }
 }
 

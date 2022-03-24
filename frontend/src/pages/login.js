@@ -50,12 +50,9 @@ function Login(props) {
   const { register, handleSubmit , formState: { errors } } = useForm();
 
   const Submit_form = (event) => {
-    // event.preventDefault();
+
     console.log(event)
-    // console.log(formData);
-    // const data = new FormData(event.currentTarget);
-    // console.log(data)
-    
+   
     axiosInstance.post(`token/`, {
       email: event.email,
       password: event.password,
@@ -172,10 +169,10 @@ function Login(props) {
                   color="success"
                   autoFocus
                   {...register("email", {
-                    required: "โปรดใส่อีเมล",
+                    required: "กรุณาใส่อีเมล",
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "อีเมลไม่ถูกต้อง",
+                      message: "กรุณาใส่อีเมลให้ถูกต้อง",
                     },
                   })}
                   error={!!errors?.email}
@@ -193,10 +190,10 @@ function Login(props) {
                   id="password"
                   autoComplete="current-password"
                   color="success"
-                  {...register("password", { required: "โปรดใส่รหัสผ่าน",
+                  {...register("password", { required: "กรุณาใส่รหัสผ่าน",
                     minLength: {
                       value: 8,
-                      message: "รหัสผ่านอย่างน้อยต้องมี 8 ตัว"
+                      message: "รหัสผ่านขั้นต่ำต้องไม่ต่ำกว่า 8 ตัวอักษร"
                    }, })}
                   error={!!errors?.password}
                   helperText={errors?.password ? errors.password.message : null}

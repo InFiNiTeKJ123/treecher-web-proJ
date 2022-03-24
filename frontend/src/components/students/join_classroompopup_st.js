@@ -40,24 +40,25 @@ function Join_classroomPopup_st(props) {
       join_code: data.classroom_code
     }).then(
       navigate('/home_st', { replace: true })
-    ).catch(
-      console.log("รหัสห้องเรียนไม่ถูกต้อง"),
-      setWrong_join_code(true),
     )
+    // .catch(
+    //   console.log("รหัสห้องเรียนไม่ถูกต้อง"),
+    //   setWrong_join_code(true),
+    // )
   }
 
-  const Wrong_joincode = () => (
-    <Stack spacing={2} sx={{ width: '100%' }}>
-        <Snackbar 
-          open={wrong_join_code} 
-          autoHideDuration={2500} 
-          onClose={handleClose} >
-          <Alert  onClose={handleClose} severity="error" sx={{ fontFamily: "Kanit", width: '100%' }}>
-            รหัสผ่านห้องเรียนไม่ถูกต้อง
-          </Alert>
-        </Snackbar>
-      </Stack>
-  )
+  // const Wrong_joincode = () => (
+  //   <Stack spacing={2} sx={{ width: '100%' }}>
+  //       <Snackbar 
+  //         open={wrong_join_code} 
+  //         autoHideDuration={2500} 
+  //         onClose={handleClose} >
+  //         <Alert  onClose={handleClose} severity="error" sx={{ fontFamily: "Kanit", width: '100%' }}>
+  //           รหัสห้องเรียนไม่ถูกต้อง
+  //         </Alert>
+  //       </Snackbar>
+  //     </Stack>
+  // )
   
   return (
     <Box>
@@ -92,7 +93,7 @@ function Join_classroomPopup_st(props) {
           </DialogActions>
         </Box>
       </Dialog>
-      {Wrong_joincode()}
+      {/* {Wrong_joincode()} */}
     </Box>
   );
 }

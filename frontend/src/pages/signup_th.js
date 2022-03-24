@@ -164,7 +164,7 @@ function SignUp_TH(props) {
                   label="ชื่อ"
                   autoFocus
                   color="success"
-                  {...register("firstName", {required: "โปรดใส่ชื่อ"})}
+                  {...register("firstName", {required: "กรุณาใส่ชื่อ"})}
                   error={!!errors?.firstName}
                   helperText={errors?.firstName ? errors.firstName.message : null}
                 />
@@ -180,7 +180,7 @@ function SignUp_TH(props) {
                   name="lastName"
                   autoComplete="family-name"
                   color="success"
-                  {...register("lastName", {required: "โปรดใส่นามสกุล"})}
+                  {...register("lastName", {required: "กรุณาใส่นามสกุล"})}
                   error={!!errors?.lastName}
                   helperText={errors?.lastName ? errors.lastName.message : null}
                 />
@@ -200,7 +200,7 @@ function SignUp_TH(props) {
                     required: "โปรดใส่อีเมล",
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "อีเมลไม่ถูกต้อง",
+                      message: "กรุณาใส่อีเมลให้ถูกต้อง",
                     },
                   })}
                   error={!!errors?.email}
@@ -219,7 +219,7 @@ function SignUp_TH(props) {
                   id="password"
                   autoComplete="new-password"
                   color="success"
-                  {...register("password", { required: "โปรดใส่รหัสผ่าน",
+                  {...register("password", { required: "กรุณาใส่รหัสผ่าน",
                     minLength: {
                       value: 8,
                       message: "รหัสผ่านอย่างน้อยต้องมี 8 ตัว"
@@ -240,10 +240,10 @@ function SignUp_TH(props) {
                   id="confirm_password"
                   autoComplete="new-password"
                   color="success"
-                  {...register("confirm_password", { required: "โปรดยืนยันรหัสผ่าน",
+                  {...register("confirm_password", { required: "กรุณายืนยันรหัสผ่าน",
                   minLength: {
                     value: 8,
-                    message: "รหัสผ่านอย่างน้อยต้องมี 8 ตัว",
+                    message: "รหัสผ่านขั้นต่ำต้องไม่ต่ำกว่า 8 ตัวอักษร",
                   }, 
                   validate: value =>
                   value === password.current || "รหัสผ่านไม่ตรงกัน"}

@@ -74,7 +74,7 @@ function Member_th() {
             </Button>
             <Button startIcon = {<AddTaskIcon className={classes.icon} />} variant="contained" color='success'
                 sx={{ fontFamily: "Kanit", width: '95%', height: 50, fontSize: 16, marginBottom: theme.spacing(3), color: 'white'}} 
-                 href='/quizmade' >
+                 href='/quizth' >
                 สร้างแบบฝึกหัด
             </Button>
             <Button startIcon = {<FilterVintageIcon className={classes.icon} />} variant="contained" color='success'

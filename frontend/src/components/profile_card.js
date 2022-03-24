@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Avatar, Box, Button, Grid, IconButton, Typography } from "@mui/material";
+import { Avatar, Box, Button, Grid, Typography } from "@mui/material";
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({

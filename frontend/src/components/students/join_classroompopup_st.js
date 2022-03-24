@@ -6,12 +6,28 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { Box } from '@mui/material';
+import { Box, Slide, Snackbar, Stack } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import axiosInstance from '../../config/axios';
 import { useNavigate } from 'react-router-dom';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+
+});
 
 function Join_classroomPopup_st(props) {
+
+  const [wrong_join_code, setWrong_join_code] = React.useState(false)
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setWrong_join_code(false);
+  };
 
   const navigate = useNavigate()
 
@@ -24,8 +40,24 @@ function Join_classroomPopup_st(props) {
       join_code: data.classroom_code
     }).then(
       navigate('/home_st', { replace: true })
+    ).catch(
+      console.log("รหัสห้องเรียนไม่ถูกต้อง"),
+      setWrong_join_code(true),
     )
   }
+
+  const Wrong_joincode = () => (
+    <Stack spacing={2} sx={{ width: '100%' }}>
+        <Snackbar 
+          open={wrong_join_code} 
+          autoHideDuration={2500} 
+          onClose={handleClose} >
+          <Alert  onClose={handleClose} severity="error" sx={{ fontFamily: "Kanit", width: '100%' }}>
+            รหัสผ่านห้องเรียนไม่ถูกต้อง
+          </Alert>
+        </Snackbar>
+      </Stack>
+  )
   
   return (
     <Box>
@@ -60,6 +92,7 @@ function Join_classroomPopup_st(props) {
           </DialogActions>
         </Box>
       </Dialog>
+      {Wrong_joincode()}
     </Box>
   );
 }

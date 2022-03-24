@@ -38,7 +38,7 @@ class Post(models.Model):
         
     classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE, default=1)
     content = models.TextField()
-    published = models.DateTimeField(default=datetime.now())
+    published = models.DateField(default=timezone.now())
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='classroom_posts')
     status = models.CharField(max_length=10, choices=option, default='published')
     objects = models.Manager()  # default manager
@@ -86,6 +86,9 @@ class Answer(models.Model):
 
 class TakenQuiz(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='taken_quizzes')
-    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='taken_quizzes')
-    score = models.FloatField()
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='taken_quizzes', blank=True, null=True)
+    score = models.IntegerField(default=0, null=True)
     date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.student.user.first_name} {self.student.user.last_name}'

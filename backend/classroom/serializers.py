@@ -46,10 +46,14 @@ class QuestionSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class AnswerSerializer(serializers.ModelSerializer):
-    question = serializers.SlugRelatedField(
-        slug_field='question',
-        queryset= Question.objects.all()
-    )
+    question = QuestionSerializer(read_only=True)
     class Meta:
         model = Answer
+        fields = '__all__'
+
+class TakenQuizSerializer(serializers.ModelSerializer):
+    student = StudentsSerializer(read_only=True)
+    question = QuestionSerializer(read_only=True) 
+    class Meta:
+        model = TakenQuiz
         fields = '__all__'

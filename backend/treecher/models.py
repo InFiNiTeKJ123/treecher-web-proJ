@@ -47,6 +47,7 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_student = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
+    avartar = models.CharField(max_length=1, blank=True)
 
     objects = CustomAccountManager()
 

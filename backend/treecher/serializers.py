@@ -1,4 +1,6 @@
+from email.policy import default
 from rest_framework import serializers
+from classroom.models import TakenQuiz
 from treecher.models import NewUser, Student, Teacher
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseBadRequest
@@ -19,12 +21,13 @@ class CreateStudentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NewUser
-        fields = ('email', 'first_name', 'last_name', 'password', 'confirm_password', 'is_student', 'is_teacher')
+        fields = ('email', 'first_name', 'last_name', 'password', 'confirm_password', 'is_student', 'is_teacher', 'avartar')
         extra_kwargs = {'password': {'write_only': True}, 'confirmpassword': {'write_only': True}}
 
     def create(self, validated_data):
         password = validated_data.pop('password', None)
         confirm_password = validated_data.pop('confirm_password', None)
+        name = validated_data.get('first_name')
         # as long as the fields are the same, we can just use this
         instance = self.Meta.model(**validated_data)
         if password is not None and confirm_password is not None :
@@ -32,10 +35,21 @@ class CreateStudentSerializer(serializers.ModelSerializer):
                 raise ValueError(
                     'Confirm Password Must same as Password')
             else:
-                instance.set_password(password) 
+                instance.set_password(password)
+        for i in range(0, len(name)):
+            if name[i] not in "ก ข ฃ ค ฅ ฆ ง จ ฉ ช ซ ฌ ญ ฎ ฏ ฐ ฑ ฒ ณ ด ต ถ ท ธ น บ ป ผ ฝ พ ฟ ภ ม ย ร ฤ ฤๅ ล ฦ ฦๅ ว ศ ษ ส ห ฬ อ ฮ":
+                continue
+            else: 
+                instance.avartar = name[i] 
+                break
         instance.save()
         student = Student.objects.create(user=instance)
         student.save()
+        st_takequiz = TakenQuiz.objects.create(
+            student = student,
+            score = 0
+        )
+        st_takequiz.save()
         return instance
 
 class CreateTeacherSerializer(serializers.ModelSerializer):
@@ -52,12 +66,13 @@ class CreateTeacherSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NewUser
-        fields = ('email', 'first_name', 'last_name', 'password', 'confirm_password', 'is_student', 'is_teacher')
+        fields = ('email', 'first_name', 'last_name', 'password', 'confirm_password', 'is_student', 'is_teacher', 'avartar')
         extra_kwargs = {'password': {'write_only': True}, 'confirmpassword': {'write_only': True}}
 
     def create(self, validated_data):
         password = validated_data.pop('password', None)
         confirm_password = validated_data.pop('confirm_password', None)
+        name = validated_data.get('first_name')
         # as long as the fields are the same, we can just use this
         instance = self.Meta.model(**validated_data)
         if password is not None and confirm_password is not None :
@@ -65,7 +80,13 @@ class CreateTeacherSerializer(serializers.ModelSerializer):
                 raise ValueError(
                     'Confirm Password Must same as Password')
             else:
-                instance.set_password(password) 
+                instance.set_password(password)
+        for i in range(0, len(name)):
+            if name[i] not in "ก ข ฃ ค ฅ ฆ ง จ ฉ ช ซ ฌ ญ ฎ ฏ ฐ ฑ ฒ ณ ด ต ถ ท ธ น บ ป ผ ฝ พ ฟ ภ ม ย ร ฤ ฤๅ ล ฦ ฦๅ ว ศ ษ ส ห ฬ อ ฮ":
+                continue
+            else: 
+                instance.avartar = name[i] 
+                break
         instance.save()
         teacher = Teacher.objects.create(user=instance)
         teacher.save()
@@ -75,12 +96,12 @@ class CreateTeacherSerializer(serializers.ModelSerializer):
 class NewUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = NewUser
-        fields = ('id', 'email', 'first_name', 'last_name', 'is_student', 'is_teacher')
+        fields = ('id', 'email', 'first_name', 'last_name', 'is_student', 'is_teacher', 'avartar')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'email', 'first_name', 'last_name', 'is_student', 'is_teacher')
+        fields = ('id', 'email', 'first_name', 'last_name', 'is_student', 'is_teacher', 'avartar')
 
 class StudentsSerializer(serializers.ModelSerializer):
     user = NewUserSerializer(read_only=True)
@@ -89,6 +110,7 @@ class StudentsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class TeacherSerializer(serializers.ModelSerializer):
+    user = NewUserSerializer(read_only=True)
     class Meta:
         model = Teacher
         fields = '__all__'

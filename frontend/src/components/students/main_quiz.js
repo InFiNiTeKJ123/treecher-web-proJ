@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles'
 import { createTheme } from '@mui/material/styles';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography, Grid } from '@mui/material';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
@@ -12,6 +12,7 @@ import Quiz_popup2 from '../quiz_popup2';
 import Quiz_popup1 from '../quiz_popup1';
 import Quiz_popup3 from '../quiz_popup3';
 import Quiz_popup4 from '../quiz_popup4';
+import axiosInstance from '../../config/axios';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -37,6 +38,15 @@ function Main_quiz(props) {
     const classes = useStyles();
 
     const theme = createTheme();
+
+    const [QuizList, setQuizList] = useState([])
+
+    //! axios
+    useEffect( async () => {
+      let res = await axiosInstance.get('classrooms/quiz')
+      console.log(res.data[0])
+      setQuizList(res.data[0])
+    } ,[])
 
     const [open1, setOpen1] = useState(false)
   
@@ -78,33 +88,6 @@ function Main_quiz(props) {
       setOpen4(false)
     }
   // popup
-
-  // snackbar1
-
-  const [opensnackbar1, setOpensnackbar1] = useState(false);
-
-  const handleClick1 = () => {
-    setOpensnackbar1(true);
-    setOpen1(false)
-  };
-
-  const handleClose1 = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
-    setOpensnackbar1(false);
-  };
-
-  const Checkpoint1 = () => (
-    <Stack spacing={2} sx={{ width: '100%' }}>
-        <Snackbar open={opensnackbar1} autoHideDuration={2000} onClose={handleClose1}>
-          <Alert onClose={handleClose1} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
-            เย้! คุณได้รดน้ำต้นไม้แล้ว
-          </Alert>
-        </Snackbar>
-      </Stack>
-  )
 
   // snackbar2
 
@@ -215,18 +198,17 @@ function Main_quiz(props) {
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>
-                          แบบฝึกหัดที่ 1
+                          {QuizList.title}
                         </Typography>
                         <Typography  gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
-                          มารดน้ำต้นไม้กันเถอะ
+                          {QuizList.content}
                         </Typography>
                       </CardContent>
                     </CardActionArea>
                     <CardActions CardActions onClick={handleOpenPopup1}>
                       <Button sx={{ fontFamily: "Kanit"}} size="small">เข้าทำควิซ</Button>
                     </CardActions>
-                    <Quiz_popup1 Open={open1} handleclose={handleClosePopup1} clickcheckpoint={handleClick1}/>
-                    {Checkpoint1()}
+                    <Quiz_popup1 Open={open1} setopen={setOpen1} handleclose={handleClosePopup1} />
                 </Card>
 
                   <Card sx = {{background: 'linear-gradient(45deg, #f9e6d6 30%, #e1c4ba 60%)', marginRight: theme.spacing(4) }}  className={classes.card_classroom}>

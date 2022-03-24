@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -13,6 +13,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import axiosInstance from "../config/axios";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -25,16 +26,29 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 function Quiz_popup1(props) {
   const theme = createTheme();
 
-  const [close, setClose] = useState(false);
+  const [ans1, setans1] = useState([])
 
-  const clickonClose = (props) => {
-    setClose(!props.clickcheckpoint);
-  };
+  const [ans2, setans2] = useState([])
+
+  const [Question, setQuestion] = useState([])
+
+  useEffect( async () => {
+    let res = await axiosInstance.get('classrooms/quiz/question/answer')
+    let question = await axiosInstance.get('classrooms/quiz/question')
+    console.log(res.data[0].question.content)
+    console.log(question.data[0])
+    setQuestion(question.data[0])
+    setans1(res.data[0])
+    setans2(res.data[1])
+  }, [])
 
   const [opensnackbar1, setOpensnackbar1] = useState(false);
 
   const handleClick1 = () => {
     setOpensnackbar1(true);
+    props.setopen(false)
+
+    axiosInstance.get('http://127.0.0.1:8000/api/classrooms/getans')
   };
 
   const handleClose1 = (event, reason) => {
@@ -47,15 +61,15 @@ function Quiz_popup1(props) {
 
   const Checkpoint1 = () => (
     <Stack spacing={2} sx={{ width: '100%' }}>
-        <Snackbar open={opensnackbar1} autoHideDuration={6000} onClose={handleClose1}>
+        <Snackbar open={opensnackbar1} autoHideDuration={2000} onClose={handleClose1}>
           <Alert onClose={handleClose1} severity="success" sx={{ fontFamily: "Kanit", width: '100%' }}>
-            เย้ คุณได้รดน้ำต้นไม้แล้ว
+            เย้! คุณได้รดน้ำต้นไม้แล้ว
           </Alert>
         </Snackbar>
       </Stack>
   )
 
-  return (
+   return (
     <Box>
       <Dialog
         open={props.Open}
@@ -74,7 +88,7 @@ function Quiz_popup1(props) {
               fontWeight: "bold",
             }}
           >
-            {"แบบฝึกหัดการรดน้ำต้นไม้"}
+            {Question.question}
           </Typography>
           <IconButton
             aria-label="CancelIcon"
@@ -94,7 +108,7 @@ function Quiz_popup1(props) {
         <DialogContent>
           <Box component="div" sx={{ textAlign: "center" }}>
             <DialogContentText  sx={{ fontFamily: "Kanit" }} id="alert-dialog-slide-description">
-              วันนี้นักเรียนรดน้ำต้นไม้แล้วหรือยังคะ ?
+              {Question.content}
             </DialogContentText>
           </Box>
           <Box component="div" sx={{ textAlign: "center" }}>
@@ -112,12 +126,9 @@ function Quiz_popup1(props) {
             startIcon={<CheckCircleOutlineIcon />}
             variant="contained"
             color="success"
-            onClick={props.clickcheckpoint}
-            onClose={close}
-            // onClose={}
-            // onClick={(props) => {props.checkpoint && props.handleclose}}
+            onClick={handleClick1}
           >
-            ยืนยัน
+            {ans1.answer_text}
           </Button>
           <Button 
             sx = {{ fontFamily: "Kanit"}}
@@ -126,10 +137,11 @@ function Quiz_popup1(props) {
             color="error"
             onClick={props.handleclose}
           >
-            ยกเลิก
+            {ans2.answer_text}
           </Button>
         </DialogActions>
       </Dialog>
+      <Checkpoint1 />
     </Box>
   );
 }

@@ -92,7 +92,7 @@ function Navbar(props) {
                   sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', 
                         display: { xs: 'none', sm: 'flex' }}} 
                   size="small" aria-label="avatar" >
-                  {user.first_name}
+                  {user.avartar}
                 </Avatar>
               </IconButton> 
           </Box>
@@ -156,7 +156,7 @@ function Navbar(props) {
                   sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', 
                         display: { xs: 'none', sm: 'flex' }}} 
                   size="small" aria-label="avatar" >
-                  {user.first_name}
+                  {user.avartar}
                 </Avatar>
               </IconButton> 
           </Box>

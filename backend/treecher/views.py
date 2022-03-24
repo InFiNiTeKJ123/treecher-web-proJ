@@ -14,7 +14,8 @@ class StudentUserCreate(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request, format='json'):
-        serializer = CreateStudentSerializer(data=request.data)
+        data = request.data
+        serializer = CreateStudentSerializer(data=data)
         if serializer.is_valid():
             user = serializer.save()
             if user:
@@ -27,7 +28,8 @@ class TeacherUserCreate(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request, format='json'):
-        serializer = CreateTeacherSerializer(data=request.data)
+        data = request.data
+        serializer = CreateTeacherSerializer(data=data)
         if serializer.is_valid():
             user = serializer.save()
             if user:

@@ -1,5 +1,6 @@
 from rest_framework import viewsets, generics, status
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from classroom.models import Classroom, Post, Question, Answer
 from classroom.serializers import *
@@ -77,4 +78,25 @@ class QuestionViewSets(generics.ListAPIView):
 
     serializer_class = QuestionSerializer
     queryset = Question.objects.all()
+
+class AnswerViewSets(generics.ListAPIView):
+
+    serializer_class = AnswerSerializer
+    queryset = Answer.objects.all()
+
+class TakenQuizViewSets(generics.ListAPIView):
+    serializer_class = TakenQuizSerializer
+    queryset = TakenQuiz.objects.all()
+
+@api_view()
+def getAnswer(request):
+    data = request.data
+    user = request.user
+    user_st = Student.objects.get(user_id=request.user)
+    user_takenquiz = TakenQuiz.objects.filter(student=user_st)
+    takenquiz = user_takenquiz[0]
+    takenquiz.score += 1
+    takenquiz.save()
+
+    return Response({'user_st_score': takenquiz.score})
 

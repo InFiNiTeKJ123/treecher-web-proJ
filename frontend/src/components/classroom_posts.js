@@ -31,7 +31,7 @@ if(props.posts.author.is_student) {
                   sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#fcf872',color:'#000000', fontFamily: "Kanit",
                         display: { xs: 'flex' }, marginLeft: { xs: theme.spacing(2) ,md: theme.spacing(4) }, marginTop: theme.spacing(2)}} 
                   size="small" aria-label="avatar" >
-                  {props.posts.author.first_name[0]}
+                  {props.posts.author.avartar}
                 </Avatar>
                 <Typography variant="h6" 
                 sx={{ fontFamily: "Kanit", marginTop: theme.spacing(2), marginLeft: theme.spacing(2), color: "white", fontFamily: "Kanit"}}>
@@ -104,7 +104,7 @@ if(props.posts.author.is_student) {
                           sx={{ fontFamily: "Kanit", fontWeight: 'bold',bgcolor: '#81DBEA',color:'#000000', fontFamily: "Kanit",
                           display: { xs: 'flex' }, marginLeft: { xs: theme.spacing(2) ,md: theme.spacing(4) }, marginTop: theme.spacing(2)}} 
                           size="small" aria-label="avatar" >
-                          {props.posts.author.first_name[0]}
+                          {props.posts.author.avartar}
                         </Avatar>
                         <Typography variant="h6" 
                         sx={{ fontFamily: "Kanit", marginTop: theme.spacing(2), marginLeft: theme.spacing(2), color: "white", fontFamily: "Kanit"}}>

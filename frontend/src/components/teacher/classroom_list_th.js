@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Box, Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import axiosInstance from '../../config/axios';
+import Classroom_card from '../classroom_card';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
@@ -28,10 +29,14 @@ function Classroom_list_th() {
 
     const [classroom, setClassroom] = useState([])
 
+    // const [classroomList, setClassroomList] = useState([])
+
     useEffect( async () => {
       let classroom_data = await axiosInstance.get('classrooms/classroom')
       console.log(classroom_data.data[0])
       setClassroom(classroom_data.data[0])
+      // console.log(classroom_data.data)
+      // setClassroomList(classroom_data.data)
     }, [])
 
   return (
@@ -64,7 +69,6 @@ function Classroom_list_th() {
                 </Typography>
                 <Typography gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                   {classroom.about}
-                  {/* {classroom.Students.user.id} */}
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -138,6 +142,7 @@ function Classroom_list_th() {
               <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_th' >เข้าห้องเรียน</Button>
             </CardActions>
           </Card>
+          {/* {classroomList.map(r => <Classroom_card classroom={r} key={r.id} />)} */}
         </Grid>
       </Container>
   )

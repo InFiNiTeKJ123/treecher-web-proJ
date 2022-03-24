@@ -47,6 +47,7 @@ function Addchoice() {
             <TextField
              inputProps={{style: {fontFamily: "Kanit"}}} 
              InputLabelProps={{style: {fontFamily: "Kanit"}}}
+             color="success"
              choice="choice"
              label="ตัวเลือก"
               sx={{ 
@@ -54,9 +55,8 @@ function Addchoice() {
                 // paddingLeft: theme.spacing(4),
                 marginBottom: theme.spacing(2),
                 width: "70%" }}
-              value={inputField.choice}
-              onChange={event => handleChangeIput(index,event)}
-              
+              value={inputFields.choice}
+              onChange={event => handleChangeIput(index,event)}              
             />
             <IconButton sx={{ marginTop: theme.spacing(1)}}
                   onClick={() => handleRemoveFields(index)}>

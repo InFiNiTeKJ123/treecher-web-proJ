@@ -50,13 +50,14 @@ function Addproblem() {
              inputProps={{style: {fontFamily: "Kanit"}}} 
              InputLabelProps={{style: {fontFamily: "Kanit"}}}
              choice="โจทย์"
+             color="success"
              label="โจทย์"
               sx={{ 
                 marginTop: theme.spacing(5),
                 marginBottom: theme.spacing(5),
                 marginLeft:theme.spacing(3),
                 width: "85%" }}
-              value={inputField.choice}
+              value={inputFields.choice}
               onChange={event => handleChangeIput(index,event)}
             />
 
@@ -78,6 +79,7 @@ function Addproblem() {
              inputProps={{style: {fontFamily: "Kanit"}}} 
              InputLabelProps={{style: {fontFamily: "Kanit"}}}
              choice="คำตอบ"
+             color="success"
              label="คำตอบ"
               sx={{ 
                 marginTop: theme.spacing(5),

@@ -51,27 +51,7 @@ function Makequiz_form(props) {
       return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
     });
 
-    const [open, setOpen] = useState(false)
-
-    const [close, setClose] = useState(false);
-
-    const clickonClose = (props) => {
-      setClose(!props.clickcheckpoint);
-    };
-    
-    const handleOpenPopup = () => {
-      setOpen(true)
-    }
-
-    const handleClosePopup = () => {
-      setOpen(false)
-    }
-
     const [openslide, setOpenslide] = useState(false)
-
-    const toggleslider = () => {
-      setOpenslide(!openslide)
-    }
 
     const [opensnackbar, setOpensnackbar] = useState(false);
 
@@ -90,33 +70,6 @@ function Makequiz_form(props) {
 
       setOpensnackbar(false);
     };
-
-
-    const main_quiz = () => (
-        <Box>
-            <Card className={classes.card_classroom}>
-            <CardActionArea >
-                <CardMedia
-                component="img"
-                alt="green iguana"
-                height="100"
-                image="https://www.img.in.th/images/83b7c243c2ca76e853ca96df4c2e3514.png"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 500 ,fontFamily: "Kanit"}}>
-                    แบบฝึกหัด
-                </Typography>
-                <Typography gutterBottom variant="body2" component="div" sx={{ fontWeight: 500 ,fontFamily: "Kanit"}}>
-                    มารดน้ำต้นไม้กันเถอะ
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions CardActions >
-                <Button sx={{fontFamily: "Kanit"}} size="small">เข้าทำควิซ</Button>
-            </CardActions>
-        </Card>
-      </Box>
-    )
 
   return (
     <Box component="div">
@@ -184,6 +137,7 @@ function Makequiz_form(props) {
                 placeholder="หัวข้อแบบฝึกหัด"
                 sx={{ width: "85%" }}
                 multiline
+                color="success"
               />
             </Grid>
           </Grid>

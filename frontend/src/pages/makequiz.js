@@ -19,7 +19,14 @@ import Left_slidebar_class_th from "../components/teacher/left_slidebar_class_th
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
   container: {
-    paddingTop: theme.spacing(3),
+    height: "100vh",
+    color: "white",
+    paddingTop: theme.spacing(5),
+    [theme.breakpoints.up("md")]: {
+      backgroundColor: "white",
+      color: "#555",
+      border: "1px solid #ece7e7",
+    },
   },
   avartar_mobile: {
     alignItems: "right",

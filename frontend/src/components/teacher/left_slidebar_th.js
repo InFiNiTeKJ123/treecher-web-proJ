@@ -48,13 +48,13 @@ function Left_slidebar_th(props) {
           TreeCher
         </Typography>
         <List>
-            <ListItem button >
+            <ListItem button component="a" href="/home_th">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <SchoolIcon />
                 </ListItemIcon>
                 <ListItemText primary='หน้าหลัก' sx={{ fontFamily: "Kanit",color: 'white'}}/>
             </ListItem>
-            <ListItem button component="a" href="/profile">
+            <ListItem button component="a" href="/profile_th">
                 <ListItemIcon sx={{ color: 'white'}}>
                     <Person />
                 </ListItemIcon>

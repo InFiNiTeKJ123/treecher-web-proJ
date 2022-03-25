@@ -31,7 +31,7 @@ class Post(models.Model):
         
     classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE, default=1)
     content = models.TextField()
-    published = models.DateField(default=timezone.now())
+    published = models.DateField(auto_now_add=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='classroom_posts')
     status = models.CharField(max_length=10, choices=option, default='published')
     objects = models.Manager()  # default manager

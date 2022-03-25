@@ -5,15 +5,8 @@ from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 from treecher.models import NewUser
 from treecher.models import Student
-from datetime import datetime
+from .config import random_code
 # Create your models here.
-
-from string import ascii_lowercase
-import random
-
-
-def random_code(digit=7):
-    return "".join([random.choice(ascii_lowercase) for _ in range(digit-1)])
 
 class Classroom(models.Model):
     name = models.CharField(max_length=30,null=False)

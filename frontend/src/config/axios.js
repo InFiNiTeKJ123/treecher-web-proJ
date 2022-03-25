@@ -1,6 +1,7 @@
 import axios from 'axios';
+import config from './config';  
 
-const baseURL = 'http://127.0.0.1:8000/api/';
+const baseURL = `${config.severUrlPrefix}/api/`;
 
 const axiosInstance = axios.create({
 	baseURL: baseURL,

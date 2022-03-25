@@ -15,6 +15,7 @@ import axios from "axios";
 import { Slide } from "@mui/material";
 import Tree from "../assets/TCH1.png";
 import { useForm } from "react-hook-form";
+import config from "../config/config";
 
 
 const useStyles = makeStyles({
@@ -86,7 +87,7 @@ function SignUp_TH(props) {
     // const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     
-    axios.post(`http://127.0.0.1:8000/api/user/create/th`,{
+    axios.post(`${config.severUrlPrefix}/api/user/create/th`,{
       email: event.email,
       first_name: event.firstName,
       last_name: event.lastName,

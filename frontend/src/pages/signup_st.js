@@ -86,7 +86,7 @@ function SignUp_ST(props) {
     // console.log(formData);
     // const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-    axios.post(`${config.severUrlPrefix}/api/user/create/st`,{
+    axios.post(`${config.apiUrlPrefix}user/create/st`,{
       email: event.email,
       first_name: event.firstName,
       last_name: event.lastName,

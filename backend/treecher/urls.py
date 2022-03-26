@@ -1,4 +1,3 @@
-from xml.etree.ElementInclude import include
 from django.urls import path, include
 from rest_framework import routers
 from .views import StudentUserCreate, TeacherUserCreate,  BlacklistTokenUpdateView, UserViewset, whoami, StudentViewSet

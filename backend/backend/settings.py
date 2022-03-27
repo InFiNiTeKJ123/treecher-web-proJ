@@ -63,6 +63,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = False
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:3000',
+  'https://wd0301.coe.psu.ac.th'
 )
 
 ROOT_URLCONF = 'backend.urls'
@@ -161,7 +162,7 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = "treecher.NewUser"
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False,

@@ -18,4 +18,9 @@ ALLOWED_HOSTS = [
     "18.139.161.15"
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://wd0301.coe.psu.ac.th"
+]
+
+
 DEBUG = False

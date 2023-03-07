@@ -145,7 +145,7 @@ function Login(props) {
             >
               <Avatar sx={{ width: 150, height: 150, backgroundColor: "success.main" }}>
                 <img
-                    src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
+                    src="https://sgp1.vultrobjects.com/img-in-th/U9hKvN.png"
                     alt="TreeCherLOGO.png"
                     border="20"
                     width="200"

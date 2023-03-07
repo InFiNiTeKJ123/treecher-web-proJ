@@ -61,7 +61,7 @@ function Classroom_list_th() {
               alt="TreeCherLOGO"
               height="250"
               width="125"
-              image="https://www.img.in.th/images/ac8f4b6431d8f75047d2dd768e6c83fe.png"
+//              image="https://www.img.in.th/images/ac8f4b6431d8f75047d2dd768e6c83fe.png"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500  }}>
@@ -77,14 +77,15 @@ function Classroom_list_th() {
             </CardActions>
           </Card>
       
-          <Card sx = {{background: 'linear-gradient(45deg, #ff6868 30%, #efc2cc  80%)', flexDirection: 'column', marginRight: theme.spacing(4) }} className={classes.card_classroom}>
+          {/* <Card sx = {{background: 'linear-gradient(45deg, #ff6868 30%, #efc2cc  80%)', flexDirection: 'column', marginRight: theme.spacing(4) }} className={classes.card_classroom}>
               <CardActionArea href='/classroom_th'>
                 <CardMedia
                 component="img"
                 alt="green iguana"
                 height="250"
                 width="125"
-                image="https://www.img.in.th/images/7318bff9408bfd1dddf7fe3c0539c1a8.png"/>
+//                image="https://www.img.in.th/images/7318bff9408bfd1dddf7fe3c0539c1a8.png"
+                />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                     502-002
@@ -106,7 +107,8 @@ function Classroom_list_th() {
               alt="green iguana"
               height="250"
               width="125"
-              image="https://www.img.in.th/images/c8efa1ac57689492fd93e235b6f8d3b9.png"/>
+//              image="https://www.img.in.th/images/c8efa1ac57689492fd93e235b6f8d3b9.png"
+              />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
                   001-103
@@ -128,7 +130,8 @@ function Classroom_list_th() {
               alt="green iguana"
               height="250"
               width="125"
-              image="https://www.img.in.th/images/8174a40842545887fd91f9dc8df9adb9.png"/>
+  //            image="https://www.img.in.th/images/8174a40842545887fd91f9dc8df9adb9.png"
+              />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500, color:"#ffffff" }}>
                   320-005
@@ -141,7 +144,7 @@ function Classroom_list_th() {
             <CardActions CardActions>
               <Button sx={{ fontFamily: "Kanit", color:"#000000" }} size="small" href='/classroom_th' >เข้าห้องเรียน</Button>
             </CardActions>
-          </Card>
+          </Card> */}
           {/* {classroomList.map(r => <Classroom_card classroom={r} key={r.id} />)} */}
         </Grid>
       </Container>

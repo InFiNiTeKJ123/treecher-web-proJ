@@ -63,7 +63,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = False
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:3000',
-  'https://wd0301.coe.psu.ac.th'
+  'https://wd0301.coe.psu.ac.th',
+  'http://34.142.248.210/'
 )
 
 ROOT_URLCONF = 'backend.urls'

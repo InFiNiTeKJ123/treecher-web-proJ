@@ -1,10 +1,5 @@
-# สิ่งที่ต้องลง 
-FrontEnd: ไม่ต้องลงเพิ่ม
+# TreeCheer Classroom Website
+เว็บไซต์ห้องเรียน เพื่อการศึกษาและการส่งงาน โปรเจครายวิชา 240-124 Web Design & Developer Module 1st Year 2/2564
+พัฒนาโดยใช้ React เป็น Frontend และ Django เป็น Backend
 
-Backend: pip install -r requirements.txt
-         py manage.py migrate 
 
-หลังจาก Git Clone เสร็จ ขอให้แยก branch กันทำนะ 
-วิธีแยก branch: 
-    git branch <ชื่อเล่น>
-    git checkout <ชื่อเล่น> 

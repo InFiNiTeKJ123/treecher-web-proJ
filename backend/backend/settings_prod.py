@@ -15,12 +15,14 @@ DATABASES = {
 
 ALLOWED_HOSTS = [
     #"wd0301.coe.psu.ac.th"
-    "34.142.248.210"
+    # "34.142.248.210"
+    '192.168.10.10'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     #"https://wd0301.coe.psu.ac.th"
-    "http://34.142.248.210/"
+    # "http://34.142.248.210/"
+    'http://192.168.10.10/'
 ]
 
 

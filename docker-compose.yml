@@ -18,9 +18,9 @@ services:
     networks:
       - dj
 
-  dj_treecher_web:
-    container_name: djtreecher-web
-    build: .
+  dj_treecher_web_server:
+    container_name: djtreecher-web-server
+    build: ./backend
     command: gunicorn backend.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120 --log-level=debug
     volumes:
       - /opt/docker-volumes/dj-static:/code/static

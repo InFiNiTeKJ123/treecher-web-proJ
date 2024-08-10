@@ -1,5 +1,36 @@
 version: '3'
 services:
+  treecher_frontend:
+    container_name: treecher-frontend
+    build: ./frontend
+    ports:
+      - 80:80
+    volumes:
+      - /opt/docker-volumes/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    depends_on:
+      - dj_treecher_web_server
+      - dj_mysql
+    networks:
+      - dj
+
+  dj_treecher_web_server:
+    container_name: dj_treecher_web_server
+    build: ./backend
+    command: gunicorn backend.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120 --log-level=debug
+    volumes:
+      - /opt/docker-volumes/dj-static:/code/static
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8000:8000
+    depends_on:
+      - dj_mysql
+    networks:
+      - dj
+
   dj_mysql:
     container_name: dj-mysql
     image: mysql/mysql-server:8.0.27
@@ -9,7 +40,7 @@ services:
       MYSQL_ROOT_PASSWORD: myP@assw0rd
       MYSQL_ROOT_HOST: '%'
     ports:
-      - 127.0.0.1:3306:3306
+      - 3306:3306
     volumes:
       - /opt/docker-volumes/mysql:/var/lib/mysql
       - /etc/timezone:/etc/timezone:ro
@@ -18,30 +49,7 @@ services:
     networks:
       - dj
 
-  dj_treecher_web_server:
-    container_name: djtreecher-web-server
-    build: ./backend
-    command: gunicorn backend.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120 --log-level=debug
-    volumes:
-      - /opt/docker-volumes/dj-static:/code/static
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    ports:
-      - 127.0.0.1:8000:8000
-    depends_on:
-      - dj_mysql
-    networks:
-      - dj
+
   
-  treecher_frontend:
-    container_name: treecher-frontend
-    build: ./frontend
-    ports:
-      - 80:80
-    restart: always
-    networks:
-      - dj
-
-
 networks:
   dj:

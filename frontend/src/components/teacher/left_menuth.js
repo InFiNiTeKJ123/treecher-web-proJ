@@ -84,7 +84,7 @@ function Left_Menu_th(props) {
           fontFamily: "Kanit",
         }}
       >
-        เพิ่มห้องเรียน
+        สร้างห้องเรียน
       </Button>
       <Button
         startIcon={<ExitToApp className={classes.icon} />}

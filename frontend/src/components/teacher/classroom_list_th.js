@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { Box, Button, Grid, Card, CardActionArea, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import axiosInstance from '../../config/axios';
-import Classroom_card from '../classroom_card';
+import Programming_classroom_logo from '../../assets/programming_classroom_img.png';
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
     container: {
@@ -58,10 +58,10 @@ function Classroom_list_th() {
             <CardActionArea href='/classroom_th'>
               <CardMedia
               component="img"
-              alt="TreeCherLOGO"
+              alt="Classroom_logo"
               height="250"
               width="125"
-//              image="https://www.img.in.th/images/ac8f4b6431d8f75047d2dd768e6c83fe.png"
+              src={Programming_classroom_logo}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500  }}>

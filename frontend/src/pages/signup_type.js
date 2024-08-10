@@ -2,13 +2,8 @@ import React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import ChildCareIcon from "@mui/icons-material/ChildCare";
@@ -16,6 +11,7 @@ import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles"
 import Tree from "../assets/TCH1.png";
+import Logo from "../assets/treecher.png";
 
 
 const useStyles = makeStyles({
@@ -114,7 +110,7 @@ function SignUp_Type() {
               sx={{ width: 150, height: 150, backgroundColor: "success.main" }}
             >
               <img
-                src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
+                src={Logo}
                 alt="TreeCherLOGO.png"
                 border="20"
                 width="200"

@@ -115,7 +115,7 @@ function Quizmade() {
             <Avartar_mobile className={classes.avartar_mobile}/>
           </Grid>
           <Grid item xs sx={{ marginLeft: {md:"15%"}}} >
-            <Main_quiz Openpopup={handleOpenPopup}/>
+            <Quizth_made Openpopup={handleOpenPopup}/>
             <Quiz_popup Open={open} handleclose={handleClosePopup} clickcheckpoint={handleClick}/>
             {Checkpoint()}
           </Grid>

@@ -4,7 +4,7 @@ import { useTheme , createTheme } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import Whoami from '../config/whoami'
 import MenuIcon from '@mui/icons-material/Menu';
-
+import Logo from "../assets/treecher.png";
 
 
 const useStyles = makeStyles(({theme = useTheme()}) => ({
@@ -58,7 +58,7 @@ function Navbar_moblie(props) {
                 <Avatar sx={{width: 35, height: 35, backgroundColor: 'success.main',}} 
                   >
                   <img 
-                      src="https://sgp1.vultrobjects.com/img-in-th/U9hKvN.png" 
+                      src={Logo}
                       alt="TreeCherLOGO.png"  
                       border="0"
                       width="36"/>

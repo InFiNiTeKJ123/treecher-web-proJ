@@ -1,18 +1,7 @@
 import React from 'react'
 import { makeStyles } from "@mui/styles";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import QuizIcon from "@mui/icons-material/Quiz";
 import {
-  Button,
-  Card,
-  CardActionArea,
-  CardActions,
-  CardContent,
-  CardMedia,
   Grid,
-  Paper,
-  Stack,
-  TextField,
   Typography,
 } from "@mui/material";
 import { Box, grid, spacing } from "@mui/system";
@@ -20,8 +9,6 @@ import { createTheme } from '@mui/material/styles';
 
 import FilterVintageIcon from "@mui/icons-material/FilterVintage";
 import Table_score from './tablescore';
-
-
 
 
 

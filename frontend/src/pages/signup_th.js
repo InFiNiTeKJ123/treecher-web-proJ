@@ -16,7 +16,7 @@ import { Slide } from "@mui/material";
 import Tree from "../assets/TCH1.png";
 import { useForm } from "react-hook-form";
 import config from "../config/config";
-
+import Logo from "../assets/treecher.png";
 
 const useStyles = makeStyles({
   icon: {
@@ -131,7 +131,7 @@ function SignUp_TH(props) {
               sx={{ width: 150, height: 150, backgroundColor: "success.main" }}
             >
               <img
-                src="https://www.img.in.th/images/5c82f85a69a47c74cf09dedd00fd4890.png"
+                src={Logo}
                 alt="TreeCherLOGO.png"
                 border="20"
                 width="200"

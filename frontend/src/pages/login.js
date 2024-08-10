@@ -8,6 +8,8 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axiosInstance from "../config/axios";
 import Tree from "../assets/TCH1.png";
+import Logo from "../assets/treecher.png";
+
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -145,7 +147,7 @@ function Login(props) {
             >
               <Avatar sx={{ width: 150, height: 150, backgroundColor: "success.main" }}>
                 <img
-                    src="https://sgp1.vultrobjects.com/img-in-th/U9hKvN.png"
+                    src={Logo}
                     alt="TreeCherLOGO.png"
                     border="20"
                     width="200"

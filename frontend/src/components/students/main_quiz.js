@@ -191,7 +191,7 @@ function Main_quiz(props) {
                     <CardActionArea onClick={handleOpenPopup1}>
                       <CardMedia
                       component="img"
-                      alt="green iguana"
+                      alt="Quiz logo"
                       height="250"
                       width="125"
                       image="https://www.img.in.th/images/d78a961684f161d6d40f9d613d670da0.png"
@@ -211,82 +211,7 @@ function Main_quiz(props) {
                     <Quiz_popup1 Open={open1} setopen={setOpen1} handleclose={handleClosePopup1} />
                 </Card>
 
-                  <Card sx = {{background: 'linear-gradient(45deg, #f9e6d6 30%, #e1c4ba 60%)', marginRight: theme.spacing(4) }}  className={classes.card_classroom}>
-                    <CardActionArea onClick={handleOpenPopup2}>
-                      <CardMedia
-                      component="img"
-                      alt="green iguana"
-                      height="250"
-                      width="125"
-                      image="https://www.img.in.th/images/2e3abb025b3a1680a25543d3e5009413.png"
-                      />
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>
-                          แบบฝึกหัดที่ 2
-                        </Typography>
-                        <Typography  gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
-                          มาแยกขยะกันเถอะ
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <CardActions CardActions onClick={handleOpenPopup2}>
-                      <Button sx={{ fontFamily: "Kanit", color:'#593d5e'}} size="small">เข้าทำควิซ</Button>
-                    </CardActions>
-                    <Quiz_popup2 Open={open2} handleclose={handleClosePopup2} clickcheckpoint={handleClick2}/>
-                    {Checkpoint2()}
-                </Card>
-
-                <Card sx = {{background: 'linear-gradient(45deg, #ffa73d 30%, #f1ff3a 90%)', marginRight: theme.spacing(4) }}  className={classes.card_classroom}>
-                    <CardActionArea onClick={handleOpenPopup3}>
-                      <CardMedia
-                      component="img"
-                      alt="green iguana"
-                      height="250"
-                      width="125"
-                      image="https://www.img.in.th/images/4d6fc5420e9aa4169650cb14b340254f.png"
-                      />
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>
-                          แบบฝึกหัดที่ 3
-                        </Typography>
-                        <Typography  gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
-                          การใช้ไฟฟ้าอย่างประหยัด
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <CardActions CardActions onClick={handleOpenPopup3}>
-                      <Button sx={{ fontFamily: "Kanit", color: "#461e4f"}} size="small">เข้าทำควิซ</Button>
-                    </CardActions>
-                    <Quiz_popup3 Open={open3} handleclose={handleClosePopup3} clickcheckpoint={handleClick3}/>
-                    {Checkpoint3()}
-                </Card>
-
-                <Card sx = {{background: 'linear-gradient(45deg, #c691ff 30%, #829bff 90%)', marginRight: theme.spacing(4) }}  className={classes.card_classroom}>
-                    <CardActionArea onClick={handleOpenPopup4}>
-                      <CardMedia
-                      component="img"
-                      alt="green iguana"
-                      height="250"
-                      width="125"
-                      image="https://www.img.in.th/images/52e57ea92bec5f87c0ec40099ea9db18.png"
-                      />
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>
-                          แบบฝึกหัดที่ 4
-                        </Typography>
-                        <Typography  gutterBottom variant="body2" component="div" sx={{ fontFamily: "Kanit", fontWeight: 500 }}>
-                          การใช้ไฟฟ้าอย่างปลอดภัย
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <CardActions CardActions onClick={handleOpenPopup4}>
-                      <Button sx={{ fontFamily: "Kanit", color: "#ffff02 "}} size="small">เข้าทำควิซ</Button>
-                    </CardActions>
-                    <Quiz_popup4 Open={open4} handleclose={handleClosePopup4} clickcheckpoint={handleClick4}/>
-                    {Checkpoint4()}
-                </Card>
-                
-              </Grid>
+               </Grid>
       </Container>
   )
 }

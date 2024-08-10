@@ -32,6 +32,15 @@ services:
       - dj_mysql
     networks:
       - dj
+  
+  treecher_frontend:
+    container_name: treecher-frontend
+    build: ./frontend
+    ports:
+      - 80:80
+    restart: always
+    networks:
+      - dj
 
 
 networks:

@@ -86,7 +86,7 @@ function SignUp_TH(props) {
     // console.log(formData);
     // const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-    
+    console.log(config.isProd)
     axios.post(`${config.apiUrlPrefix}user/create/th`,{
       email: event.email,
       first_name: event.firstName,

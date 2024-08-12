@@ -14,6 +14,7 @@ RUN npm install
 COPY . .
 
 ARG NODE_ENV=production
+
 # Build the React app
 RUN npm run build
 

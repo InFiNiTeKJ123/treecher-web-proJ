@@ -13,6 +13,7 @@ import Quiz_popup1 from '../quiz_popup1';
 import Quiz_popup3 from '../quiz_popup3';
 import Quiz_popup4 from '../quiz_popup4';
 import axiosInstance from '../../config/axios';
+import Quiz_logo from '../../assets/Quiz.png';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -194,7 +195,7 @@ function Main_quiz(props) {
                       alt="Quiz logo"
                       height="250"
                       width="125"
-                      image="https://www.img.in.th/images/d78a961684f161d6d40f9d613d670da0.png"
+                      image={Quiz_logo}
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>

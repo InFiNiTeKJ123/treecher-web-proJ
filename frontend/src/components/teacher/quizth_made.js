@@ -7,6 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 import MuiAlert from '@mui/material/Alert';
 import Quiz_popup1 from '../quiz_popup1';
 import axiosInstance from '../../config/axios';
+import Quiz_logo from '../../assets/Quiz.png';
 
 
 const useStyles = makeStyles(({ theme = createTheme() }) => ({
@@ -78,7 +79,7 @@ function Quizth_made(props) {
                       alt="Quiz logo"
                       height="250"
                       width="125"
-                      image="https://www.img.in.th/images/d78a961684f161d6d40f9d613d670da0.png"
+                      image={Quiz_logo}
                       />
                       <CardContent>
                         <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: "Kanit" ,fontWeight: 500 }}>

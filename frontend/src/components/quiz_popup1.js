@@ -14,6 +14,7 @@ import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import axiosInstance from "../config/axios";
+import question_logo from "../assets/python-3-logo.png";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -114,8 +115,8 @@ function Quiz_popup1(props) {
           <Box component="div" sx={{ textAlign: "center" }}>
             <Box
               component="img"
-              src="https://www.img.in.th/images/816c46fd5f108794fd30c930e2577d3a.png"
-              alt="wateringtheplant.png"
+              src={question_logo}
+              alt="question.png"
               sx={{ width: { xs: 150, md: 225 }, height: { xs: 150, md: 225 } }}
             />
           </Box>
